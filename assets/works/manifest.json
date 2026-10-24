@@ -5,7 +5,9 @@
     "category": "官网首页 · 视频动画",
     "year": "2026",
     "video": "assets/black-friday-motion.mp4",
-    "description": "独立站黑五预热官网首页视频动画 · 移动端。"
+    "description": "独立站黑五预热官网首页视频动画 · 移动端。",
+    "poster": "assets/black-friday-poster.webp",
+    "posterSmall": "assets/black-friday-poster-400.webp"
   },
   {
     "id": "solarcam",
@@ -20,7 +22,10 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "banner.png"
+        "originalName": "banner.png",
+        "thumb": "assets/works/thumbs/solarcam-01.webp",
+        "cardSmall": "assets/works/cards/solarcam-01-400.webp",
+        "cardMedium": "assets/works/cards/solarcam-01-800.webp"
       },
       {
         "src": "assets/works/originals/solarcam-02.png",
@@ -28,9 +33,11 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "mobile.png"
+        "originalName": "mobile.png",
+        "thumb": "assets/works/thumbs/solarcam-02.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/solarcam-01.webp"
   },
   {
     "id": "summer-wave",
@@ -45,7 +52,8 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "3840x1632-web-10.jpg"
+        "originalName": "3840x1632-web-10.jpg",
+        "thumb": "assets/works/thumbs/summer-wave-01.webp"
       },
       {
         "src": "assets/works/originals/summer-wave-02.jpg",
@@ -53,9 +61,13 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-17.jpg"
+        "originalName": "1200x1600-17.jpg",
+        "thumb": "assets/works/thumbs/summer-wave-02.webp",
+        "cardSmall": "assets/works/cards/summer-wave-02-400.webp",
+        "cardMedium": "assets/works/cards/summer-wave-02-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/summer-wave-02.webp"
   },
   {
     "id": "fathers-family",
@@ -70,9 +82,13 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "25-父亲节主banner.jpg"
+        "originalName": "25-父亲节主banner.jpg",
+        "thumb": "assets/works/thumbs/fathers-family-01.webp",
+        "cardSmall": "assets/works/cards/fathers-family-01-400.webp",
+        "cardMedium": "assets/works/cards/fathers-family-01-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/fathers-family-01.webp"
   },
   {
     "id": "summer-2025",
@@ -87,7 +103,10 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "25-夏季促销2800x1190-web.jpg"
+        "originalName": "25-夏季促销2800x1190-web.jpg",
+        "thumb": "assets/works/thumbs/summer-2025-01.webp",
+        "cardSmall": "assets/works/cards/summer-2025-01-400.webp",
+        "cardMedium": "assets/works/cards/summer-2025-01-800.webp"
       },
       {
         "src": "assets/works/originals/summer-2025-02.jpg",
@@ -95,7 +114,8 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "25-夏季促销1200x1600.jpg"
+        "originalName": "25-夏季促销1200x1600.jpg",
+        "thumb": "assets/works/thumbs/summer-2025-02.webp"
       },
       {
         "src": "assets/works/originals/summer-2025-03.jpg",
@@ -103,7 +123,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 套餐 Banner",
-        "originalName": "2800x1190-首页bundle-有按钮-2.jpg"
+        "originalName": "2800x1190-首页bundle-有按钮-2.jpg",
+        "thumb": "assets/works/thumbs/summer-2025-03.webp"
       },
       {
         "src": "assets/works/originals/summer-2025-04.jpg",
@@ -111,9 +132,11 @@
         "width": 750,
         "height": 1000,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "750x1000-首页bundle-手机端-有按钮-2.jpg"
+        "originalName": "750x1000-首页bundle-手机端-有按钮-2.jpg",
+        "thumb": "assets/works/thumbs/summer-2025-04.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/summer-2025-01.webp"
   },
   {
     "id": "spring",
@@ -128,7 +151,8 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "3840x1632-web-05.jpg"
+        "originalName": "3840x1632-web-05.jpg",
+        "thumb": "assets/works/thumbs/spring-01.webp"
       },
       {
         "src": "assets/works/originals/spring-02.jpg",
@@ -136,7 +160,10 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-12.jpg"
+        "originalName": "1200x1600-12.jpg",
+        "thumb": "assets/works/thumbs/spring-02.webp",
+        "cardSmall": "assets/works/cards/spring-02-400.webp",
+        "cardMedium": "assets/works/cards/spring-02-800.webp"
       },
       {
         "src": "assets/works/originals/spring-03.jpg",
@@ -144,7 +171,8 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 套餐 Banner",
-        "originalName": "3840x1632-首页bundle-有按钮-2.jpg"
+        "originalName": "3840x1632-首页bundle-有按钮-2.jpg",
+        "thumb": "assets/works/thumbs/spring-03.webp"
       },
       {
         "src": "assets/works/originals/spring-04.jpg",
@@ -152,9 +180,11 @@
         "width": 750,
         "height": 1000,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "750x1000-首页bundle-手机端-有按钮-8.jpg"
+        "originalName": "750x1000-首页bundle-手机端-有按钮-8.jpg",
+        "thumb": "assets/works/thumbs/spring-04.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/spring-02.webp"
   },
   {
     "id": "mothers-2026",
@@ -169,7 +199,10 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "3840x1632-web-08.jpg"
+        "originalName": "3840x1632-web-08.jpg",
+        "thumb": "assets/works/thumbs/mothers-2026-01.webp",
+        "cardSmall": "assets/works/cards/mothers-2026-01-400.webp",
+        "cardMedium": "assets/works/cards/mothers-2026-01-800.webp"
       },
       {
         "src": "assets/works/originals/mothers-2026-02.jpg",
@@ -177,9 +210,11 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-15.jpg"
+        "originalName": "1200x1600-15.jpg",
+        "thumb": "assets/works/thumbs/mothers-2026-02.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/mothers-2026-01.webp"
   },
   {
     "id": "halloween",
@@ -194,7 +229,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "2800x1190-web-5.jpg"
+        "originalName": "2800x1190-web-5.jpg",
+        "thumb": "assets/works/thumbs/halloween-01.webp"
       },
       {
         "src": "assets/works/originals/halloween-02.jpg",
@@ -202,9 +238,13 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-05.jpg"
+        "originalName": "1200x1600-05.jpg",
+        "thumb": "assets/works/thumbs/halloween-02.webp",
+        "cardSmall": "assets/works/cards/halloween-02-400.webp",
+        "cardMedium": "assets/works/cards/halloween-02-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/halloween-02.webp"
   },
   {
     "id": "black-friday-headstart",
@@ -219,7 +259,10 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "2800x1190-web-6.jpg"
+        "originalName": "2800x1190-web-6.jpg",
+        "thumb": "assets/works/thumbs/black-friday-headstart-01.webp",
+        "cardSmall": "assets/works/cards/black-friday-headstart-01-400.webp",
+        "cardMedium": "assets/works/cards/black-friday-headstart-01-800.webp"
       },
       {
         "src": "assets/works/originals/black-friday-headstart-02.jpg",
@@ -227,7 +270,8 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-06.jpg"
+        "originalName": "1200x1600-06.jpg",
+        "thumb": "assets/works/thumbs/black-friday-headstart-02.webp"
       },
       {
         "src": "assets/works/originals/black-friday-headstart-03.jpg",
@@ -235,7 +279,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 套餐 Banner",
-        "originalName": "2800x1190-首页bundle-有按钮-5.jpg"
+        "originalName": "2800x1190-首页bundle-有按钮-5.jpg",
+        "thumb": "assets/works/thumbs/black-friday-headstart-03.webp"
       },
       {
         "src": "assets/works/originals/black-friday-headstart-04.jpg",
@@ -243,9 +288,11 @@
         "width": 750,
         "height": 1000,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "750x1000-首页bundle-手机端-有按钮-5.jpg"
+        "originalName": "750x1000-首页bundle-手机端-有按钮-5.jpg",
+        "thumb": "assets/works/thumbs/black-friday-headstart-04.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/black-friday-headstart-01.webp"
   },
   {
     "id": "black-friday-kickoff",
@@ -260,7 +307,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "2800x1190-web-7.jpg"
+        "originalName": "2800x1190-web-7.jpg",
+        "thumb": "assets/works/thumbs/black-friday-kickoff-01.webp"
       },
       {
         "src": "assets/works/originals/black-friday-kickoff-02.jpg",
@@ -268,9 +316,13 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-07.jpg"
+        "originalName": "1200x1600-07.jpg",
+        "thumb": "assets/works/thumbs/black-friday-kickoff-02.webp",
+        "cardSmall": "assets/works/cards/black-friday-kickoff-02-400.webp",
+        "cardMedium": "assets/works/cards/black-friday-kickoff-02-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/black-friday-kickoff-02.webp"
   },
   {
     "id": "christmas",
@@ -285,7 +337,10 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "2800x1190-web-8.jpg"
+        "originalName": "2800x1190-web-8.jpg",
+        "thumb": "assets/works/thumbs/christmas-01.webp",
+        "cardSmall": "assets/works/cards/christmas-01-400.webp",
+        "cardMedium": "assets/works/cards/christmas-01-800.webp"
       },
       {
         "src": "assets/works/originals/christmas-02.png",
@@ -293,7 +348,8 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600.png"
+        "originalName": "1200x1600.png",
+        "thumb": "assets/works/thumbs/christmas-02.webp"
       },
       {
         "src": "assets/works/originals/christmas-03.jpg",
@@ -301,7 +357,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 套餐 Banner",
-        "originalName": "2800x1190-首页bundle-有按钮-6.jpg"
+        "originalName": "2800x1190-首页bundle-有按钮-6.jpg",
+        "thumb": "assets/works/thumbs/christmas-03.webp"
       },
       {
         "src": "assets/works/originals/christmas-04.jpg",
@@ -309,9 +366,11 @@
         "width": 750,
         "height": 1000,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "750x1000-首页bundle-手机端-有按钮-6.jpg"
+        "originalName": "750x1000-首页bundle-手机端-有按钮-6.jpg",
+        "thumb": "assets/works/thumbs/christmas-04.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/christmas-01.webp"
   },
   {
     "id": "year-end",
@@ -326,7 +385,8 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "3840x1632-web-01.jpg"
+        "originalName": "3840x1632-web-01.jpg",
+        "thumb": "assets/works/thumbs/year-end-01.webp"
       },
       {
         "src": "assets/works/originals/year-end-02.jpg",
@@ -334,7 +394,10 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-08.jpg"
+        "originalName": "1200x1600-08.jpg",
+        "thumb": "assets/works/thumbs/year-end-02.webp",
+        "cardSmall": "assets/works/cards/year-end-02-400.webp",
+        "cardMedium": "assets/works/cards/year-end-02-800.webp"
       },
       {
         "src": "assets/works/originals/year-end-03.jpg",
@@ -342,7 +405,8 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 套餐 Banner",
-        "originalName": "3840x1632-首页bundle-有按钮-1.jpg"
+        "originalName": "3840x1632-首页bundle-有按钮-1.jpg",
+        "thumb": "assets/works/thumbs/year-end-03.webp"
       },
       {
         "src": "assets/works/originals/year-end-04.jpg",
@@ -350,9 +414,11 @@
         "width": 750,
         "height": 1000,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "750x1000-首页bundle-手机端-有按钮-7.jpg"
+        "originalName": "750x1000-首页bundle-手机端-有按钮-7.jpg",
+        "thumb": "assets/works/thumbs/year-end-04.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/year-end-02.webp"
   },
   {
     "id": "valentines",
@@ -367,7 +433,10 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "3840x1632-web-02.jpg"
+        "originalName": "3840x1632-web-02.jpg",
+        "thumb": "assets/works/thumbs/valentines-01.webp",
+        "cardSmall": "assets/works/cards/valentines-01-400.webp",
+        "cardMedium": "assets/works/cards/valentines-01-800.webp"
       },
       {
         "src": "assets/works/originals/valentines-02.jpg",
@@ -375,9 +444,11 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-09.jpg"
+        "originalName": "1200x1600-09.jpg",
+        "thumb": "assets/works/thumbs/valentines-02.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/valentines-01.webp"
   },
   {
     "id": "winter",
@@ -392,7 +463,8 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "3840x1632-web-03.jpg"
+        "originalName": "3840x1632-web-03.jpg",
+        "thumb": "assets/works/thumbs/winter-01.webp"
       },
       {
         "src": "assets/works/originals/winter-02.jpg",
@@ -400,9 +472,13 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-10.jpg"
+        "originalName": "1200x1600-10.jpg",
+        "thumb": "assets/works/thumbs/winter-02.webp",
+        "cardSmall": "assets/works/cards/winter-02-400.webp",
+        "cardMedium": "assets/works/cards/winter-02-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/winter-02.webp"
   },
   {
     "id": "football",
@@ -417,7 +493,10 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "3840x1632-web-04.jpg"
+        "originalName": "3840x1632-web-04.jpg",
+        "thumb": "assets/works/thumbs/football-01.webp",
+        "cardSmall": "assets/works/cards/football-01-400.webp",
+        "cardMedium": "assets/works/cards/football-01-800.webp"
       },
       {
         "src": "assets/works/originals/football-02.jpg",
@@ -425,9 +504,11 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-11.jpg"
+        "originalName": "1200x1600-11.jpg",
+        "thumb": "assets/works/thumbs/football-02.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/football-01.webp"
   },
   {
     "id": "easter-garden",
@@ -442,7 +523,8 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "3840x1632-web-06.jpg"
+        "originalName": "3840x1632-web-06.jpg",
+        "thumb": "assets/works/thumbs/easter-garden-01.webp"
       },
       {
         "src": "assets/works/originals/easter-garden-02.jpg",
@@ -450,9 +532,13 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-13.jpg"
+        "originalName": "1200x1600-13.jpg",
+        "thumb": "assets/works/thumbs/easter-garden-02.webp",
+        "cardSmall": "assets/works/cards/easter-garden-02-400.webp",
+        "cardMedium": "assets/works/cards/easter-garden-02-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/easter-garden-02.webp"
   },
   {
     "id": "full-home",
@@ -467,7 +553,10 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "3840x1632-web-07.jpg"
+        "originalName": "3840x1632-web-07.jpg",
+        "thumb": "assets/works/thumbs/full-home-01.webp",
+        "cardSmall": "assets/works/cards/full-home-01-400.webp",
+        "cardMedium": "assets/works/cards/full-home-01-800.webp"
       },
       {
         "src": "assets/works/originals/full-home-02.jpg",
@@ -475,7 +564,8 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-14.jpg"
+        "originalName": "1200x1600-14.jpg",
+        "thumb": "assets/works/thumbs/full-home-02.webp"
       },
       {
         "src": "assets/works/originals/full-home-03.jpg",
@@ -483,7 +573,8 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 套餐 Banner",
-        "originalName": "3840x1632-首页bundle-有按钮-3.jpg"
+        "originalName": "3840x1632-首页bundle-有按钮-3.jpg",
+        "thumb": "assets/works/thumbs/full-home-03.webp"
       },
       {
         "src": "assets/works/originals/full-home-04.jpg",
@@ -491,7 +582,8 @@
         "width": 750,
         "height": 1000,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "750x1000-首页bundle-手机端-有按钮 拷贝.jpg"
+        "originalName": "750x1000-首页bundle-手机端-有按钮 拷贝.jpg",
+        "thumb": "assets/works/thumbs/full-home-04.webp"
       },
       {
         "src": "assets/works/originals/full-home-05.jpg",
@@ -499,7 +591,8 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 套餐 Banner",
-        "originalName": "3840x1632-首页bundle-有按钮-4.jpg"
+        "originalName": "3840x1632-首页bundle-有按钮-4.jpg",
+        "thumb": "assets/works/thumbs/full-home-05.webp"
       },
       {
         "src": "assets/works/originals/full-home-06.jpg",
@@ -507,9 +600,11 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "1200x1600-首页bundle-手机端-有按钮.jpg"
+        "originalName": "1200x1600-首页bundle-手机端-有按钮.jpg",
+        "thumb": "assets/works/thumbs/full-home-06.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/full-home-01.webp"
   },
   {
     "id": "travel-2025",
@@ -524,7 +619,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "25-出游促销2800x1190-web.jpg"
+        "originalName": "25-出游促销2800x1190-web.jpg",
+        "thumb": "assets/works/thumbs/travel-2025-01.webp"
       },
       {
         "src": "assets/works/originals/travel-2025-02.jpg",
@@ -532,7 +628,10 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "25-出游促销1200x1600.jpg"
+        "originalName": "25-出游促销1200x1600.jpg",
+        "thumb": "assets/works/thumbs/travel-2025-02.webp",
+        "cardSmall": "assets/works/cards/travel-2025-02-400.webp",
+        "cardMedium": "assets/works/cards/travel-2025-02-800.webp"
       },
       {
         "src": "assets/works/originals/travel-2025-03.jpg",
@@ -540,7 +639,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 套餐 Banner",
-        "originalName": "2800x1190-首页bundle-有按钮-1.jpg"
+        "originalName": "2800x1190-首页bundle-有按钮-1.jpg",
+        "thumb": "assets/works/thumbs/travel-2025-03.webp"
       },
       {
         "src": "assets/works/originals/travel-2025-04.jpg",
@@ -548,9 +648,11 @@
         "width": 750,
         "height": 1000,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "750x1000-首页bundle-手机端-有按钮-1.jpg"
+        "originalName": "750x1000-首页bundle-手机端-有按钮-1.jpg",
+        "thumb": "assets/works/thumbs/travel-2025-04.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/travel-2025-02.webp"
   },
   {
     "id": "easter-2025",
@@ -565,7 +667,10 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "25-复活节2800x1190-web.jpg"
+        "originalName": "25-复活节2800x1190-web.jpg",
+        "thumb": "assets/works/thumbs/easter-2025-01.webp",
+        "cardSmall": "assets/works/cards/easter-2025-01-400.webp",
+        "cardMedium": "assets/works/cards/easter-2025-01-800.webp"
       },
       {
         "src": "assets/works/originals/easter-2025-02.jpg",
@@ -573,9 +678,11 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "25-复活节1200x1600.jpg"
+        "originalName": "25-复活节1200x1600.jpg",
+        "thumb": "assets/works/thumbs/easter-2025-02.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/easter-2025-01.webp"
   },
   {
     "id": "mothers-2025",
@@ -590,7 +697,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "25-母亲节2800x1190-web.jpg"
+        "originalName": "25-母亲节2800x1190-web.jpg",
+        "thumb": "assets/works/thumbs/mothers-2025-01.webp"
       },
       {
         "src": "assets/works/originals/mothers-2025-02.jpg",
@@ -598,9 +706,13 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "25-母亲节1200x1600.jpg"
+        "originalName": "25-母亲节1200x1600.jpg",
+        "thumb": "assets/works/thumbs/mothers-2025-02.webp",
+        "cardSmall": "assets/works/cards/mothers-2025-02-400.webp",
+        "cardMedium": "assets/works/cards/mothers-2025-02-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/mothers-2025-02.webp"
   },
   {
     "id": "memorial-2025",
@@ -615,7 +727,10 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "25-烈士纪念日2800x1190-web.jpg"
+        "originalName": "25-烈士纪念日2800x1190-web.jpg",
+        "thumb": "assets/works/thumbs/memorial-2025-01.webp",
+        "cardSmall": "assets/works/cards/memorial-2025-01-400.webp",
+        "cardMedium": "assets/works/cards/memorial-2025-01-800.webp"
       },
       {
         "src": "assets/works/originals/memorial-2025-02.jpg",
@@ -623,9 +738,11 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "25-烈士纪念日1200x1600.jpg"
+        "originalName": "25-烈士纪念日1200x1600.jpg",
+        "thumb": "assets/works/thumbs/memorial-2025-02.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/memorial-2025-01.webp"
   },
   {
     "id": "fathers-2025",
@@ -640,7 +757,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "25-父亲节2800x1190-web.jpg"
+        "originalName": "25-父亲节2800x1190-web.jpg",
+        "thumb": "assets/works/thumbs/fathers-2025-01.webp"
       },
       {
         "src": "assets/works/originals/fathers-2025-02.jpg",
@@ -648,7 +766,10 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "25-父亲节1200x1600.jpg"
+        "originalName": "25-父亲节1200x1600.jpg",
+        "thumb": "assets/works/thumbs/fathers-2025-02.webp",
+        "cardSmall": "assets/works/cards/fathers-2025-02-400.webp",
+        "cardMedium": "assets/works/cards/fathers-2025-02-800.webp"
       },
       {
         "src": "assets/works/originals/fathers-2025-03.jpg",
@@ -656,7 +777,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 套餐 Banner",
-        "originalName": "25-父亲节2800x1190-首页bundle-有按钮.jpg"
+        "originalName": "25-父亲节2800x1190-首页bundle-有按钮.jpg",
+        "thumb": "assets/works/thumbs/fathers-2025-03.webp"
       },
       {
         "src": "assets/works/originals/fathers-2025-04.jpg",
@@ -664,9 +786,11 @@
         "width": 750,
         "height": 1000,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "25-父亲节750x1000-首页bundle-手机端-有按钮.jpg"
+        "originalName": "25-父亲节750x1000-首页bundle-手机端-有按钮.jpg",
+        "thumb": "assets/works/thumbs/fathers-2025-04.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/fathers-2025-02.webp"
   },
   {
     "id": "fathers-tool",
@@ -681,7 +805,10 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "2800x1190-web-1.jpg"
+        "originalName": "2800x1190-web-1.jpg",
+        "thumb": "assets/works/thumbs/fathers-tool-01.webp",
+        "cardSmall": "assets/works/cards/fathers-tool-01-400.webp",
+        "cardMedium": "assets/works/cards/fathers-tool-01-800.webp"
       },
       {
         "src": "assets/works/originals/fathers-tool-02.jpg",
@@ -689,9 +816,11 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-01.jpg"
+        "originalName": "1200x1600-01.jpg",
+        "thumb": "assets/works/thumbs/fathers-tool-02.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/fathers-tool-01.webp"
   },
   {
     "id": "school",
@@ -706,7 +835,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "2800x1190-web-2.jpg"
+        "originalName": "2800x1190-web-2.jpg",
+        "thumb": "assets/works/thumbs/school-01.webp"
       },
       {
         "src": "assets/works/originals/school-02.jpg",
@@ -714,7 +844,10 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-02.jpg"
+        "originalName": "1200x1600-02.jpg",
+        "thumb": "assets/works/thumbs/school-02.webp",
+        "cardSmall": "assets/works/cards/school-02-400.webp",
+        "cardMedium": "assets/works/cards/school-02-800.webp"
       },
       {
         "src": "assets/works/originals/school-03.jpg",
@@ -722,7 +855,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 套餐 Banner",
-        "originalName": "2800x1190-首页bundle-有按钮-3.jpg"
+        "originalName": "2800x1190-首页bundle-有按钮-3.jpg",
+        "thumb": "assets/works/thumbs/school-03.webp"
       },
       {
         "src": "assets/works/originals/school-04.jpg",
@@ -730,9 +864,11 @@
         "width": 750,
         "height": 1000,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "750x1000-首页bundle-手机端-有按钮-3.jpg"
+        "originalName": "750x1000-首页bundle-手机端-有按钮-3.jpg",
+        "thumb": "assets/works/thumbs/school-04.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/school-02.webp"
   },
   {
     "id": "labor",
@@ -747,7 +883,10 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "2800x1190-web-3.jpg"
+        "originalName": "2800x1190-web-3.jpg",
+        "thumb": "assets/works/thumbs/labor-01.webp",
+        "cardSmall": "assets/works/cards/labor-01-400.webp",
+        "cardMedium": "assets/works/cards/labor-01-800.webp"
       },
       {
         "src": "assets/works/originals/labor-02.jpg",
@@ -755,7 +894,8 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-03.jpg"
+        "originalName": "1200x1600-03.jpg",
+        "thumb": "assets/works/thumbs/labor-02.webp"
       },
       {
         "src": "assets/works/originals/labor-03.jpg",
@@ -763,7 +903,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 套餐 Banner",
-        "originalName": "2800x1190-首页bundle-有按钮-4.jpg"
+        "originalName": "2800x1190-首页bundle-有按钮-4.jpg",
+        "thumb": "assets/works/thumbs/labor-03.webp"
       },
       {
         "src": "assets/works/originals/labor-04.jpg",
@@ -771,9 +912,11 @@
         "width": 750,
         "height": 1000,
         "label": "竖版 · 套餐 Banner",
-        "originalName": "750x1000-首页bundle-手机端-有按钮-4.jpg"
+        "originalName": "750x1000-首页bundle-手机端-有按钮-4.jpg",
+        "thumb": "assets/works/thumbs/labor-04.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/labor-01.webp"
   },
   {
     "id": "autumn",
@@ -788,7 +931,8 @@
         "width": 2800,
         "height": 1190,
         "label": "横版 · 主视觉",
-        "originalName": "2800x1190-web-4.jpg"
+        "originalName": "2800x1190-web-4.jpg",
+        "thumb": "assets/works/thumbs/autumn-01.webp"
       },
       {
         "src": "assets/works/originals/autumn-02.jpg",
@@ -796,9 +940,13 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-04.jpg"
+        "originalName": "1200x1600-04.jpg",
+        "thumb": "assets/works/thumbs/autumn-02.webp",
+        "cardSmall": "assets/works/cards/autumn-02-400.webp",
+        "cardMedium": "assets/works/cards/autumn-02-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/autumn-02.webp"
   },
   {
     "id": "memorial",
@@ -813,7 +961,10 @@
         "width": 3840,
         "height": 1632,
         "label": "横版 · 主视觉",
-        "originalName": "3840x1632-web-09.jpg"
+        "originalName": "3840x1632-web-09.jpg",
+        "thumb": "assets/works/thumbs/memorial-01.webp",
+        "cardSmall": "assets/works/cards/memorial-01-400.webp",
+        "cardMedium": "assets/works/cards/memorial-01-800.webp"
       },
       {
         "src": "assets/works/originals/memorial-02.jpg",
@@ -821,9 +972,11 @@
         "width": 1200,
         "height": 1600,
         "label": "竖版 · 作品画面",
-        "originalName": "1200x1600-16.jpg"
+        "originalName": "1200x1600-16.jpg",
+        "thumb": "assets/works/thumbs/memorial-02.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/memorial-01.webp"
   },
   {
     "id": "c8s",
@@ -838,9 +991,13 @@
         "width": 960,
         "height": 1200,
         "label": "竖版 · 作品画面",
-        "originalName": "(C8S-4H)960x1200.jpg"
+        "originalName": "(C8S-4H)960x1200.jpg",
+        "thumb": "assets/works/thumbs/c8s-01.webp",
+        "cardSmall": "assets/works/cards/c8s-01-400.webp",
+        "cardMedium": "assets/works/cards/c8s-01-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/c8s-01.webp"
   },
   {
     "id": "c9c",
@@ -855,9 +1012,13 @@
         "width": 960,
         "height": 1200,
         "label": "竖版 · 作品画面",
-        "originalName": "(C9C-6H)960x1200.jpg"
+        "originalName": "(C9C-6H)960x1200.jpg",
+        "thumb": "assets/works/thumbs/c9c-01.webp",
+        "cardSmall": "assets/works/cards/c9c-01-400.webp",
+        "cardMedium": "assets/works/cards/c9c-01-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/c9c-01.webp"
   },
   {
     "id": "floodlight",
@@ -872,9 +1033,13 @@
         "width": 960,
         "height": 1200,
         "label": "竖版 · 作品画面",
-        "originalName": "960x1200.jpg"
+        "originalName": "960x1200.jpg",
+        "thumb": "assets/works/thumbs/floodlight-01.webp",
+        "cardSmall": "assets/works/cards/floodlight-01-400.webp",
+        "cardMedium": "assets/works/cards/floodlight-01-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/floodlight-01.webp"
   },
   {
     "id": "rain",
@@ -889,8 +1054,12 @@
         "width": 2560,
         "height": 1600,
         "label": "横版 · 作品画面",
-        "originalName": "4.png"
+        "originalName": "4.png",
+        "thumb": "assets/works/thumbs/rain-01.webp",
+        "cardSmall": "assets/works/cards/rain-01-400.webp",
+        "cardMedium": "assets/works/cards/rain-01-800.webp"
       }
-    ]
+    ],
+    "hero": "assets/works/hero/rain-01.webp"
   }
 ]
