@@ -1,6 +1,8 @@
 (() => {
   'use strict';
   const projects=window.portfolioWorks;
+  const homeProjects=projects.filter(project=>project.showOnHome!==false);
+  document.querySelector(".section-top h2 small").textContent="("+homeProjects.length+")";
   const dialog=document.querySelector('#detail');
   const player=document.querySelector('#detail-video');
   const image=document.querySelector('#detail-image');
@@ -39,7 +41,7 @@
       });
       document.querySelector('#previous-image').disabled=project.images.length<2;
       document.querySelector('#next-image').disabled=project.images.length<2;
-      setImage(0);
+      setImage(project.cover||0);
     }
     dialog.showModal();dialog.scrollTop=0;document.body.classList.add('modal-open');
     if(project.video){player.src=project.video;player.play().catch(()=>{if(player.error)videoError.hidden=false})}
@@ -55,18 +57,18 @@
     entries.forEach(entry=>{if(entry.isIntersecting){loadCard(entry.target);cardObserver.unobserve(entry.target)}});
   },{rootMargin:'300px 0px'}):null;
   const columnHeights=[0,0];
-  projects.forEach((project,i)=>{
+  homeProjects.forEach((project,i)=>{
     const button=document.createElement('button');button.className='project'+(project.video?' video-project':'');
     button.setAttribute('aria-label',(project.video?'播放视频作品：':'查看作品：')+project.title);
     button.dataset.projectId=project.id;
     const cover=project.images?.[project.cover||0]||{width:1200,height:1600,preview:project.poster,cardSmall:project.posterSmall,cardMedium:project.poster};
     const responsive=project.video?cover.cardSmall+' 400w, '+cover.preview+' 750w':cover.cardSmall+' 400w, '+cover.cardMedium+' 800w, '+cover.preview+' '+Math.min(1280,cover.width)+'w';
-    const media='<img class="pending" data-src="'+cover.cardSmall+'" data-srcset="'+responsive+'" sizes="calc(50vw - 6px)" alt="'+escapeText(project.title)+'" width="'+cover.width+'" height="'+cover.height+'" style="aspect-ratio:'+cover.width+'/'+cover.height+'" loading="lazy" decoding="async">'+(project.video?'<div class="play-mark"><i>▶</i><small>点击播放</small></div>':'');
+    const media='<img class="pending" data-src="'+cover.cardSmall+'" data-srcset="'+responsive+'" sizes="calc(50vw - 6px)" alt="'+escapeText(project.title)+'" width="'+cover.width+'" height="'+cover.height+'" style="aspect-ratio:3/4" loading="lazy" decoding="async">'+(project.video?'<div class="play-mark"><i>▶</i><small>点击播放</small></div>':'');
     button.innerHTML=media+(project.images?.length>1?'<span class="image-count">'+project.images.length+' 张 ↗</span>':'')+'<div class="caption"><div><b>'+escapeText(project.title)+'</b><small>'+escapeText(metadata(project))+'</small></div><span>'+(project.video?'▶':'↗')+'</span></div>';
     button.addEventListener('click',()=>openProject(project,button));
     const col=i===0?0:i===1?1:columnHeights[0]<=columnHeights[1]?0:1;
     document.querySelector(col?'#right':'#left').append(button);
-    columnHeights[col]+=(cover.height/cover.width)+.12;
+    columnHeights[col]+=4/3+.12;
     const img=button.querySelector('img');if(cardObserver)cardObserver.observe(img);else loadCard(img);
   });
   document.querySelector('#previous-image').addEventListener('click',()=>setImage(activeImage-1));
@@ -80,7 +82,7 @@
   dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()});
   dialog.addEventListener('close',()=>{player.pause();player.removeAttribute('src');player.load();image.removeAttribute('src');document.body.classList.remove('modal-open');opener?.focus()});
   player.addEventListener('error',()=>{if(dialog.open&&!player.hidden)videoError.hidden=false});
-  const trailImages=projects.filter(p=>p.images).slice(0,6).map(p=>p.hero);
+  const trailImages=homeProjects.filter(p=>p.images).slice(0,6).map(p=>p.hero);
   const hero=document.querySelector('.hero');let lastX=-999,lastY=-999,count=0,lastTime=0;
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   hero.addEventListener('pointermove',e=>{

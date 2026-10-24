@@ -7,14 +7,15 @@
     "video": "assets/black-friday-motion.mp4",
     "description": "独立站黑五预热官网首页视频动画 · 移动端。",
     "poster": "assets/black-friday-poster.webp",
-    "posterSmall": "assets/black-friday-poster-400.webp"
+    "posterSmall": "assets/black-friday-poster-400.webp",
+    "showOnHome": true
   },
   {
     "id": "solarcam",
     "title": "4K SolarCam P1 Max",
     "category": "新品发布 · 产品视觉",
     "year": "",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/solarcam-01.png",
@@ -34,10 +35,13 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "mobile.png",
-        "thumb": "assets/works/thumbs/solarcam-02.webp"
+        "thumb": "assets/works/thumbs/solarcam-02.webp",
+        "cardSmall": "assets/works/cards/solarcam-02-400.webp",
+        "cardMedium": "assets/works/cards/solarcam-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/solarcam-01.webp"
+    "hero": "assets/works/hero/solarcam-02.webp",
+    "showOnHome": true
   },
   {
     "id": "summer-wave",
@@ -67,7 +71,8 @@
         "cardMedium": "assets/works/cards/summer-wave-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/summer-wave-02.webp"
+    "hero": "assets/works/hero/summer-wave-02.webp",
+    "showOnHome": true
   },
   {
     "id": "fathers-family",
@@ -88,14 +93,15 @@
         "cardMedium": "assets/works/cards/fathers-family-01-800.webp"
       }
     ],
-    "hero": "assets/works/hero/fathers-family-01.webp"
+    "hero": "assets/works/hero/fathers-family-01.webp",
+    "showOnHome": false
   },
   {
     "id": "summer-2025",
     "title": "夏季促销 / SUMMER SALE",
     "category": "官网活动 · 营销视觉",
     "year": "2025",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/summer-2025-01.jpg",
@@ -115,7 +121,9 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "25-夏季促销1200x1600.jpg",
-        "thumb": "assets/works/thumbs/summer-2025-02.webp"
+        "thumb": "assets/works/thumbs/summer-2025-02.webp",
+        "cardSmall": "assets/works/cards/summer-2025-02-400.webp",
+        "cardMedium": "assets/works/cards/summer-2025-02-800.webp"
       },
       {
         "src": "assets/works/originals/summer-2025-03.jpg",
@@ -136,7 +144,8 @@
         "thumb": "assets/works/thumbs/summer-2025-04.webp"
       }
     ],
-    "hero": "assets/works/hero/summer-2025-01.webp"
+    "hero": "assets/works/hero/summer-2025-02.webp",
+    "showOnHome": true
   },
   {
     "id": "spring",
@@ -184,14 +193,15 @@
         "thumb": "assets/works/thumbs/spring-04.webp"
       }
     ],
-    "hero": "assets/works/hero/spring-02.webp"
+    "hero": "assets/works/hero/spring-02.webp",
+    "showOnHome": true
   },
   {
     "id": "mothers-2026",
     "title": "母亲节 · 温暖日常",
     "category": "官网活动 · 营销视觉",
     "year": "2026",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/mothers-2026-01.jpg",
@@ -211,10 +221,13 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "1200x1600-15.jpg",
-        "thumb": "assets/works/thumbs/mothers-2026-02.webp"
+        "thumb": "assets/works/thumbs/mothers-2026-02.webp",
+        "cardSmall": "assets/works/cards/mothers-2026-02-400.webp",
+        "cardMedium": "assets/works/cards/mothers-2026-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/mothers-2026-01.webp"
+    "hero": "assets/works/hero/mothers-2026-02.webp",
+    "showOnHome": true
   },
   {
     "id": "halloween",
@@ -244,14 +257,15 @@
         "cardMedium": "assets/works/cards/halloween-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/halloween-02.webp"
+    "hero": "assets/works/hero/halloween-02.webp",
+    "showOnHome": true
   },
   {
     "id": "black-friday-headstart",
     "title": "黑五 · 提前购",
     "category": "官网活动 · 营销视觉",
     "year": "",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/black-friday-headstart-01.jpg",
@@ -271,7 +285,9 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "1200x1600-06.jpg",
-        "thumb": "assets/works/thumbs/black-friday-headstart-02.webp"
+        "thumb": "assets/works/thumbs/black-friday-headstart-02.webp",
+        "cardSmall": "assets/works/cards/black-friday-headstart-02-400.webp",
+        "cardMedium": "assets/works/cards/black-friday-headstart-02-800.webp"
       },
       {
         "src": "assets/works/originals/black-friday-headstart-03.jpg",
@@ -292,7 +308,8 @@
         "thumb": "assets/works/thumbs/black-friday-headstart-04.webp"
       }
     ],
-    "hero": "assets/works/hero/black-friday-headstart-01.webp"
+    "hero": "assets/works/hero/black-friday-headstart-02.webp",
+    "showOnHome": true
   },
   {
     "id": "black-friday-kickoff",
@@ -322,14 +339,15 @@
         "cardMedium": "assets/works/cards/black-friday-kickoff-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/black-friday-kickoff-02.webp"
+    "hero": "assets/works/hero/black-friday-kickoff-02.webp",
+    "showOnHome": true
   },
   {
     "id": "christmas",
     "title": "圣诞礼遇 / CHRISTMAS",
     "category": "官网活动 · 营销视觉",
     "year": "",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/christmas-01.jpg",
@@ -349,7 +367,9 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "1200x1600.png",
-        "thumb": "assets/works/thumbs/christmas-02.webp"
+        "thumb": "assets/works/thumbs/christmas-02.webp",
+        "cardSmall": "assets/works/cards/christmas-02-400.webp",
+        "cardMedium": "assets/works/cards/christmas-02-800.webp"
       },
       {
         "src": "assets/works/originals/christmas-03.jpg",
@@ -370,7 +390,8 @@
         "thumb": "assets/works/thumbs/christmas-04.webp"
       }
     ],
-    "hero": "assets/works/hero/christmas-01.webp"
+    "hero": "assets/works/hero/christmas-02.webp",
+    "showOnHome": true
   },
   {
     "id": "year-end",
@@ -418,14 +439,15 @@
         "thumb": "assets/works/thumbs/year-end-04.webp"
       }
     ],
-    "hero": "assets/works/hero/year-end-02.webp"
+    "hero": "assets/works/hero/year-end-02.webp",
+    "showOnHome": true
   },
   {
     "id": "valentines",
     "title": "情人节 / VALENTINE’S DAY",
     "category": "官网活动 · 营销视觉",
     "year": "",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/valentines-01.jpg",
@@ -445,10 +467,13 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "1200x1600-09.jpg",
-        "thumb": "assets/works/thumbs/valentines-02.webp"
+        "thumb": "assets/works/thumbs/valentines-02.webp",
+        "cardSmall": "assets/works/cards/valentines-02-400.webp",
+        "cardMedium": "assets/works/cards/valentines-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/valentines-01.webp"
+    "hero": "assets/works/hero/valentines-02.webp",
+    "showOnHome": true
   },
   {
     "id": "winter",
@@ -478,14 +503,15 @@
         "cardMedium": "assets/works/cards/winter-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/winter-02.webp"
+    "hero": "assets/works/hero/winter-02.webp",
+    "showOnHome": true
   },
   {
     "id": "football",
     "title": "赛季守护 / GAME DAY",
     "category": "官网活动 · 营销视觉",
     "year": "",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/football-01.jpg",
@@ -505,10 +531,13 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "1200x1600-11.jpg",
-        "thumb": "assets/works/thumbs/football-02.webp"
+        "thumb": "assets/works/thumbs/football-02.webp",
+        "cardSmall": "assets/works/cards/football-02-400.webp",
+        "cardMedium": "assets/works/cards/football-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/football-01.webp"
+    "hero": "assets/works/hero/football-02.webp",
+    "showOnHome": true
   },
   {
     "id": "easter-garden",
@@ -538,14 +567,15 @@
         "cardMedium": "assets/works/cards/easter-garden-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/easter-garden-02.webp"
+    "hero": "assets/works/hero/easter-garden-02.webp",
+    "showOnHome": true
   },
   {
     "id": "full-home",
     "title": "全屋安防 / FULL HOME",
     "category": "官网活动 · 营销视觉",
     "year": "",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/full-home-01.jpg",
@@ -565,7 +595,9 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "1200x1600-14.jpg",
-        "thumb": "assets/works/thumbs/full-home-02.webp"
+        "thumb": "assets/works/thumbs/full-home-02.webp",
+        "cardSmall": "assets/works/cards/full-home-02-400.webp",
+        "cardMedium": "assets/works/cards/full-home-02-800.webp"
       },
       {
         "src": "assets/works/originals/full-home-03.jpg",
@@ -604,7 +636,8 @@
         "thumb": "assets/works/thumbs/full-home-06.webp"
       }
     ],
-    "hero": "assets/works/hero/full-home-01.webp"
+    "hero": "assets/works/hero/full-home-02.webp",
+    "showOnHome": true
   },
   {
     "id": "travel-2025",
@@ -652,14 +685,15 @@
         "thumb": "assets/works/thumbs/travel-2025-04.webp"
       }
     ],
-    "hero": "assets/works/hero/travel-2025-02.webp"
+    "hero": "assets/works/hero/travel-2025-02.webp",
+    "showOnHome": true
   },
   {
     "id": "easter-2025",
     "title": "复活节 / EASTER",
     "category": "官网活动 · 营销视觉",
     "year": "2025",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/easter-2025-01.jpg",
@@ -679,10 +713,13 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "25-复活节1200x1600.jpg",
-        "thumb": "assets/works/thumbs/easter-2025-02.webp"
+        "thumb": "assets/works/thumbs/easter-2025-02.webp",
+        "cardSmall": "assets/works/cards/easter-2025-02-400.webp",
+        "cardMedium": "assets/works/cards/easter-2025-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/easter-2025-01.webp"
+    "hero": "assets/works/hero/easter-2025-02.webp",
+    "showOnHome": true
   },
   {
     "id": "mothers-2025",
@@ -712,14 +749,15 @@
         "cardMedium": "assets/works/cards/mothers-2025-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/mothers-2025-02.webp"
+    "hero": "assets/works/hero/mothers-2025-02.webp",
+    "showOnHome": true
   },
   {
     "id": "memorial-2025",
     "title": "纪念日 / MEMORIAL DAY",
     "category": "官网活动 · 营销视觉",
     "year": "2025",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/memorial-2025-01.jpg",
@@ -739,10 +777,13 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "25-烈士纪念日1200x1600.jpg",
-        "thumb": "assets/works/thumbs/memorial-2025-02.webp"
+        "thumb": "assets/works/thumbs/memorial-2025-02.webp",
+        "cardSmall": "assets/works/cards/memorial-2025-02-400.webp",
+        "cardMedium": "assets/works/cards/memorial-2025-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/memorial-2025-01.webp"
+    "hero": "assets/works/hero/memorial-2025-02.webp",
+    "showOnHome": true
   },
   {
     "id": "fathers-2025",
@@ -790,14 +831,15 @@
         "thumb": "assets/works/thumbs/fathers-2025-04.webp"
       }
     ],
-    "hero": "assets/works/hero/fathers-2025-02.webp"
+    "hero": "assets/works/hero/fathers-2025-02.webp",
+    "showOnHome": true
   },
   {
     "id": "fathers-tool",
     "title": "全天守护 / ALWAYS ON",
     "category": "产品推广 · 营销视觉",
     "year": "",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/fathers-tool-01.jpg",
@@ -817,10 +859,13 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "1200x1600-01.jpg",
-        "thumb": "assets/works/thumbs/fathers-tool-02.webp"
+        "thumb": "assets/works/thumbs/fathers-tool-02.webp",
+        "cardSmall": "assets/works/cards/fathers-tool-02-400.webp",
+        "cardMedium": "assets/works/cards/fathers-tool-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/fathers-tool-01.webp"
+    "hero": "assets/works/hero/fathers-tool-02.webp",
+    "showOnHome": true
   },
   {
     "id": "school",
@@ -868,14 +913,15 @@
         "thumb": "assets/works/thumbs/school-04.webp"
       }
     ],
-    "hero": "assets/works/hero/school-02.webp"
+    "hero": "assets/works/hero/school-02.webp",
+    "showOnHome": true
   },
   {
     "id": "labor",
     "title": "劳动节 / LABOR DAY",
     "category": "官网活动 · 营销视觉",
     "year": "",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/labor-01.jpg",
@@ -895,7 +941,9 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "1200x1600-03.jpg",
-        "thumb": "assets/works/thumbs/labor-02.webp"
+        "thumb": "assets/works/thumbs/labor-02.webp",
+        "cardSmall": "assets/works/cards/labor-02-400.webp",
+        "cardMedium": "assets/works/cards/labor-02-800.webp"
       },
       {
         "src": "assets/works/originals/labor-03.jpg",
@@ -916,7 +964,8 @@
         "thumb": "assets/works/thumbs/labor-04.webp"
       }
     ],
-    "hero": "assets/works/hero/labor-01.webp"
+    "hero": "assets/works/hero/labor-02.webp",
+    "showOnHome": true
   },
   {
     "id": "autumn",
@@ -946,14 +995,15 @@
         "cardMedium": "assets/works/cards/autumn-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/autumn-02.webp"
+    "hero": "assets/works/hero/autumn-02.webp",
+    "showOnHome": true
   },
   {
     "id": "memorial",
     "title": "纪念日 · 蓝色盛夏",
     "category": "官网活动 · 营销视觉",
     "year": "",
-    "cover": 0,
+    "cover": 1,
     "images": [
       {
         "src": "assets/works/originals/memorial-01.jpg",
@@ -973,10 +1023,13 @@
         "height": 1600,
         "label": "竖版 · 作品画面",
         "originalName": "1200x1600-16.jpg",
-        "thumb": "assets/works/thumbs/memorial-02.webp"
+        "thumb": "assets/works/thumbs/memorial-02.webp",
+        "cardSmall": "assets/works/cards/memorial-02-400.webp",
+        "cardMedium": "assets/works/cards/memorial-02-800.webp"
       }
     ],
-    "hero": "assets/works/hero/memorial-01.webp"
+    "hero": "assets/works/hero/memorial-02.webp",
+    "showOnHome": true
   },
   {
     "id": "c8s",
@@ -997,7 +1050,8 @@
         "cardMedium": "assets/works/cards/c8s-01-800.webp"
       }
     ],
-    "hero": "assets/works/hero/c8s-01.webp"
+    "hero": "assets/works/hero/c8s-01.webp",
+    "showOnHome": true
   },
   {
     "id": "c9c",
@@ -1018,7 +1072,8 @@
         "cardMedium": "assets/works/cards/c9c-01-800.webp"
       }
     ],
-    "hero": "assets/works/hero/c9c-01.webp"
+    "hero": "assets/works/hero/c9c-01.webp",
+    "showOnHome": true
   },
   {
     "id": "floodlight",
@@ -1039,7 +1094,8 @@
         "cardMedium": "assets/works/cards/floodlight-01-800.webp"
       }
     ],
-    "hero": "assets/works/hero/floodlight-01.webp"
+    "hero": "assets/works/hero/floodlight-01.webp",
+    "showOnHome": true
   },
   {
     "id": "rain",
@@ -1060,6 +1116,7 @@
         "cardMedium": "assets/works/cards/rain-01-800.webp"
       }
     ],
-    "hero": "assets/works/hero/rain-01.webp"
+    "hero": "assets/works/hero/rain-01.webp",
+    "showOnHome": false
   }
 ]
