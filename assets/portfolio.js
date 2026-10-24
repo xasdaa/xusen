@@ -74,12 +74,13 @@
   homeProjects.filter(p=>!p.pageProject).forEach(p=>{
     const video=!!(p.video||p.videos?.length);
     const cover=p.coverImage||p.images?.[p.cover||0]||{width:1200,height:1600,preview:p.poster,cardSmall:p.posterSmall,cardMedium:p.posterMedium||p.poster};
-    const button=document.createElement('button');button.className='project'+(video?' video-project':'');
+    const button=document.createElement('button');button.className='project'+(video?' video-project':' poster-project');
     button.setAttribute('aria-label',(video?'播放视频作品：':'查看作品：')+p.title);button.dataset.projectId=p.id;
     const count=(p.videos?.length||0)+(p.images?.length||0);
     const badge=p.archive?'109 页旧作 ↗':video?(p.videos?.length>1?'横 / 竖 · 视频':'视频'):count>1?count+' 张 ↗':'';
     const responsive=cover.cardSmall+' 400w, '+cover.cardMedium+' 800w, '+cover.preview+' '+Math.min(1280,cover.width)+'w';
     button.innerHTML='<img class="pending" data-src="'+cover.cardSmall+'" data-srcset="'+responsive+'" sizes="(min-width: 701px) min(calc(50vw - 47px), calc(75svh - 156px)), calc(50vw - 6px)" alt="'+escapeText(p.title)+'" width="'+cover.width+'" height="'+cover.height+'" style="aspect-ratio:3/4" loading="lazy" decoding="async">'+(video?'<div class="play-mark"><i>▶</i><small>点击播放</small></div>':'')+(badge?'<span class="image-count">'+badge+'</span>':'')+'<div class="caption"><div><b>'+escapeText(p.title)+'</b><small>'+escapeText(metadata(p))+'</small></div><span>'+(video?'▶':'↗')+'</span></div>';
+    if(!video)button.insertAdjacentHTML('beforeend','<span class="poster-open" aria-hidden="true"><span>↗</span><small>查看项目</small></span>');
     button.addEventListener('click',()=>openProject(p,button));
     const i=video?motionIndex++:graphicIndex++;
     document.querySelector(video?(i%2?'#motion-right':'#motion-left'):(i%2?'#right':'#left')).append(button);
