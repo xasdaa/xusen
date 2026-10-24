@@ -1,21 +1,21 @@
 # 许森 · 个人设计作品集
 
-黑色首屏、鼠标跟随图片轨迹、直角窄间距瀑布流。首个作品是黑五预热官网视频，点击可播放、暂停、拖动和全屏。
+黑色首屏、鼠标跟随作品轨迹、直角窄间距瀑布流。
 
-## 文件
+当前包含 30 组图片作品（77 张图片）及 1 个黑五预热视频。每组活动的横版、竖版与套餐画面集中展示，支持切换图片、查看原图和键盘左右切换。视频支持点击播放、暂停、拖动与全屏。
 
-- `index.html`：页面、样式和交互。
-- `assets/black-friday-motion.mp4`：本人视频作品。
-- `assets/project-*.svg`：用于确认视觉方向的概念占位作品。
+- `index.html`：页面与样式。
+- `assets/portfolio.js`：瀑布流、项目相册与鼠标轨迹。
+- `assets/works-data.js`：作品数据。
+- `assets/works/manifest.json`：作品清单及原始文件名映射。
+- `assets/works/originals/`：77 张原始作品图片，保持原文件内容。
+- `assets/works/previews/`：首页使用的 WebP 预览图。
+- `assets/black-friday-motion.mp4`：黑五预热官网视频。
 
 ## 部署
 
-GitHub Pages 使用 `.github/workflows/pages.yml` 自动部署。仓库 Settings → Pages 的 Source 应选择 GitHub Actions。每次推送 `main` 后会自动更新。
-
-预期网址：https://xasdaa.github.io/xusen/
+GitHub Pages 使用 `.github/workflows/pages.yml`。推送 `main` 后自动部署到 https://xasdaa.github.io/xusen/ 。
 
 ## 本地预览
 
-使用任意静态 HTTP 服务打开仓库目录。视频服务需要支持 `video/mp4` 类型，推荐支持 HTTP Range 请求以方便拖动进度。
-
-介绍文案、联系方式及概念占位作品仍可继续替换。
+使用静态 HTTP 服务打开仓库目录。视频服务应支持 `video/mp4` 类型和 HTTP Range 请求。

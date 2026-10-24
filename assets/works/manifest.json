@@ -1,0 +1,896 @@
+[
+  {
+    "id": "black-friday-motion",
+    "title": "黑五预热 / BLACK FRIDAY",
+    "category": "官网首页 · 视频动画",
+    "year": "2026",
+    "video": "assets/black-friday-motion.mp4",
+    "description": "独立站黑五预热官网首页视频动画 · 移动端。"
+  },
+  {
+    "id": "solarcam",
+    "title": "4K SolarCam P1 Max",
+    "category": "新品发布 · 产品视觉",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/solarcam-01.png",
+        "preview": "assets/works/previews/solarcam-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "banner.png"
+      },
+      {
+        "src": "assets/works/originals/solarcam-02.png",
+        "preview": "assets/works/previews/solarcam-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "mobile.png"
+      }
+    ]
+  },
+  {
+    "id": "summer-wave",
+    "title": "夏日浪潮 / SUMMER READY",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/summer-wave-01.jpg",
+        "preview": "assets/works/previews/summer-wave-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "3840x1632-web-10.jpg"
+      },
+      {
+        "src": "assets/works/originals/summer-wave-02.jpg",
+        "preview": "assets/works/previews/summer-wave-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-17.jpg"
+      }
+    ]
+  },
+  {
+    "id": "fathers-family",
+    "title": "父亲节 · 家庭守护",
+    "category": "官网活动 · 营销视觉",
+    "year": "2025",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/fathers-family-01.jpg",
+        "preview": "assets/works/previews/fathers-family-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "25-父亲节主banner.jpg"
+      }
+    ]
+  },
+  {
+    "id": "summer-2025",
+    "title": "夏季促销 / SUMMER SALE",
+    "category": "官网活动 · 营销视觉",
+    "year": "2025",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/summer-2025-01.jpg",
+        "preview": "assets/works/previews/summer-2025-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "25-夏季促销2800x1190-web.jpg"
+      },
+      {
+        "src": "assets/works/originals/summer-2025-02.jpg",
+        "preview": "assets/works/previews/summer-2025-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "25-夏季促销1200x1600.jpg"
+      },
+      {
+        "src": "assets/works/originals/summer-2025-03.jpg",
+        "preview": "assets/works/previews/summer-2025-03.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "2800x1190-首页bundle-有按钮-2.jpg"
+      },
+      {
+        "src": "assets/works/originals/summer-2025-04.jpg",
+        "preview": "assets/works/previews/summer-2025-04.webp",
+        "width": 750,
+        "height": 1000,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "750x1000-首页bundle-手机端-有按钮-2.jpg"
+      }
+    ]
+  },
+  {
+    "id": "spring",
+    "title": "春日守护 / SPRING SALE",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/spring-01.jpg",
+        "preview": "assets/works/previews/spring-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "3840x1632-web-05.jpg"
+      },
+      {
+        "src": "assets/works/originals/spring-02.jpg",
+        "preview": "assets/works/previews/spring-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-12.jpg"
+      },
+      {
+        "src": "assets/works/originals/spring-03.jpg",
+        "preview": "assets/works/previews/spring-03.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "3840x1632-首页bundle-有按钮-2.jpg"
+      },
+      {
+        "src": "assets/works/originals/spring-04.jpg",
+        "preview": "assets/works/previews/spring-04.webp",
+        "width": 750,
+        "height": 1000,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "750x1000-首页bundle-手机端-有按钮-8.jpg"
+      }
+    ]
+  },
+  {
+    "id": "mothers-2026",
+    "title": "母亲节 · 温暖日常",
+    "category": "官网活动 · 营销视觉",
+    "year": "2026",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/mothers-2026-01.jpg",
+        "preview": "assets/works/previews/mothers-2026-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "3840x1632-web-08.jpg"
+      },
+      {
+        "src": "assets/works/originals/mothers-2026-02.jpg",
+        "preview": "assets/works/previews/mothers-2026-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-15.jpg"
+      }
+    ]
+  },
+  {
+    "id": "halloween",
+    "title": "万圣节 / HALLOWEEN",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/halloween-01.jpg",
+        "preview": "assets/works/previews/halloween-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "2800x1190-web-5.jpg"
+      },
+      {
+        "src": "assets/works/originals/halloween-02.jpg",
+        "preview": "assets/works/previews/halloween-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-05.jpg"
+      }
+    ]
+  },
+  {
+    "id": "black-friday-headstart",
+    "title": "黑五 · 提前购",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/black-friday-headstart-01.jpg",
+        "preview": "assets/works/previews/black-friday-headstart-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "2800x1190-web-6.jpg"
+      },
+      {
+        "src": "assets/works/originals/black-friday-headstart-02.jpg",
+        "preview": "assets/works/previews/black-friday-headstart-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-06.jpg"
+      },
+      {
+        "src": "assets/works/originals/black-friday-headstart-03.jpg",
+        "preview": "assets/works/previews/black-friday-headstart-03.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "2800x1190-首页bundle-有按钮-5.jpg"
+      },
+      {
+        "src": "assets/works/originals/black-friday-headstart-04.jpg",
+        "preview": "assets/works/previews/black-friday-headstart-04.webp",
+        "width": 750,
+        "height": 1000,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "750x1000-首页bundle-手机端-有按钮-5.jpg"
+      }
+    ]
+  },
+  {
+    "id": "black-friday-kickoff",
+    "title": "黑五 · 正式促销",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/black-friday-kickoff-01.jpg",
+        "preview": "assets/works/previews/black-friday-kickoff-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "2800x1190-web-7.jpg"
+      },
+      {
+        "src": "assets/works/originals/black-friday-kickoff-02.jpg",
+        "preview": "assets/works/previews/black-friday-kickoff-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-07.jpg"
+      }
+    ]
+  },
+  {
+    "id": "christmas",
+    "title": "圣诞礼遇 / CHRISTMAS",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/christmas-01.jpg",
+        "preview": "assets/works/previews/christmas-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "2800x1190-web-8.jpg"
+      },
+      {
+        "src": "assets/works/originals/christmas-02.png",
+        "preview": "assets/works/previews/christmas-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600.png"
+      },
+      {
+        "src": "assets/works/originals/christmas-03.jpg",
+        "preview": "assets/works/previews/christmas-03.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "2800x1190-首页bundle-有按钮-6.jpg"
+      },
+      {
+        "src": "assets/works/originals/christmas-04.jpg",
+        "preview": "assets/works/previews/christmas-04.webp",
+        "width": 750,
+        "height": 1000,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "750x1000-首页bundle-手机端-有按钮-6.jpg"
+      }
+    ]
+  },
+  {
+    "id": "year-end",
+    "title": "年末礼遇 / YEAR-END",
+    "category": "官网活动 · 营销视觉",
+    "year": "2025",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/year-end-01.jpg",
+        "preview": "assets/works/previews/year-end-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "3840x1632-web-01.jpg"
+      },
+      {
+        "src": "assets/works/originals/year-end-02.jpg",
+        "preview": "assets/works/previews/year-end-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-08.jpg"
+      },
+      {
+        "src": "assets/works/originals/year-end-03.jpg",
+        "preview": "assets/works/previews/year-end-03.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "3840x1632-首页bundle-有按钮-1.jpg"
+      },
+      {
+        "src": "assets/works/originals/year-end-04.jpg",
+        "preview": "assets/works/previews/year-end-04.webp",
+        "width": 750,
+        "height": 1000,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "750x1000-首页bundle-手机端-有按钮-7.jpg"
+      }
+    ]
+  },
+  {
+    "id": "valentines",
+    "title": "情人节 / VALENTINE’S DAY",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/valentines-01.jpg",
+        "preview": "assets/works/previews/valentines-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "3840x1632-web-02.jpg"
+      },
+      {
+        "src": "assets/works/originals/valentines-02.jpg",
+        "preview": "assets/works/previews/valentines-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-09.jpg"
+      }
+    ]
+  },
+  {
+    "id": "winter",
+    "title": "冬夜守护 / WINTER",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/winter-01.jpg",
+        "preview": "assets/works/previews/winter-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "3840x1632-web-03.jpg"
+      },
+      {
+        "src": "assets/works/originals/winter-02.jpg",
+        "preview": "assets/works/previews/winter-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-10.jpg"
+      }
+    ]
+  },
+  {
+    "id": "football",
+    "title": "赛季守护 / GAME DAY",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/football-01.jpg",
+        "preview": "assets/works/previews/football-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "3840x1632-web-04.jpg"
+      },
+      {
+        "src": "assets/works/originals/football-02.jpg",
+        "preview": "assets/works/previews/football-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-11.jpg"
+      }
+    ]
+  },
+  {
+    "id": "easter-garden",
+    "title": "复活节 · 春日花园",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/easter-garden-01.jpg",
+        "preview": "assets/works/previews/easter-garden-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "3840x1632-web-06.jpg"
+      },
+      {
+        "src": "assets/works/originals/easter-garden-02.jpg",
+        "preview": "assets/works/previews/easter-garden-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-13.jpg"
+      }
+    ]
+  },
+  {
+    "id": "full-home",
+    "title": "全屋安防 / FULL HOME",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/full-home-01.jpg",
+        "preview": "assets/works/previews/full-home-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "3840x1632-web-07.jpg"
+      },
+      {
+        "src": "assets/works/originals/full-home-02.jpg",
+        "preview": "assets/works/previews/full-home-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-14.jpg"
+      },
+      {
+        "src": "assets/works/originals/full-home-03.jpg",
+        "preview": "assets/works/previews/full-home-03.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "3840x1632-首页bundle-有按钮-3.jpg"
+      },
+      {
+        "src": "assets/works/originals/full-home-04.jpg",
+        "preview": "assets/works/previews/full-home-04.webp",
+        "width": 750,
+        "height": 1000,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "750x1000-首页bundle-手机端-有按钮 拷贝.jpg"
+      },
+      {
+        "src": "assets/works/originals/full-home-05.jpg",
+        "preview": "assets/works/previews/full-home-05.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "3840x1632-首页bundle-有按钮-4.jpg"
+      },
+      {
+        "src": "assets/works/originals/full-home-06.jpg",
+        "preview": "assets/works/previews/full-home-06.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "1200x1600-首页bundle-手机端-有按钮.jpg"
+      }
+    ]
+  },
+  {
+    "id": "travel-2025",
+    "title": "安心出游 / TRAVEL",
+    "category": "官网活动 · 营销视觉",
+    "year": "2025",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/travel-2025-01.jpg",
+        "preview": "assets/works/previews/travel-2025-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "25-出游促销2800x1190-web.jpg"
+      },
+      {
+        "src": "assets/works/originals/travel-2025-02.jpg",
+        "preview": "assets/works/previews/travel-2025-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "25-出游促销1200x1600.jpg"
+      },
+      {
+        "src": "assets/works/originals/travel-2025-03.jpg",
+        "preview": "assets/works/previews/travel-2025-03.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "2800x1190-首页bundle-有按钮-1.jpg"
+      },
+      {
+        "src": "assets/works/originals/travel-2025-04.jpg",
+        "preview": "assets/works/previews/travel-2025-04.webp",
+        "width": 750,
+        "height": 1000,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "750x1000-首页bundle-手机端-有按钮-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "easter-2025",
+    "title": "复活节 / EASTER",
+    "category": "官网活动 · 营销视觉",
+    "year": "2025",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/easter-2025-01.jpg",
+        "preview": "assets/works/previews/easter-2025-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "25-复活节2800x1190-web.jpg"
+      },
+      {
+        "src": "assets/works/originals/easter-2025-02.jpg",
+        "preview": "assets/works/previews/easter-2025-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "25-复活节1200x1600.jpg"
+      }
+    ]
+  },
+  {
+    "id": "mothers-2025",
+    "title": "母亲节 / MOTHER’S DAY",
+    "category": "官网活动 · 营销视觉",
+    "year": "2025",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/mothers-2025-01.jpg",
+        "preview": "assets/works/previews/mothers-2025-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "25-母亲节2800x1190-web.jpg"
+      },
+      {
+        "src": "assets/works/originals/mothers-2025-02.jpg",
+        "preview": "assets/works/previews/mothers-2025-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "25-母亲节1200x1600.jpg"
+      }
+    ]
+  },
+  {
+    "id": "memorial-2025",
+    "title": "纪念日 / MEMORIAL DAY",
+    "category": "官网活动 · 营销视觉",
+    "year": "2025",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/memorial-2025-01.jpg",
+        "preview": "assets/works/previews/memorial-2025-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "25-烈士纪念日2800x1190-web.jpg"
+      },
+      {
+        "src": "assets/works/originals/memorial-2025-02.jpg",
+        "preview": "assets/works/previews/memorial-2025-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "25-烈士纪念日1200x1600.jpg"
+      }
+    ]
+  },
+  {
+    "id": "fathers-2025",
+    "title": "父亲节 · 力量守护",
+    "category": "官网活动 · 营销视觉",
+    "year": "2025",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/fathers-2025-01.jpg",
+        "preview": "assets/works/previews/fathers-2025-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "25-父亲节2800x1190-web.jpg"
+      },
+      {
+        "src": "assets/works/originals/fathers-2025-02.jpg",
+        "preview": "assets/works/previews/fathers-2025-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "25-父亲节1200x1600.jpg"
+      },
+      {
+        "src": "assets/works/originals/fathers-2025-03.jpg",
+        "preview": "assets/works/previews/fathers-2025-03.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "25-父亲节2800x1190-首页bundle-有按钮.jpg"
+      },
+      {
+        "src": "assets/works/originals/fathers-2025-04.jpg",
+        "preview": "assets/works/previews/fathers-2025-04.webp",
+        "width": 750,
+        "height": 1000,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "25-父亲节750x1000-首页bundle-手机端-有按钮.jpg"
+      }
+    ]
+  },
+  {
+    "id": "fathers-tool",
+    "title": "全天守护 / ALWAYS ON",
+    "category": "产品推广 · 营销视觉",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/fathers-tool-01.jpg",
+        "preview": "assets/works/previews/fathers-tool-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "2800x1190-web-1.jpg"
+      },
+      {
+        "src": "assets/works/originals/fathers-tool-02.jpg",
+        "preview": "assets/works/previews/fathers-tool-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-01.jpg"
+      }
+    ]
+  },
+  {
+    "id": "school",
+    "title": "开学季 / NEW SCHOOL YEAR",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/school-01.jpg",
+        "preview": "assets/works/previews/school-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "2800x1190-web-2.jpg"
+      },
+      {
+        "src": "assets/works/originals/school-02.jpg",
+        "preview": "assets/works/previews/school-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-02.jpg"
+      },
+      {
+        "src": "assets/works/originals/school-03.jpg",
+        "preview": "assets/works/previews/school-03.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "2800x1190-首页bundle-有按钮-3.jpg"
+      },
+      {
+        "src": "assets/works/originals/school-04.jpg",
+        "preview": "assets/works/previews/school-04.webp",
+        "width": 750,
+        "height": 1000,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "750x1000-首页bundle-手机端-有按钮-3.jpg"
+      }
+    ]
+  },
+  {
+    "id": "labor",
+    "title": "劳动节 / LABOR DAY",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/labor-01.jpg",
+        "preview": "assets/works/previews/labor-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "2800x1190-web-3.jpg"
+      },
+      {
+        "src": "assets/works/originals/labor-02.jpg",
+        "preview": "assets/works/previews/labor-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-03.jpg"
+      },
+      {
+        "src": "assets/works/originals/labor-03.jpg",
+        "preview": "assets/works/previews/labor-03.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 套餐 Banner",
+        "originalName": "2800x1190-首页bundle-有按钮-4.jpg"
+      },
+      {
+        "src": "assets/works/originals/labor-04.jpg",
+        "preview": "assets/works/previews/labor-04.webp",
+        "width": 750,
+        "height": 1000,
+        "label": "竖版 · 套餐 Banner",
+        "originalName": "750x1000-首页bundle-手机端-有按钮-4.jpg"
+      }
+    ]
+  },
+  {
+    "id": "autumn",
+    "title": "秋日促销 / FALL SAVINGS",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 1,
+    "images": [
+      {
+        "src": "assets/works/originals/autumn-01.jpg",
+        "preview": "assets/works/previews/autumn-01.webp",
+        "width": 2800,
+        "height": 1190,
+        "label": "横版 · 主视觉",
+        "originalName": "2800x1190-web-4.jpg"
+      },
+      {
+        "src": "assets/works/originals/autumn-02.jpg",
+        "preview": "assets/works/previews/autumn-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "memorial",
+    "title": "纪念日 · 蓝色盛夏",
+    "category": "官网活动 · 营销视觉",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/memorial-01.jpg",
+        "preview": "assets/works/previews/memorial-01.webp",
+        "width": 3840,
+        "height": 1632,
+        "label": "横版 · 主视觉",
+        "originalName": "3840x1632-web-09.jpg"
+      },
+      {
+        "src": "assets/works/originals/memorial-02.jpg",
+        "preview": "assets/works/previews/memorial-02.webp",
+        "width": 1200,
+        "height": 1600,
+        "label": "竖版 · 作品画面",
+        "originalName": "1200x1600-16.jpg"
+      }
+    ]
+  },
+  {
+    "id": "c8s",
+    "title": "黑五 · C8S-4H",
+    "category": "产品促销 · 电商海报",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/c8s-01.jpg",
+        "preview": "assets/works/previews/c8s-01.webp",
+        "width": 960,
+        "height": 1200,
+        "label": "竖版 · 作品画面",
+        "originalName": "(C8S-4H)960x1200.jpg"
+      }
+    ]
+  },
+  {
+    "id": "c9c",
+    "title": "黑五 · C9C-6H",
+    "category": "产品促销 · 电商海报",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/c9c-01.jpg",
+        "preview": "assets/works/previews/c9c-01.webp",
+        "width": 960,
+        "height": 1200,
+        "label": "竖版 · 作品画面",
+        "originalName": "(C9C-6H)960x1200.jpg"
+      }
+    ]
+  },
+  {
+    "id": "floodlight",
+    "title": "黑五 · Floodlight Cam Pro",
+    "category": "产品促销 · 电商海报",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/floodlight-01.jpg",
+        "preview": "assets/works/previews/floodlight-01.webp",
+        "width": 960,
+        "height": 1200,
+        "label": "竖版 · 作品画面",
+        "originalName": "960x1200.jpg"
+      }
+    ]
+  },
+  {
+    "id": "rain",
+    "title": "雨中守护 / WEATHERPROOF",
+    "category": "产品场景 · 视觉设计",
+    "year": "",
+    "cover": 0,
+    "images": [
+      {
+        "src": "assets/works/originals/rain-01.png",
+        "preview": "assets/works/previews/rain-01.webp",
+        "width": 2560,
+        "height": 1600,
+        "label": "横版 · 作品画面",
+        "originalName": "4.png"
+      }
+    ]
+  }
+]
