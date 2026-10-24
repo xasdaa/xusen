@@ -634,6 +634,43 @@
             "width": 1280,
             "height": 150
           }
+        ],
+        "detailTiles": [
+          {
+            "src": "assets/works/web/website-home-detail-01.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-home-detail-02.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-home-detail-03.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-home-detail-04.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-home-detail-05.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-home-detail-06.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-home-detail-07.webp",
+            "width": 2560,
+            "height": 301
+          }
         ]
       },
       {
@@ -690,7 +727,17 @@
     "hero": "assets/works/hero/website-home-02.webp",
     "showOnHome": true,
     "pageProject": true,
-    "description": "PC 与移动端完整页面，向下滚动查看，使用缩略图切换版本。"
+    "description": "以活动主视觉建立第一印象，串联产品与内容模块，呈现完整的官网浏览体验。 负责内容：视觉设计、页面布局与多端适配。",
+    "webCase": {
+      "title": "官网首页",
+      "english": "HOMEPAGE",
+      "summary": "以活动主视觉建立第一印象，串联产品与内容模块，呈现完整的官网浏览体验。",
+      "scope": "视觉设计 / 页面布局 / 多端适配",
+      "desktop800": "assets/works/web/website-home-desktop-800.webp",
+      "desktop1600": "assets/works/web/website-home-desktop-1600.webp",
+      "mobile240": "assets/works/web/website-home-mobile-240.webp",
+      "mobile500": "assets/works/web/website-home-mobile-500.webp"
+    }
   },
   {
     "id": "website-product",
@@ -754,6 +801,73 @@
             "src": "assets/works/tiles/website-product-01-09.webp",
             "width": 1280,
             "height": 926
+          }
+        ],
+        "detailTiles": [
+          {
+            "src": "assets/works/web/website-product-detail-01.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-02.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-03.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-04.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-05.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-06.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-07.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-08.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-09.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-10.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-11.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-12.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-product-detail-13.webp",
+            "width": 2560,
+            "height": 1851
           }
         ]
       },
@@ -856,7 +970,17 @@
     "hero": "assets/works/hero/website-product-02.webp",
     "showOnHome": true,
     "pageProject": true,
-    "description": "PC 与移动端完整页面，向下滚动查看，使用缩略图切换版本。"
+    "description": "围绕产品信息安排内容节奏，让卖点、场景与细节形成连贯的阅读路径。 负责内容：视觉设计、页面布局与多端适配。",
+    "webCase": {
+      "title": "产品售卖页",
+      "english": "PRODUCT PAGE",
+      "summary": "围绕产品信息安排内容节奏，让卖点、场景与细节形成连贯的阅读路径。",
+      "scope": "视觉设计 / 页面布局 / 多端适配",
+      "desktop800": "assets/works/web/website-product-desktop-800.webp",
+      "desktop1600": "assets/works/web/website-product-desktop-1600.webp",
+      "mobile240": "assets/works/web/website-product-mobile-240.webp",
+      "mobile500": "assets/works/web/website-product-mobile-500.webp"
+    }
   },
   {
     "id": "website-campaign",
@@ -900,6 +1024,48 @@
             "src": "assets/works/tiles/website-campaign-01-05.webp",
             "width": 1280,
             "height": 1260
+          }
+        ],
+        "detailTiles": [
+          {
+            "src": "assets/works/web/website-campaign-detail-01.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-campaign-detail-02.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-campaign-detail-03.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-campaign-detail-04.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-campaign-detail-05.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-campaign-detail-06.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-campaign-detail-07.webp",
+            "width": 2560,
+            "height": 2048
+          },
+          {
+            "src": "assets/works/web/website-campaign-detail-08.webp",
+            "width": 2560,
+            "height": 473
           }
         ]
       },
@@ -982,7 +1148,17 @@
     "hero": "assets/works/hero/website-campaign-02.webp",
     "showOnHome": true,
     "pageProject": true,
-    "description": "PC 与移动端完整页面，向下滚动查看，使用缩略图切换版本。"
+    "description": "延续活动视觉语言，以清晰的版式层级组织专题内容与产品展示。 负责内容：视觉设计、页面布局与多端适配。",
+    "webCase": {
+      "title": "营销专题页",
+      "english": "CAMPAIGN PAGE",
+      "summary": "延续活动视觉语言，以清晰的版式层级组织专题内容与产品展示。",
+      "scope": "视觉设计 / 页面布局 / 多端适配",
+      "desktop800": "assets/works/web/website-campaign-desktop-800.webp",
+      "desktop1600": "assets/works/web/website-campaign-desktop-1600.webp",
+      "mobile240": "assets/works/web/website-campaign-mobile-240.webp",
+      "mobile500": "assets/works/web/website-campaign-mobile-500.webp"
+    }
   },
   {
     "id": "solarcam",
