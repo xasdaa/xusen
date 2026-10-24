@@ -63,7 +63,7 @@
     button.dataset.projectId=project.id;
     const cover=project.images?.[project.cover||0]||{width:1200,height:1600,preview:project.poster,cardSmall:project.posterSmall,cardMedium:project.poster};
     const responsive=project.video?cover.cardSmall+' 400w, '+cover.preview+' 750w':cover.cardSmall+' 400w, '+cover.cardMedium+' 800w, '+cover.preview+' '+Math.min(1280,cover.width)+'w';
-    const media='<img class="pending" data-src="'+cover.cardSmall+'" data-srcset="'+responsive+'" sizes="calc(50vw - 6px)" alt="'+escapeText(project.title)+'" width="'+cover.width+'" height="'+cover.height+'" style="aspect-ratio:3/4" loading="lazy" decoding="async">'+(project.video?'<div class="play-mark"><i>▶</i><small>点击播放</small></div>':'');
+    const media='<img class="pending" data-src="'+cover.cardSmall+'" data-srcset="'+responsive+'" sizes="(min-width: 701px) min(calc(50vw - 47px), calc(75svh - 156px)), calc(50vw - 6px)" alt="'+escapeText(project.title)+'" width="'+cover.width+'" height="'+cover.height+'" style="aspect-ratio:3/4" loading="lazy" decoding="async">'+(project.video?'<div class="play-mark"><i>▶</i><small>点击播放</small></div>':'');
     button.innerHTML=media+(project.images?.length>1?'<span class="image-count">'+project.images.length+' 张 ↗</span>':'')+'<div class="caption"><div><b>'+escapeText(project.title)+'</b><small>'+escapeText(metadata(project))+'</small></div><span>'+(project.video?'▶':'↗')+'</span></div>';
     button.addEventListener('click',()=>openProject(project,button));
     const col=i===0?0:i===1?1:columnHeights[0]<=columnHeights[1]?0:1;
