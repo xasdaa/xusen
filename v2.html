@@ -3,30 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#020609">
-  <meta name="description" content="Xu Zhizhai — Visual designer. Portfolio 2026. Brand thinking. Powerful visual expression.">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Xu Zhizhai — Portfolio 2026 cover preview.">
   <meta name="robots" content="noindex,nofollow">
   <title>Xu Zhizhai — Portfolio 2026</title>
-  <link rel="stylesheet" href="assets/v2/cover.css?v=20261026-blue">
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;width:100%;min-height:100%;background:#000}
+    .cover{width:100%;height:100svh;overflow:hidden;background:#000}
+    .cover img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;user-select:none}
+    @media(max-aspect-ratio:1/1){.cover img{object-fit:contain}}
+  </style>
 </head>
 <body>
-  <main class="cover" id="home" aria-labelledby="cover-title">
-    <div class="portrait-stage">
-      <img class="portrait" src="assets/v2/portrait-blue-2026.webp" width="1672" height="941" alt="Blue-lit portrait of visual designer Xu Zhizhai" fetchpriority="high" decoding="async">
-    </div>
-    <header class="cover-header">
-      <a class="wordmark" href="#home" aria-label="Xu Zhizhai home"><span class="brand-square" aria-hidden="true"></span><span>XU ZHIZHAI</span></a>
-      <nav class="cover-nav" aria-label="Primary navigation">
-        <a href="#home" aria-current="page">HOME</a>
-        <a href="index.html#works" target="_blank" rel="noopener" aria-label="Works — open current portfolio in a new tab">WORKS</a>
-        <a href="index.html#about" target="_blank" rel="noopener" aria-label="About — open profile in a new tab">ABOUT</a>
-      </nav>
-      <div class="header-contact"><span class="role">VISUAL DESIGNER</span><a class="contact-button" href="mailto:970899168@qq.com">CONTACT</a></div>
-    </header>
-    <h1 class="cover-title" id="cover-title">Portfolio 2026</h1>
-    <p class="cover-statement">Brand thinking.<br>Powerful visual<br>expression.</p>
-    <footer class="cover-footer">VISUAL DESIGNER <span aria-hidden="true">/</span> PORTFOLIO 2026</footer>
+  <main class="cover" aria-label="Portfolio 2026 — static cover preview">
+    <img src="assets/v2/cover-static-2026.png" width="3840" height="1632" alt="Static cover image with the words: Click anywhere to turn on your sound." fetchpriority="high" decoding="async">
   </main>
-  <script src="assets/v2/cover.js?v=20261026-blue" defer></script>
 </body>
 </html>
