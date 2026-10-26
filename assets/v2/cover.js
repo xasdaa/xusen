@@ -17,8 +17,8 @@
   cover.addEventListener('pointermove',event => {
     if(reduced.matches || !finePointer.matches || event.pointerType !== 'mouse') return;
     const rect = cover.getBoundingClientRect();
-    targetX = ((event.clientX-rect.left)/rect.width - .5) * 14;
-    targetY = ((event.clientY-rect.top)/rect.height - .5) * 10;
+    targetX = ((event.clientX-rect.left)/rect.width - .5) * 6;
+    targetY = ((event.clientY-rect.top)/rect.height - .5) * 4;
     start();
   });
   cover.addEventListener('pointerleave',reset);
