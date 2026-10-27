@@ -51,6 +51,25 @@
       .gallery-controls{margin-top:34px;gap:14px}
     }
     @media(prefers-reduced-motion:reduce){.gallery-controls button{transition:none}}
+
+    .motion{--inset:max(5vw,calc((100vw - 1440px)/2));--gap:24px;padding-bottom:30px}
+    .motion-track{display:flex;gap:var(--gap);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-left:var(--inset);padding:0 var(--inset);scrollbar-width:none}
+    .motion-track::-webkit-scrollbar{display:none}
+    .motion-project{flex:0 0 min(86vw,1440px);min-width:0;margin:0;scroll-snap-align:start}
+    .motion-video{display:block;width:100%;height:auto;aspect-ratio:2.35/1;object-fit:contain;background:#0a0a0a;border:0;border-radius:0}
+    .motion-project figcaption{display:flex;align-items:baseline;gap:18px;margin:22px 0 0;color:#858589;font-size:13px;line-height:1.5}
+    .motion-project strong{font-size:20px;color:#f5f5f7;font-weight:500;letter-spacing:-.5px}
+    .motion-number{margin-left:auto;font-variant-numeric:tabular-nums}
+    .motion-track:focus-visible,.motion-video:focus-visible{outline:2px solid #fff;outline-offset:-3px}
+    @media(max-width:767px){
+      .motion{--inset:0px;--gap:0px;padding:72px 0 24px}
+      .motion h2{margin-left:7vw;margin-right:7vw}
+      .motion-project{flex-basis:100%}
+      .motion-video{aspect-ratio:3/4}
+      .motion-project figcaption{margin:20px 7vw 0;gap:10px;flex-wrap:wrap;font-size:11px}
+      .motion-project strong{font-size:18px}
+      .motion .gallery-controls{margin-left:7vw;margin-right:7vw}
+    }
   </style>
 </head>
 <body>
@@ -58,6 +77,33 @@
     <picture class="desktop-cover"><source media="(min-width:768px) and (min-aspect-ratio:4/5)" srcset="assets/v2/cover-desktop-2026.png"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" width="3840" height="1632" alt="XU. 2026. 11 years' experience. Visual Designer. Portfolio." fetchpriority="high" decoding="async"></picture>
     <div class="mobile-cover"><h1 class="mobile-copy"><span>XU</span><span>2026</span><span>11 YRS’ EXP</span><span>VISUAL DESIGNER</span><span>PORTFOLIO</span></h1></div>
   </main>
+
+
+  <section class="motion selected" aria-labelledby="motion-title" id="motion">
+    <h2 id="motion-title">Selected motion.</h2>
+    <div class="motion-track" id="motion-track" tabindex="0" role="region" aria-label="四组动态视觉作品，可横向滑动">
+      <figure class="motion-project">
+        <video class="motion-video" width="3840" height="1632" controls muted loop playsinline preload="none" aria-label="黑五预热，营销视觉动画" data-desktop="assets/works/videos/black-friday-motion-02.mp4" data-mobile="assets/works/videos/black-friday-motion-01.mp4" data-poster-desktop="assets/works/previews/black-friday-motion-motion-02.webp" data-poster-mobile="assets/works/cards/black-friday-motion-motion-01-800.webp" poster="assets/works/previews/black-friday-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
+        <figcaption><strong>Black Friday.</strong><span lang="zh-CN">黑五预热 / aosu</span><span class="motion-number">01 / 04</span></figcaption>
+      </figure>
+      <figure class="motion-project">
+        <video class="motion-video" width="3840" height="1632" controls muted loop playsinline preload="none" aria-label="夏日浪潮，营销视觉动画" data-desktop="assets/works/videos/summer-wave-02.mp4" data-mobile="assets/works/videos/summer-wave-01.mp4" data-poster-desktop="assets/works/previews/summer-wave-motion-02.webp" data-poster-mobile="assets/works/cards/summer-wave-motion-01-800.webp" poster="assets/works/previews/summer-wave-motion-02.webp">你的浏览器不支持视频播放。</video>
+        <figcaption><strong>Summer Ready.</strong><span lang="zh-CN">夏日浪潮 / aosu</span><span class="motion-number">02 / 04</span></figcaption>
+      </figure>
+      <figure class="motion-project">
+        <video class="motion-video" width="3840" height="1632" controls muted loop playsinline preload="none" aria-label="夏日礼遇，营销视觉动画" data-desktop="assets/works/videos/summer-event-motion-02.mp4" data-mobile="assets/works/videos/summer-event-motion-01.mp4" data-poster-desktop="assets/works/previews/summer-event-motion-motion-02.webp" data-poster-mobile="assets/works/cards/summer-event-motion-motion-01-800.webp" poster="assets/works/previews/summer-event-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
+        <figcaption><strong>Summer Event.</strong><span lang="zh-CN">夏日礼遇 / aosu</span><span class="motion-number">03 / 04</span></figcaption>
+      </figure>
+      <figure class="motion-project">
+        <video class="motion-video" width="3840" height="1632" controls muted loop playsinline preload="none" aria-label="赛场热情，营销视觉动画" data-desktop="assets/works/videos/football-motion-02.mp4" data-mobile="assets/works/videos/football-motion-01.mp4" data-poster-desktop="assets/works/previews/football-motion-motion-02.webp" data-poster-mobile="assets/works/cards/football-motion-motion-01-800.webp" poster="assets/works/previews/football-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
+        <figcaption><strong>Game Day.</strong><span lang="zh-CN">赛场热情 / aosu</span><span class="motion-number">04 / 04</span></figcaption>
+      </figure>
+    </div>
+    <div class="gallery-controls" role="group" aria-label="切换动态作品">
+      <button type="button" id="previous-motion" aria-label="上一个视频" aria-controls="motion-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      <button type="button" id="next-motion" aria-label="下一个视频" aria-controls="motion-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
+  </section>
 
   <section class="selected" aria-labelledby="selected-title">
     <h2 id="selected-title">Visuals with purpose.</h2>
@@ -87,5 +133,6 @@
       update();
     })();
   </script>
+  <script src="assets/v2/motion.js" defer></script>
 </body>
 </html>
