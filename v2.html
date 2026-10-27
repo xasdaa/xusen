@@ -25,6 +25,32 @@
     @media(min-width:768px) and (max-aspect-ratio:4/5){.mobile-copy{right:16%;font-size:clamp(22px,2.8vw,28px);gap:clamp(20px,2.3svh,30px)}}
     @media(max-height:650px) and (max-width:767px){.mobile-copy{top:46%;font-size:16px;gap:12px}}
     @media(max-height:450px) and (max-width:767px){.mobile-copy{top:34%;font-size:14px;gap:9px}}
+
+    .selected{--inset:max(6vw,calc((100vw - 1120px)/2));--gap:24px;padding:110px 0 100px;overflow:hidden;color:#f5f5f7;font-family:Arial,"Microsoft YaHei",sans-serif}
+    .selected h2{margin:0 var(--inset) 42px;font-size:clamp(30px,3vw,48px);line-height:1.1;letter-spacing:-1.6px;font-weight:600}
+    .project-track{display:flex;gap:var(--gap);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-left:var(--inset);padding:0 var(--inset);scrollbar-width:none}
+    .project-track::-webkit-scrollbar{display:none}
+    .project{flex:0 0 min(44vw,680px);min-width:0;margin:0;scroll-snap-align:start}
+    .project picture{display:block;overflow:hidden;border:1px solid #202020;border-radius:24px;background:#090909}
+    .project img{display:block;width:100%;aspect-ratio:3840/1632;object-fit:contain}
+    .project figcaption{max-width:440px;margin:24px 14px 0;color:#858589;font-size:16px;line-height:1.65;letter-spacing:-.2px}
+    .project strong{color:#ededf0;font-weight:600}
+    .gallery-controls{display:flex;justify-content:flex-end;gap:16px;margin:40px var(--inset) 0}
+    .gallery-controls button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:#303032;color:#eee;cursor:pointer;transition:background .2s,opacity .2s}
+    .gallery-controls button:disabled{background:#171718;color:#5b5b5e;cursor:default}
+    .gallery-controls button:hover:not(:disabled){background:#48484b}
+    .gallery-controls button:focus-visible,.project-track:focus-visible{outline:2px solid #fff;outline-offset:5px}
+    .gallery-controls svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    @media(max-width:767px){
+      .selected{--inset:7vw;--gap:20px;padding:72px 0 64px}
+      .selected h2{font-size:clamp(27px,7vw,36px);letter-spacing:-1px;margin-bottom:30px}
+      .project{flex-basis:74vw}
+      .project picture{border-radius:24px}
+      .project img{aspect-ratio:3/4}
+      .project figcaption{margin:20px 10px 0;font-size:15px;line-height:1.65}
+      .gallery-controls{margin-top:34px;gap:14px}
+    }
+    @media(prefers-reduced-motion:reduce){.gallery-controls button{transition:none}}
   </style>
 </head>
 <body>
@@ -32,5 +58,34 @@
     <picture class="desktop-cover"><source media="(min-width:768px) and (min-aspect-ratio:4/5)" srcset="assets/v2/cover-desktop-2026.png"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" width="3840" height="1632" alt="XU. 2026. 11 years' experience. Visual Designer. Portfolio." fetchpriority="high" decoding="async"></picture>
     <div class="mobile-cover"><h1 class="mobile-copy"><span>XU</span><span>2026</span><span>11 YRS’ EXP</span><span>VISUAL DESIGNER</span><span>PORTFOLIO</span></h1></div>
   </main>
+
+  <section class="selected" aria-labelledby="selected-title">
+    <h2 id="selected-title">Visuals with purpose.</h2>
+    <div class="project-track" id="project-track" tabindex="0" role="region" aria-label="精选品牌视觉项目，可横向滑动">
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/halloween-night-01-800.webp"><img src="assets/works/previews/halloween-night-02.webp" width="1280" height="544" alt="aosu 万圣节营销主视觉，手机中呈现孩子们讨糖的全彩夜视画面" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>让守护融入家庭生活。</strong> 以万圣夜讨糖的真实生活情境为创意切入点，将全彩夜视的产品能力与家庭安全的品牌理念连接起来。</figcaption></figure>
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/one-app-01-800.webp"><img src="assets/works/previews/one-app-02.webp" width="1280" height="544" alt="aosu 全景守护主视觉，手机托起房屋与摄像头守护范围" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>把产品能力变成直观感受。</strong> 用手机、房屋与摄像头之间的视觉关系，表达一个 App 掌握全屋动态，让抽象的安全感变得可感知。</figcaption></figure>
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/summer-wave-motion-01-800.webp"><img src="assets/works/previews/summer-wave-motion-02.webp" width="1280" height="544" alt="aosu 夏日浪潮主视觉，海浪与太阳能摄像头组合" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>让品牌表达与季节同频。</strong> 以海浪、阳光与产品组合建立夏日氛围，在活动主视觉中延续家庭守护的主题，兼顾节日情绪与产品识别。</figcaption></figure>
+    </div>
+    <div class="gallery-controls" role="group" aria-label="切换项目">
+      <button type="button" id="previous-project" aria-label="上一个项目" aria-controls="project-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      <button type="button" id="next-project" aria-label="下一个项目" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
+  </section>
+  <script>
+    (()=>{
+      const track=document.getElementById('project-track');
+      const previous=document.getElementById('previous-project');
+      const next=document.getElementById('next-project');
+      const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+      function update(){previous.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-2;}
+      function move(direction){const step=track.querySelector('.project').getBoundingClientRect().width+parseFloat(getComputedStyle(track).gap);track.scrollBy({left:direction*step,behavior:reduced.matches?'instant':'smooth'});}
+      previous.addEventListener('click',()=>move(-1));
+      next.addEventListener('click',()=>move(1));
+      track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();move(e.key==='ArrowRight'?1:-1);}});
+      track.addEventListener('scroll',update,{passive:true});
+      new ResizeObserver(update).observe(track);
+      update();
+    })();
+  </script>
 </body>
 </html>
