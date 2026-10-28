@@ -71,6 +71,7 @@
       .motion .gallery-controls{margin-left:7vw;margin-right:7vw}
     }
   </style>
+  <link rel="stylesheet" href="assets/v2/halloween-case.css">
 </head>
 <body>
   <main class="cover" aria-label="Xu Zhizhai — Portfolio 2026">
@@ -105,6 +106,15 @@
     </div>
   </section>
 
+
+  <section class="halloween-case" id="halloween-case" aria-labelledby="original-case-title">
+    <details id="halloween-details">
+      <summary><div class="case-preview"><img src="assets/v2/halloween-case-original.png" width="1920" height="5300" loading="lazy" decoding="async" alt="aosu 2026 万圣节品牌营销案例主视觉预览"></div><div class="case-summary"><div><h2 id="original-case-title">aosu 品牌营销 / 2026 万圣节</h2><p>BRAND MARKETING VISUALS / CASE STUDY</p></div><span class="case-action"><span class="case-closed-label">查看完整案例</span><span class="case-open-label">收起完整案例</span><b aria-hidden="true">↓</b></span></div></summary>
+      <div class="case-expanded"><div class="case-toolbar"><span>原版完整案例 · 点击图片可放大</span><button type="button" data-case-zoom>放大查看 ↗</button><button type="button" class="case-close-inline" data-case-close>收起 ↑</button></div><img class="original-case-image" src="assets/v2/halloween-case-original.png" width="1920" height="5300" loading="lazy" decoding="async" alt="aosu 万圣节品牌营销完整案例，包含目标用户、品牌表达、美术风格参考、配色字体和延展视觉" tabindex="0" role="button" data-case-zoom aria-label="放大查看完整案例长图"><div class="case-bottom"><button type="button" data-case-close>收起完整案例 ↑</button></div></div>
+    </details>
+  </section>
+  <dialog id="case-zoom" aria-labelledby="zoom-title"><div class="zoom-top"><h2 id="zoom-title">aosu / 2026 万圣节 · 完整案例</h2><button type="button" id="zoom-minus" aria-label="缩小案例">−</button><output id="zoom-value" aria-live="polite">100%</output><button type="button" id="zoom-plus" aria-label="放大案例">+</button><button type="button" id="zoom-fit">适应宽度</button><button type="button" id="zoom-close" aria-label="关闭放大查看">×</button></div><p class="zoom-help">滚动阅读；手机可左右滑动，电脑可按住画面拖动。</p><div class="zoom-scroll" id="zoom-scroll" tabindex="0" role="region" aria-label="完整案例放大阅读区"><img id="zoom-image" width="1920" height="5300" alt="aosu 万圣节品牌营销案例原图" draggable="false"></div></dialog>
+
   <section class="selected" aria-labelledby="selected-title">
     <h2 id="selected-title">Visuals with purpose.</h2>
     <div class="project-track" id="project-track" tabindex="0" role="region" aria-label="精选品牌视觉项目，可横向滑动">
@@ -134,5 +144,6 @@
     })();
   </script>
   <script src="assets/v2/motion.js" defer></script>
+  <script src="assets/v2/halloween-case.js" defer></script>
 </body>
 </html>
