@@ -7,7 +7,8 @@
   const mobile=matchMedia('(max-width:767px)');
   const reduced=matchMedia('(prefers-reduced-motion:reduce)');
   const visible=new Set();
-  const shouldAutoPlay=()=>!reduced.matches&&!navigator.connection?.saveData&&!document.hidden;
+  // Slow connections keep the poster visible until the visitor chooses to play.
+  const shouldAutoPlay=()=>!reduced.matches&&!navigator.connection?.saveData&&!['slow-2g','2g','3g'].includes(navigator.connection?.effectiveType)&&!document.hidden;
   function configure(video){
     const src=mobile.matches?video.dataset.mobile:video.dataset.desktop;
     const poster=mobile.matches?video.dataset.posterMobile:video.dataset.posterDesktop;
@@ -15,14 +16,16 @@
     if(video.getAttribute('src')&&video.getAttribute('src')!==src){video.pause();video.removeAttribute('src');video.load();}
     return src;
   }
-  function activate(video){
+  function activate(video,manual=false){
+    if(!manual&&!shouldAutoPlay())return;
     if(!video.getAttribute('src')){video.src=configure(video);video.load();}
-    if(shouldAutoPlay())video.play().catch(()=>{});
+    if(manual||shouldAutoPlay())video.play().catch(()=>{});
   }
   videos.forEach(video=>{
     configure(video);
     // User-initiated playback also works when automatic playback is disabled.
-    video.addEventListener('pointerdown',()=>{if(!video.getAttribute('src'))activate(video);},{once:true});
+    video.addEventListener('pointerdown',()=>{if(!video.getAttribute('src'))activate(video,true);});
+    video.addEventListener('keydown',e=>{if(['Enter',' '].includes(e.key)&&!video.getAttribute('src')){e.preventDefault();activate(video,true);}});
     video.addEventListener('play',()=>videos.forEach(other=>{if(other!==video)other.pause();}));
   });
   if('IntersectionObserver' in window){
