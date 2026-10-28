@@ -71,6 +71,7 @@
       .motion .gallery-controls{margin-left:7vw;margin-right:7vw}
     }
   </style>
+  <link rel="stylesheet" href="assets/v2/editorial.css">
 </head>
 <body>
   <main class="cover" aria-label="Xu Zhizhai — Portfolio 2026">
@@ -105,34 +106,50 @@
     </div>
   </section>
 
-  <section class="selected" aria-labelledby="selected-title">
-    <h2 id="selected-title">Visuals with purpose.</h2>
-    <div class="project-track" id="project-track" tabindex="0" role="region" aria-label="精选品牌视觉项目，可横向滑动">
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/halloween-night-01-800.webp"><img src="assets/works/previews/halloween-night-02.webp" width="1280" height="544" alt="aosu 万圣节营销主视觉，手机中呈现孩子们讨糖的全彩夜视画面" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>让守护融入家庭生活。</strong> 以万圣夜讨糖的真实生活情境为创意切入点，将全彩夜视的产品能力与家庭安全的品牌理念连接起来。</figcaption></figure>
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/one-app-01-800.webp"><img src="assets/works/previews/one-app-02.webp" width="1280" height="544" alt="aosu 全景守护主视觉，手机托起房屋与摄像头守护范围" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>把产品能力变成直观感受。</strong> 用手机、房屋与摄像头之间的视觉关系，表达一个 App 掌握全屋动态，让抽象的安全感变得可感知。</figcaption></figure>
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/summer-wave-motion-01-800.webp"><img src="assets/works/previews/summer-wave-motion-02.webp" width="1280" height="544" alt="aosu 夏日浪潮主视觉，海浪与太阳能摄像头组合" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>让品牌表达与季节同频。</strong> 以海浪、阳光与产品组合建立夏日氛围，在活动主视觉中延续家庭守护的主题，兼顾节日情绪与产品识别。</figcaption></figure>
-    </div>
-    <div class="gallery-controls" role="group" aria-label="切换项目">
-      <button type="button" id="previous-project" aria-label="上一个项目" aria-controls="project-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
-      <button type="button" id="next-project" aria-label="下一个项目" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
-    </div>
-  </section>
-  <script>
-    (()=>{
-      const track=document.getElementById('project-track');
-      const previous=document.getElementById('previous-project');
-      const next=document.getElementById('next-project');
-      const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-      function update(){previous.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-2;}
-      function move(direction){const step=track.querySelector('.project').getBoundingClientRect().width+parseFloat(getComputedStyle(track).gap);track.scrollBy({left:direction*step,behavior:reduced.matches?'instant':'smooth'});}
-      previous.addEventListener('click',()=>move(-1));
-      next.addEventListener('click',()=>move(1));
-      track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();move(e.key==='ArrowRight'?1:-1);}});
-      track.addEventListener('scroll',update,{passive:true});
-      new ResizeObserver(update).observe(track);
-      update();
-    })();
-  </script>
+<nav class="chapter-nav" aria-label="作品章节"><a href="#motion">Motion</a><a href="#brand-case">Case study</a><a href="#evolution">Evolution</a><a href="#web-design">Web</a><a href="#selected-work">Selected work</a><a href="#resume">About</a></nav>
+
+<section class="editorial case-study" id="brand-case" aria-labelledby="case-title">
+ <div class="section-label"><span>01 / BRAND CAMPAIGN</span><span>AOSU · HALLOWEEN 2026</span></div>
+ <div class="section-intro"><h2 id="case-title">让家庭的故事，<br>成为品牌的表达。</h2><p>从品牌使命出发，将全彩夜视的产品能力，转化为美国家庭熟悉的万圣夜场景。</p></div>
+ <figure class="case-hero"><picture><source media="(max-width:767px)" srcset="assets/works/cards/halloween-night-01-800.webp"><img src="assets/works/previews/halloween-night-02.webp" width="1280" height="544" loading="lazy" alt="aosu 2026 万圣节主视觉：手机里记录着孩子们讨糖的故事"></picture><figcaption><span>WATCH WHAT HAPPENS AFTER DARK</span><span>2026.10.31 / 万圣夜</span></figcaption></figure>
+ <div class="case-statement"><p class="eyebrow">THE STARTING POINT</p><h3>守护家庭安全，<br>是我们的使命。</h3><p>以 aosu 的品牌理念为起点，画面希望传递的不只有夜视功能，还有人们对家庭生活的关心。</p></div>
+ <div class="case-context"><div><span class="eyebrow">AUDIENCE & CONTEXT</span><h3>一扇家门前，<br>一个熟悉的万圣夜。</h3></div><div><p>在美国，孩子们会穿着万圣节服装，挨家挨户讨糖。许多家庭会在前院设置糖果区，供邻家的孩子取用。</p><p>这为创意提供了具体场景：当主人不在门口时，仍可以通过手机，看见家门前发生的有趣瞬间。</p></div></div>
+ <div class="brand-values"><article><span>01 / RELIABLE</span><h3>可靠</h3><p>家中发生的事，通过手机可以随时了解。</p></article><article><span>02 / SMART</span><h3>智能</h3><p>以全彩夜视画面，直观表达夜间细节的可见性。</p></article><article><span>03 / APPROACHABLE</span><h3>亲和</h3><p>从美国家庭熟悉的生活场景切入，建立情感联系。</p></article></div>
+ <details class="case-details"><summary><span>展开设计推导与传播延展</span><span class="toggle-symbol" aria-hidden="true">+</span></summary><div class="expanded-case">
+  <div class="story-split"><img src="assets/works/previews/halloween-night-01.webp" width="1200" height="1600" loading="lazy" alt="万圣节竖版主视觉与手机中的故事"><div><p class="eyebrow">A SMALL STORY, A CLEAR MESSAGE</p><h3>让功能出现在故事里。</h3><p>三个邻家孩子来到糖果区。穿木乃伊服装的孩子拿起一个大棒棒糖，正想再拿一个时，身后的“吸血鬼”拦住了他——牌子上写着“只能拿一颗”。一旁的小女孩开心地笑了。</p><p>以手机作为观看入口，将孩子们的互动与全彩夜视画面放在同一视觉中心，让观者直观理解：摄像头记录下了万圣夜的家庭生活。</p><p class="small-note">画面为营销创意场景，用于表达产品与品牌价值。</p><dl class="decision-list"><div><dt>为什么出现手机？</dt><dd>把摄像头的记录能力，连接到用户熟悉的远程查看方式。</dd></div><div><dt>为什么选择讨糖的孩子？</dt><dd>用具体生活片段承接节日情绪，让“守护家庭”有可感知的内容。</dd></div><div><dt>为什么保留夜色与暖光？</dt><dd>以夜间环境交代产品场景，以糖果、孩子与暖色细节保留节日的亲和感。</dd></div></dl></div></div>
+  <div class="case-context"><div><span class="eyebrow">THE COMMUNICATION PATH</span><h3>从广告到官网，<br>延续同一个故事。</h3></div><div><p>以下是本案例的传播设计逻辑，不代表已经验证的转化结果。</p></div></div>
+  <ol class="journey"><li><span>01 / AD</span><h4>吸引注意</h4><p>用万圣夜场景与清晰主题吸引目标用户。</p></li><li><span>02 / LANDING</span><h4>承接预期</h4><p>官网主视觉延续广告的故事、色彩与产品组合。</p></li><li><span>03 / UNDERSTAND</span><h4>理解价值</h4><p>通过手机中的夜视画面，连接产品功能与家庭生活。</p></li><li><span>04 / ACTION</span><h4>继续了解</h4><p>促销信息与行动按钮引导用户探索产品。</p></li></ol>
+  <h3 class="subheading">同一个主题，多种传播画幅。</h3><div class="campaign-pair"><img src="assets/works/previews/halloween-night-02.webp" width="1280" height="544" loading="lazy" alt="万圣节横版传播画面"><img src="assets/works/cards/halloween-night-01-800.webp" width="800" height="1067" loading="lazy" alt="万圣节竖版传播画面"></div>
+  <button class="text-button" data-collapse>收起案例 ↑</button>
+ </div></details>
+</section>
+
+<section class="editorial evolution" id="evolution" aria-labelledby="evolution-title"><div class="section-label"><span>02 / VISUAL EVOLUTION</span><span>AOSU · 2024 → 2025</span></div><div class="section-intro"><h2 id="evolution-title">让升级，<br>看得见。</h2><p>同样的万圣节主题，从产品陈列到门前场景。并列观察视觉语言与信息表达的变化。</p></div><div class="comparison-grid"><figure><figcaption><span>BEFORE</span><strong>2024 万圣节</strong></figcaption><div class="compare-art before"><img src="assets/v2/content/halloween-comparison.png" width="900" height="540" loading="lazy" alt="2024 万圣节视觉：紫色背景与产品展台"></div></figure><figure><figcaption><span>AFTER</span><strong>2025 万圣节</strong></figcaption><div class="compare-art after"><img src="assets/v2/content/halloween-comparison.png" width="900" height="540" loading="lazy" alt="2025 万圣节视觉：家门前的产品、南瓜与暖光"></div></figure></div><div class="comparison-notes"><article><span>场景</span><p>从抽象展台，走向与家庭安防相关的门前环境。</p></article><article><span>氛围</span><p>从紫色节日符号，转向夜色、暖光与材质细节。</p></article><article><span>呈现</span><p>从密集的产品阵列，转向更集中的产品组合。</p></article></div><p class="small-note">以上为画面层面的对比观察；具体调整背景与决策过程，后续结合项目资料补充。本组为 2024—2025 对比，与上方 2026 案例分别呈现。</p></section>
+
+<section class="editorial" id="web-design" aria-labelledby="web-title"><div class="section-label"><span>03 / DIGITAL EXPERIENCE</span><span>PRODUCT LANDING PAGE</span></div><div class="section-intro"><h2 id="web-title">从看见产品，<br>到理解产品。</h2><p>aosu C9X 独立站售卖页<br>PC 与移动端的完整页面设计。</p></div><details class="long-project" id="c9x-project"><summary><div class="web-preview"><div class="desktop-window"><span class="window-label">DESKTOP</span><img src="assets/v2/content/c9x-pc-cover.webp" width="1440" height="1094" loading="lazy" alt="C9X 产品售卖页 PC 设计预览"></div><div class="mobile-window"><span class="window-label">MOBILE</span><img src="assets/v2/content/c9x-mobile-cover.webp" width="500" height="380" loading="lazy" alt="C9X 产品售卖页移动端设计预览"></div></div><div class="project-summary"><span><strong>C9X / Product page</strong><small>独立站售卖页 · PC & Mobile</small></span><span class="expand-label">展开完整页面 <b aria-hidden="true">↗</b></span></div></summary><div class="long-content"><div class="device-controls" role="group" aria-label="选择页面版本"><button type="button" data-device="pc" aria-pressed="true">PC</button><button type="button" data-device="mobile" aria-pressed="false">Mobile</button><button type="button" class="text-button" data-collapse>收起 ↑</button></div><div id="long-page-tiles" aria-live="polite"></div><div class="long-bottom"><button type="button" class="text-button" data-collapse>收起完整页面 ↑</button></div></div></details></section>
+
+<section class="editorial" id="selected-work" aria-labelledby="work-title"><div class="section-label"><span>04 / SELECTED WORK</span><span>VISUAL SYSTEMS & APPLICATIONS</span></div><div class="section-intro"><h2 id="work-title">不同项目，<br>同样深入。</h2><p>品牌规范、营销应用、产品视觉与设计方法。按项目归组，点击进入完整画廊。</p></div><div class="work-groups" id="work-groups"></div></section>
+
+<section class="editorial presentation-section" id="presentation" aria-labelledby="presentation-title"><div class="section-label"><span>05 / PRESENTATION</span><span>25 PAGES</span></div><div class="presentation-layout"><div><p class="eyebrow">PRESENTATION DESIGN</p><h2 id="presentation-title">小院智饮<br>自助设备</h2><p class="muted-copy">PPT / 演示文稿设计</p><a class="text-button" href="assets/v2/content/xiaoyuan-presentation.pdf" target="_blank" rel="noopener">查看完整 PDF ↗</a></div><div class="presentation-viewer"><button class="slide-open" type="button" data-open-group="presentation" aria-label="放大查看小院智饮演示文稿"><img id="presentation-image" src="assets/v2/content/presentation-01.webp" width="1280" height="720" loading="lazy" alt="小院智饮演示文稿第 1 页"></button><div class="slide-controls"><span id="presentation-counter" aria-live="polite">01 / 25</span><div><button type="button" id="presentation-prev" aria-label="上一页演示文稿" disabled>←</button><button type="button" id="presentation-next" aria-label="下一页演示文稿">→</button></div></div></div></div></section>
+
+<section class="editorial resume-section" id="resume" aria-labelledby="resume-title"><div class="section-label"><span>06 / PROFILE & EXPERIENCE</span><a href="assets/xu-zhizhai-resume-2026.pdf" target="_blank" rel="noopener">原版简历 PDF ↗</a></div><div class="resume-intro"><div><h2 id="resume-title">许志斋</h2><p class="resume-role">视觉设计 / 平面设计</p><p class="muted-copy">品牌视觉 / 电商营销 / 海外独立站</p></div><div class="resume-personal"><p>11年工作经验</p><p>本科 / 北京</p><a href="tel:15901368168">159 0136 8168</a><a href="mailto:970899168@qq.com">970899168@qq.com</a></div></div><div id="resume-career"><details class="career-entry" open><summary><span class="career-date">2025.03 – 2026.10</span><strong class="career-title">北京七人科技有限公司</strong><span class="career-role">视觉设计师</span><span class="toggle-symbol" aria-hidden="true">+</span></summary><div class="career-content"><p>家庭安防品牌，产品销售海外、亚马逊、独立站
+海外独立站设计：品牌统一 / 视觉策划 / 官网首页 / 黑五 Prime Day 等营销视觉 / 二级页 / 产品售卖页 / 新品上市 / 主视觉 banner / 推广素材、图标 ...
+其他设计支持：易拉宝、展架、企业文化物料、社媒宣传、EDM邮件、...</p><div class="resume-highlights"><article><h4>280%</h4><p>2025-2026 负责独立站运营设计，年度业绩完成率280%</p></article><article><h4>ROI +27%</h4><p>Facebook、Google投放的广告图，我比外包公司的图，平均ROI高出27%，CTR高出19%
+并持续更新方法论：往期分析、精准匹配...</p></article><article><h4>项目管理</h4><p>根据项目上线时间倒推、规划排期表、设计方案策划、内部提案、设计执行落地、延展、上线验收...</p></article><article><h4>营销心理学</h4><p>损失厌恶、从众心理、情绪驱动消费、好奇心驱动、心理账户...</p></article><article><h4>数据提升方法论</h4><p>根据经验做AB测-测后结果分析-总结方法论-用在下一次AB测...</p></article><article><h4>AI工具应用</h4><p>提效、提品质、视频动画...
+Codex、chatGPT、LibLib、LibTV、Banana、Lovart、即梦Seedream5.0、Seedance 2.5</p></article></div></div></details><details class="career-entry"><summary><span class="career-date">2023.10 – 2025.02</span><strong class="career-title">许森设计 / XS Design</strong><span class="career-role">自由设计师</span><span class="toggle-symbol" aria-hidden="true">+</span></summary><div class="career-content"><p>客户类型：车载香薰、护肤品、葡萄酒、白酒、汽车用品、红包定制、心理咨询、生鲜、小吃、咖啡奶茶、包包...
+线上线下各类宣传设计：产品摄影、产品kv海报、主图、详情页、朋友圈海报、公众号推文、PPT、LOGO/VI，线下活动展板、横幅、易拉宝、邀请函等各类物料设计</p><div class="resume-highlights"><article><h4>全流程独立交付</h4><p>从需求沟通 - 报价 - 合同 - 理解需求 - 策划设计方案 - 执行落地 - 交付上线 - 验收 ...</p></article><article><h4>不只是设计师</h4><p>更深入理解业务，设计吸引用户点击的、能看懂卖点、更好数据表现的设计，解决客户实际问题</p></article></div></div></details><details class="career-entry"><summary><span class="career-date">2020.12 – 2023.09</span><strong class="career-title">西鸽观兰葡萄酒产业集团有限公司</strong><span class="career-role">设计经理</span><span class="toggle-symbol" aria-hidden="true">+</span></summary><div class="career-content"><p>国内葡萄酒品牌，线下经销商、线上电商平台：京东、天猫、抖音 ...
+品牌视觉 VI / 视觉策划 / 摄影跟拍 / 主视觉 / 618 双11 年货节等营销视觉 / 产品主图详情页 / 移动端首页 / 会员页 / 直播间背景 + 切片 / 新品上市发布会 / 春季糖酒会 + 中酒展展会物料 / 公众号长图推文 ...</p><div class="resume-highlights"><article><h4>品牌VI</h4><p>优化品牌VI体系，包括品牌标志、字体、色彩、图形等元素的规划和应用，确保品牌形象的统一性和识别度</p></article><article><h4>产品VI</h4><p>策划并跟拍摄影图、把控渲染产品图；制定产品VI体系，包括字体、色彩、图形、主视觉kv海报、各类宣传物料等规范制定</p></article><article><h4>团队管理（4人）</h4><p>跨部门需求对接、需求统筹、工作分配、周会
+OKR对齐、KPI制定</p></article><article><h4>项目管理S A B C级</h4><p>根据项目重要程度、上线时间倒推、规划排期表、工作分配、设计方案策划、内部提案、设计执行落地、延展、上线验收...</p></article><article><h4>AI+渲染学习+培训</h4><p>带头报名C4D渲染课程、AI课程、分享相关课程干货、培训技能、复盘项目、督促每位设计师能力提升</p></article><article><h4>内部设计比赛</h4><p>个人出资，奖励每月评选的最佳作品
+目标：活跃团队氛围、梳理分享设计思维、提升设计师讲设计的能力</p></article></div></div></details><details class="career-entry"><summary><span class="career-date">2018.05 – 2020.10</span><strong class="career-title">北京赫石国际咨询有限公司</strong><span class="career-role">平面设计师</span><span class="toggle-symbol" aria-hidden="true">+</span></summary><div class="career-content"><p>品牌设计：公司 LOGO 升级、新 LOGO的 VI 建立
+线上宣传设计：广告投放长图、公众号推文、官网 banner图、海报、微信配图、节日海报、朋友圈地产海报、电子邀请函等设计
+线下活动设计：主视觉展板、签到背景板、易拉宝、画册、DM 单页、名片、手提袋、海报、桌牌、水牌、指示牌等设计</p></div></details><details class="career-entry"><summary><span class="career-date">2015.09 – 2018.04</span><strong class="career-title">北京国铁晟达文化传播有限公司</strong><span class="career-role">平面设计师</span><span class="toggle-symbol" aria-hidden="true">+</span></summary><div class="career-content"><p>线上设计：电商 banner图、产品详情页、主图、专题页、节日海报、微信公众号配图等。
+线下设计：易拉宝、画册、单页、名片、三折页、海报、展板、台历等。</p></div></details></div><div class="education"><h3>教育经历</h3><span>遵义师范学院</span><span>本科</span><span>视觉传达设计</span><span>2011 – 2015</span></div><a class="text-button resume-download" href="assets/xu-zhizhai-resume-2026.pdf" download="许志斋简历2026-视觉设计师.pdf">下载完整简历 ↓</a></section>
+<footer class="v2-footer"><span>XU / PORTFOLIO 2026</span><a href="#">Back to top ↑</a></footer>
+
+<dialog id="work-viewer" aria-labelledby="viewer-title"><div class="viewer-top"><div><span id="viewer-kicker"></span><h2 id="viewer-title"></h2></div><button type="button" id="viewer-close" aria-label="关闭作品画廊">×</button></div><div class="viewer-stage"><img id="viewer-image" alt=""></div><div class="viewer-controls"><button type="button" id="viewer-prev" aria-label="上一张作品">←</button><span id="viewer-counter" aria-live="polite"></span><button type="button" id="viewer-next" aria-label="下一张作品">→</button></div><div id="viewer-thumbs" class="viewer-thumbs" aria-label="作品缩略图"></div></dialog>
+
   <script src="assets/v2/motion.js" defer></script>
+  <script src="assets/v2/editorial.js" defer></script>
 </body>
 </html>
+
