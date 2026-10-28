@@ -1,7 +1,11 @@
 (()=>{
  const section=document.getElementById('halloween-case'),details=document.getElementById('halloween-details');
  const dialog=document.getElementById('case-zoom'),scroll=document.getElementById('zoom-scroll'),zoomImage=document.getElementById('zoom-image');
- const full='assets/v2/halloween-case-original.png';
+ const caseImage=section.querySelector('.original-case-image');
+ const full=caseImage.dataset.src;
+ function loadCase(){if(!caseImage.getAttribute('src')){caseImage.srcset=caseImage.dataset.srcset;caseImage.src=full;}}
+ details.addEventListener('toggle',()=>{if(details.open)loadCase();});
+ if(details.open)loadCase();
  const reduced=matchMedia('(prefers-reduced-motion:reduce)');
  let zoom=1,returnFocus=null,drag=null;
  const minus=document.getElementById('zoom-minus'),plus=document.getElementById('zoom-plus');
