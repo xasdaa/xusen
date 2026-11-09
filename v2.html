@@ -123,7 +123,8 @@
         --inset: max(5vw, calc((100vw - 1440px) / 2));
       }
     }
-      .rain-camera-banner{width:100%;margin:0 0 clamp(48px,7vw,110px)}
+      .rain-camera-banner{position:relative;width:100%;margin:0 0 clamp(12px,2vw,32px)}
+    .scene-showcase .rain-camera-banner h2{position:absolute;inset-inline:0;bottom:12%;margin:0;text-align:center}
     .rain-camera-banner img{display:block;width:100%;height:auto}
   </style>
   <style>#halloween-case picture,#halloween-case img{display:block}#halloween-case img{width:100%;height:auto}</style>
@@ -236,11 +237,11 @@
       <button type="button" id="next-selling" aria-label="下一个项目" aria-controls="selling-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
     </div>
   </section>
-  <figure class="rain-camera-banner">
-    <img src="assets/v2/rain-camera-banner-v4.webp" width="2560" height="1398" loading="lazy" decoding="async" alt="雨中安装在外墙上的 aosu 太阳能摄像头">
-  </figure>
   <section class="selected scene-showcase" lang="zh-CN" aria-labelledby="scene-title">
-    <h2 id="scene-title">产品介绍页</h2>
+    <figure class="rain-camera-banner">
+      <img src="assets/v2/rain-camera-banner-v4.webp" width="2560" height="1398" loading="lazy" decoding="async" alt="雨中安装在外墙上的 aosu 太阳能摄像头">
+      <h2 id="scene-title">产品介绍页</h2>
+    </figure>
     <div class="scene-panels" id="scene-panels" role="group" aria-label="切换产品介绍页">
       <button class="scene-panel" type="button" aria-label="查看 aosu 双摄广角覆盖完整案例" aria-controls="dual-case" aria-haspopup="dialog" aria-pressed="true">
         <img src="assets/v2/product-cover-1.webp" width="2427" height="1052" alt="" loading="lazy" decoding="async">
