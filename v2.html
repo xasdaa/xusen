@@ -112,6 +112,12 @@
       .scene-panel[aria-pressed="true"]{aspect-ratio:1.45}
     }
     @media(prefers-reduced-motion:reduce){.scene-panel{transition:none}}
+    @media (min-width: 768px) {
+      .selected[aria-labelledby="selected-title"],
+      .selected[aria-labelledby="selling-title"] {
+        --inset: max(5vw, calc((100vw - 1440px) / 2));
+      }
+    }
   </style>
   <link rel="stylesheet" href="assets/v2/halloween-case.css?v=20261028-images">
 </head>
