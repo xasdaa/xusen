@@ -70,6 +70,12 @@
       .motion-project strong{font-size:18px}
       .motion .gallery-controls{margin-left:7vw;margin-right:7vw}
     }
+  
+    #creative-zoom{padding:0;border:0;background:transparent;max-width:96vw;max-height:94vh;overflow:visible}
+    #creative-zoom::backdrop{background:rgba(0,0,0,.9)}
+    #creative-zoom button{display:block;padding:0;border:0;background:transparent;cursor:zoom-out}
+    #creative-zoom img{display:block;width:min(92vw,2000px);height:auto;max-height:90vh;object-fit:contain}
+    #project-track picture[role="button"]{cursor:zoom-in}
   </style>
   <link rel="stylesheet" href="assets/v2/halloween-case.css?v=20261028-images">
 </head>
@@ -143,6 +149,9 @@
       <button type="button" id="next-project" aria-label="下一个项目" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
     </div>
   </section>
+  <dialog id="creative-zoom" aria-label="创意视觉大图">
+    <button type="button" aria-label="关闭大图"><img alt=""></button>
+  </dialog>
   <script>
     (()=>{
       const track=document.getElementById('project-track');
@@ -154,6 +163,44 @@
       previous.addEventListener('click',()=>move(-1));
       next.addEventListener('click',()=>move(1));
       track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();move(e.key==='ArrowRight'?1:-1);}});
+      const desktop = matchMedia('(min-width: 768px)');
+      const viewer = document.getElementById('creative-zoom');
+      const largeImage = viewer.querySelector('img');
+      const pictures = [...track.querySelectorAll('.project picture')];
+
+      function syncZoomControls(){
+        for (const picture of pictures){
+          if (desktop.matches){
+            picture.setAttribute('role','button');
+            picture.tabIndex = 0;
+            picture.setAttribute('aria-label','放大查看：' + picture.querySelector('img').alt);
+          } else {
+            picture.removeAttribute('role');
+            picture.removeAttribute('tabindex');
+            picture.removeAttribute('aria-label');
+          }
+        }
+        if (!desktop.matches && viewer.open) viewer.close();
+      }
+
+      for (const picture of pictures){
+        function openImage(){
+          if (!desktop.matches || viewer.open) return;
+          const preview = picture.querySelector('img');
+          largeImage.alt = preview.alt;
+          largeImage.src = preview.getAttribute('src').replace('/previews/','/originals/').replace('.webp','.jpg');
+          viewer.showModal();
+        }
+        picture.addEventListener('click',openImage);
+        picture.addEventListener('keydown',event=>{
+          if (!desktop.matches || !['Enter',' '].includes(event.key)) return;
+          event.preventDefault();
+          openImage();
+        });
+      }
+      viewer.addEventListener('click',()=>viewer.close());
+      desktop.addEventListener('change',syncZoomControls);
+      syncZoomControls();
       track.addEventListener('scroll',update,{passive:true});
       new ResizeObserver(update).observe(track);
       update();
