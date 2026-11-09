@@ -76,18 +76,24 @@
     #creative-zoom button{display:block;padding:0;border:0;background:transparent;cursor:zoom-out}
     #creative-zoom img{display:block;width:min(92vw,2000px);height:auto;max-height:90vh;object-fit:contain}
     #project-track picture[role="button"]{cursor:zoom-in}
-      .zcool-showcase{width:min(1440px,calc(100% - 2 * clamp(16px,5vw,64px)));margin:clamp(48px,7vw,110px) auto 0;color:#f5f5f5}
-    .zcool-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:clamp(16px,3vw,32px)}
-    .zcool-heading h2{margin:0;font-size:clamp(24px,3.6vw,44px);line-height:1.15}
-    .zcool-heading a{color:#d8d8d8;text-decoration:none;font-size:14px;white-space:nowrap}
-    .zcool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,2vw,24px)}
-    .zcool-card{display:block;color:inherit;text-decoration:none;background:#111;border:1px solid #252525;border-radius:clamp(12px,1.6vw,22px);overflow:hidden}
+      .zcool-showcase{width:min(1440px,calc(100% - 32px));margin:clamp(48px,7vw,110px) auto 0;color:#f5f5f5}
+    .zcool-heading{text-align:center;margin-bottom:clamp(24px,4vw,56px)}
+    .zcool-heading h2{margin:0 0 12px;font-size:clamp(24px,3vw,38px);line-height:1.15}
+    .zcool-heading a{color:#ccc;text-decoration:none;font-size:clamp(13px,1.5vw,18px)}
+    .zcool-grid{display:grid;grid-template-columns:repeat(6,minmax(150px,1fr));gap:8px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x proximity}
+    .zcool-card{display:block;scroll-snap-align:start;color:inherit;text-decoration:none;background:#111;border:1px solid #272727;border-radius:6px;overflow:hidden}
     .zcool-card:hover,.zcool-card:focus-visible{border-color:#686868}
     .zcool-card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#0a0a0a}
-    .zcool-card-info{padding:clamp(10px,1.6vw,20px)}
-    .zcool-card h3{font-size:clamp(13px,1.45vw,19px);line-height:1.4;margin:0;overflow-wrap:anywhere}
-    .zcool-card p{font-size:12px;color:#aaa;margin:6px 0 0}
-    @media(max-width:767px){.zcool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .zcool-card-info{padding:10px}
+    .zcool-card-title{display:flex;align-items:center;gap:5px}
+    .zcool-card h3{flex:1;min-width:0;font-size:clamp(12px,1.1vw,16px);line-height:1.45;margin:0;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+    .zcool-flame{flex:0 0 16px;width:16px;height:19px;fill:#ff572f}
+    .zcool-card p,.zcool-card time{font-size:12px;color:#aaa}
+    .zcool-card p{margin:4px 0 12px}
+    .zcool-stats{display:flex;gap:8px;color:#bbb;font-size:11px}
+    .zcool-stats span{display:flex;align-items:center;gap:3px}
+    .zcool-stats svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linejoin:round}
+    .zcool-card time{display:block;border-top:1px solid #272727;padding:10px}
   </style>
   <link rel="stylesheet" href="assets/v2/halloween-case.css?v=20261028-images">
 </head>
@@ -135,33 +141,33 @@
 
   <section class="zcool-showcase" lang="zh-CN" aria-labelledby="zcool-title">
     <header class="zcool-heading">
-      <h2 id="zcool-title">站酷精选</h2>
-      <a href="https://www.zcool.com.cn/u/15231846" target="_blank" rel="noopener noreferrer">站酷主页 ↗</a>
+      <h2 id="zcool-title">ZCOOL 站酷</h2>
+      <a href="https://www.zcool.com.cn/u/15231846" target="_blank" rel="noopener noreferrer">zcool.com.cn/u/15231846 ↗</a>
     </header>
     <div class="zcool-grid">
       <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjgzNTMzNDA=.html" target="_blank" rel="noopener noreferrer">
         <img src="assets/v2/zcool-17088335.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><h3>香舍里-车载香薰-主视觉海报设计升级</h3><p>电商</p></div>
+        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="香舍里-车载香薰-主视觉海报设计升级">香舍里-车载香薰-主视觉海报设计升级</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="频道推荐"><title>频道推荐</title><path d="M12 1c1 5-4 6-3 10 1-1 2-2 2-4 4 3 6 6 6 9a8 8 0 0 1-16 0c0-5 4-8 5-10 0 3 1 4 2 4 0-4 3-6 4-9Z"/></svg></div><p>电商</p><div class="zcool-stats"><span aria-label="浏览 1014"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>1014</span><span aria-label="评论 0"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>0</span><span aria-label="推荐 15"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>15</span></div></div><time datetime="2024-04-18">2024-04-18</time>
       </a>
       <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjc5MzAyOTI=.html" target="_blank" rel="noopener noreferrer">
         <img src="assets/v2/zcool-16982573.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><h3>许森作品集</h3><p>电商</p></div>
+        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="许森作品集">许森作品集</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="佳作推荐"><title>佳作推荐</title><path d="M12 1c-1 5 5 6 5 12 0 4-3 7-7 9 1-5-6-6-6-12 0-4 3-7 8-9Z"/></svg></div><p>电商</p><div class="zcool-stats"><span aria-label="浏览 287"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>287</span><span aria-label="评论 2"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>2</span><span aria-label="推荐 21"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>21</span></div></div><time datetime="2024-03-04">2024-03-04</time>
       </a>
       <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU4NDM0MzI=.html" target="_blank" rel="noopener noreferrer">
         <img src="assets/v2/zcool-16460858.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><h3>产品海报设计 x AIGC（mj）流程分享</h3><p>电商</p></div>
+        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="产品海报设计 x AIGC（mj）流程分享">产品海报设计 x AIGC（mj）流程分享</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="频道推荐"><title>频道推荐</title><path d="M12 1c1 5-4 6-3 10 1-1 2-2 2-4 4 3 6 6 6 9a8 8 0 0 1-16 0c0-5 4-8 5-10 0 3 1 4 2 4 0-4 3-6 4-9Z"/></svg></div><p>电商</p><div class="zcool-stats"><span aria-label="浏览 3274"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>3274</span><span aria-label="评论 16"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>16</span><span aria-label="推荐 104"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>104</span></div></div><time datetime="2023-07-10">2023-07-10</time>
       </a>
       <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU3NjU1NjQ=.html" target="_blank" rel="noopener noreferrer">
         <img src="assets/v2/zcool-16441391.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><h3>西鸽电商2022年-中秋设计分享</h3><p>电商</p></div>
+        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="西鸽电商2022年-中秋设计分享">西鸽电商2022年-中秋设计分享</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="频道推荐"><title>频道推荐</title><path d="M12 1c1 5-4 6-3 10 1-1 2-2 2-4 4 3 6 6 6 9a8 8 0 0 1-16 0c0-5 4-8 5-10 0 3 1 4 2 4 0-4 3-6 4-9Z"/></svg></div><p>电商</p><div class="zcool-stats"><span aria-label="浏览 871"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>871</span><span aria-label="评论 2"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>2</span><span aria-label="推荐 35"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>35</span></div></div><time datetime="2023-07-03">2023-07-03</time>
       </a>
       <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU2ODY3Njg=.html" target="_blank" rel="noopener noreferrer">
         <img src="assets/v2/zcool-16421692.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><h3>2023年西鸽618大促</h3><p>电商</p></div>
+        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="2023年西鸽618大促">2023年西鸽618大促</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="佳作推荐"><title>佳作推荐</title><path d="M12 1c-1 5 5 6 5 12 0 4-3 7-7 9 1-5-6-6-6-12 0-4 3-7 8-9Z"/></svg></div><p>电商</p><div class="zcool-stats"><span aria-label="浏览 836"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>836</span><span aria-label="评论 4"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>4</span><span aria-label="推荐 28"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>28</span></div></div><time datetime="2023-06-26">2023-06-26</time>
       </a>
       <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU1MDExMTY=.html" target="_blank" rel="noopener noreferrer">
         <img src="assets/v2/zcool-16375279.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><h3>插画作品</h3><p>商业插画</p></div>
+        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="插画作品">插画作品</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="佳作推荐"><title>佳作推荐</title><path d="M12 1c-1 5 5 6 5 12 0 4-3 7-7 9 1-5-6-6-6-12 0-4 3-7 8-9Z"/></svg></div><p>商业插画</p><div class="zcool-stats"><span aria-label="浏览 277"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>277</span><span aria-label="评论 4"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>4</span><span aria-label="推荐 23"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>23</span></div></div><time datetime="2023-06-08">2023-06-08</time>
       </a>
     </div>
   </section>
