@@ -12,15 +12,23 @@
  }
  details.addEventListener('toggle',()=>{if(details.open)loadCase();});
  if(details.open)loadCase();
- const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+ const summary=details.querySelector('summary');
+ let openingScrollY=window.scrollY;
+ summary.addEventListener('click',()=>{if(!details.open)openingScrollY=window.scrollY;});
+ function closeCase(){
+  details.open=false;
+  summary.focus({preventScroll:true});
+  window.scrollTo({top:openingScrollY,behavior:'instant'});
+ }
  let zoom=1,returnFocus=null,drag=null;
  const minus=document.getElementById('zoom-minus'),plus=document.getElementById('zoom-plus');
  function updateZoom(){zoomImage.width=mobile.matches?1200:3840;zoomImage.height=mobile.matches?7733:9327;zoomImage.style.setProperty('--case-zoom-width',Math.round(baseWidth()*zoom)+'px');document.getElementById('zoom-value').value=Math.round(zoom*100)+'%';minus.disabled=zoom<=.25;plus.disabled=zoom>=2;}
  function openZoom(opener){returnFocus=opener;zoom=1;zoomImage.src=full();dialog.showModal();document.body.classList.add('case-zoom-open');updateZoom();scroll.scrollTop=0;scroll.scrollLeft=0;document.getElementById('zoom-close').focus();}
  mobile.addEventListener('change',()=>{if(details.open)loadCase();if(dialog.open){zoomImage.src=full();updateZoom();}});
  section.querySelectorAll('[data-case-zoom]').forEach(el=>el.addEventListener('click',()=>openZoom(el)));
- section.querySelector('.original-case-image').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openZoom(e.currentTarget);}});
- section.querySelectorAll('[data-case-close]').forEach(el=>el.addEventListener('click',()=>{details.open=false;const summary=details.querySelector('summary');summary.focus();section.scrollIntoView({block:'start',behavior:reduced.matches?'instant':'smooth'});}));
+ section.querySelector('.original-case-image').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();closeCase();}});
+ caseImage.addEventListener('click',closeCase);
+ section.querySelectorAll('[data-case-close]').forEach(el=>el.addEventListener('click',closeCase));
  minus.addEventListener('click',()=>{zoom=Math.max(.25,zoom-.25);updateZoom();});
  plus.addEventListener('click',()=>{zoom=Math.min(2,zoom+.25);updateZoom();});
  document.getElementById('zoom-fit').addEventListener('click',()=>{zoom=scroll.clientWidth/baseWidth();updateZoom();scroll.scrollLeft=0;});

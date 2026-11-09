@@ -126,6 +126,7 @@
       .rain-camera-banner{position:relative;width:100%;margin:0 0 clamp(12px,2vw,32px)}
     .scene-showcase .rain-camera-banner h2{position:absolute;inset-inline:0;bottom:12%;margin:0;text-align:center}
     .scene-title-en{display:block;margin-top:8px;color:#aaa;font-size:clamp(10px,1vw,14px);font-weight:500;letter-spacing:.18em}
+    #halloween-details .original-case-image{cursor:pointer}
     #halloween-details{border-block:0}
     .rain-camera-banner img{display:block;width:100%;height:auto}
   </style>
@@ -214,7 +215,7 @@
       </summary>
       <div class="case-expanded">
         <div class="case-toolbar"><span>完整案例</span><button type="button" data-case-zoom>放大查看 ↗</button><button type="button" data-case-close class="case-close-inline">收起案例 ↑</button></div>
-        <img class="original-case-image" data-mobile="assets/v2/halloween-images/case-20261029-mobile.jpg" data-src="assets/v2/halloween-images/case-20261029-original.jpg" data-srcset="assets/v2/halloween-images/case-20261029-1920.webp 1920w, assets/v2/halloween-images/case-20261029-original.jpg 3840w" sizes="100vw" width="3840" height="9327" alt="aosu 2026 万圣节完整品牌营销案例：目标用户、创意策略、美术参考、配色字体及延展视觉，点击放大查看" decoding="async" data-case-zoom tabindex="0" role="button">
+        <img class="original-case-image" data-mobile="assets/v2/halloween-images/case-20261029-mobile.jpg" data-src="assets/v2/halloween-images/case-20261029-original.jpg" data-srcset="assets/v2/halloween-images/case-20261029-1920.webp 1920w, assets/v2/halloween-images/case-20261029-original.jpg 3840w" sizes="100vw" width="3840" height="9327" alt="aosu 2026 万圣节完整品牌营销案例：目标用户、创意策略、美术参考、配色字体及延展视觉，点击收起案例" decoding="async" tabindex="0" role="button">
         <div class="case-bottom"><button type="button" data-case-close>收起完整案例 ↑</button></div>
       </div>
     </details>
@@ -360,7 +361,7 @@
     projectViewer.addEventListener('click', () => projectViewer.close());
   </script>
   <script src="assets/v2/motion.js?v=20261028-light-media" defer></script>
-  <script src="assets/v2/halloween-case.js?v=20261029-mobile" defer></script>
+  <script src="assets/v2/halloween-case.js?v=click-to-collapse" defer></script>
   <script>
     {
       const desktop = matchMedia('(min-width: 768px)');
