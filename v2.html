@@ -320,13 +320,19 @@
   <script src="assets/v2/halloween-case.js?v=20261029-mobile" defer></script>
   <script>
     {
+      const desktop = matchMedia('(min-width: 768px)');
       const panels = [...document.querySelectorAll('#scene-panels .scene-panel')];
       for (const panel of panels) {
-        panel.addEventListener('click', () => {
+        function activate() {
+          if (panel.getAttribute('aria-pressed') === 'true') return;
           for (const option of panels) {
             option.setAttribute('aria-pressed', String(option === panel));
           }
+        }
+        panel.addEventListener('pointerenter', (event) => {
+          if (event.pointerType === 'mouse' && desktop.matches) activate();
         });
+        panel.addEventListener('click', activate);
       }
     }
   </script>
