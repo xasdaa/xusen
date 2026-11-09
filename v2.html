@@ -96,7 +96,11 @@
     .zcool-card time{display:block;border-top:1px solid #272727;padding:10px}
   
     .scene-showcase{padding-top:0}
-    .dual-case{margin:24px var(--inset) 0}
+    .dual-case{box-sizing:border-box;width:min(1440px,92vw);max-height:90dvh;padding:0;border:0;background:#000;color:#fff;overflow:auto;overscroll-behavior:contain}
+    .dual-case::backdrop{background:rgb(0 0 0 / .78)}
+    body:has(.dual-case[open]){overflow:hidden}
+    .dual-case-header{position:sticky;top:0;z-index:1;display:flex;justify-content:flex-end;background:#000}
+    .dual-case img{cursor:zoom-out}
     .dual-case picture,.dual-case img{display:block;width:100%;height:auto}
     .dual-case-close{display:block;margin:20px auto 0;padding:12px 20px;border:1px solid #333;background:#000;color:#fff;cursor:pointer}
     .scene-panels{display:flex;gap:12px;margin-inline:var(--inset);height:calc((100vw - 2 * var(--inset) - 24px) * .8 * 1103 / 2544)}
@@ -238,7 +242,7 @@
   <section class="selected scene-showcase" lang="zh-CN" aria-labelledby="scene-title">
     <h2 id="scene-title">产品介绍页</h2>
     <div class="scene-panels" id="scene-panels" role="group" aria-label="切换产品介绍页">
-      <button class="scene-panel" type="button" aria-label="查看 aosu 双摄广角覆盖完整案例" aria-controls="dual-case" aria-expanded="false" aria-pressed="true">
+      <button class="scene-panel" type="button" aria-label="查看 aosu 双摄广角覆盖完整案例" aria-controls="dual-case" aria-haspopup="dialog" aria-pressed="true">
         <img src="assets/v2/product-cover-1.webp" width="2427" height="1052" alt="" loading="lazy" decoding="async">
       </button>
       <button class="scene-panel" type="button" aria-label="aosu 三合一精准侦测" aria-pressed="false">
@@ -248,9 +252,9 @@
         <img src="assets/v2/product-cover-3.webp" width="2427" height="1053" alt="" loading="lazy" decoding="async">
       </button>
     </div>
-    <div class="dual-case" id="dual-case" hidden>
+    <dialog class="dual-case" id="dual-case" aria-label="aosu 双摄广角覆盖完整案例">
+      <div class="dual-case-header"><button class="dual-case-close" type="button" autofocus>关闭案例 ×</button></div>
       <div id="dual-case-images"></div>
-      <button class="dual-case-close" type="button">收起案例 ↑</button>
       <template id="dual-case-template">
           <picture>
             <source media="(max-width:767px)" srcset="assets/v2/dual-case-mobile-0.webp" width="500" height="4000">
@@ -281,7 +285,7 @@
             <img src="assets/v2/dual-case-desktop-6.webp" width="2560" height="2547" loading="lazy" decoding="async" alt="">
           </picture>
       </template>
-    </div>
+    </dialog>
   </section>
   <dialog id="creative-zoom" aria-label="作品大图">
     <button type="button" aria-label="关闭大图"><img alt=""></button>
@@ -354,17 +358,23 @@
       const caseImages = document.getElementById('dual-case-images');
       const caseTemplate = document.getElementById('dual-case-template');
 
-      function setCaseOpen(open) {
-        if (open && !caseImages.hasChildNodes()) {
+      function openCase() {
+        if (!caseImages.hasChildNodes()) {
           caseImages.append(caseTemplate.content.cloneNode(true));
         }
-        caseDetails.hidden = !open;
-        caseTrigger.setAttribute('aria-expanded', String(open));
+        caseDetails.showModal();
+        caseDetails.scrollTop = 0;
       }
 
-      caseDetails.querySelector('button').addEventListener('click', () => {
-        setCaseOpen(false);
-        caseTrigger.focus();
+      caseDetails.querySelector('button').addEventListener('click', () => caseDetails.close());
+      caseImages.addEventListener('click', () => caseDetails.close());
+      caseDetails.addEventListener('click', (event) => {
+        if (event.target !== caseDetails) return;
+        const bounds = caseDetails.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right ||
+            event.clientY < bounds.top || event.clientY > bounds.bottom) {
+          caseDetails.close();
+        }
       });
 
       for (const panel of panels) {
@@ -379,7 +389,7 @@
         });
         panel.addEventListener('click', () => {
           activate();
-          if (panel === caseTrigger) setCaseOpen(caseDetails.hidden);
+          if (panel === caseTrigger) openCase();
         });
       }
     }
