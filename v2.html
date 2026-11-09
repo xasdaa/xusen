@@ -76,11 +76,18 @@
     #creative-zoom button{display:block;padding:0;border:0;background:transparent;cursor:zoom-out}
     #creative-zoom img{display:block;width:min(92vw,2000px);height:auto;max-height:90vh;object-fit:contain}
     #project-track picture[role="button"]{cursor:zoom-in}
-      .zcool-showcase{margin:clamp(40px,6vw,96px) auto 0;width:min(100%,1440px);text-align:center}
-    .zcool-showcase a{display:block;color:#141414;background:#f0f1f5;text-decoration:none}
-    .zcool-showcase img{display:block;width:100%;height:auto}
-    .zcool-showcase span{display:none}
-    @media(max-width:767px){.zcool-showcase span{display:block;padding:0 16px 22px;font-size:14px;text-decoration:underline}}
+      .zcool-showcase{width:min(1440px,calc(100% - 2 * clamp(16px,5vw,64px)));margin:clamp(48px,7vw,110px) auto 0;color:#f5f5f5}
+    .zcool-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:clamp(16px,3vw,32px)}
+    .zcool-heading h2{margin:0;font-size:clamp(24px,3.6vw,44px);line-height:1.15}
+    .zcool-heading a{color:#d8d8d8;text-decoration:none;font-size:14px;white-space:nowrap}
+    .zcool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,2vw,24px)}
+    .zcool-card{display:block;color:inherit;text-decoration:none;background:#111;border:1px solid #252525;border-radius:clamp(12px,1.6vw,22px);overflow:hidden}
+    .zcool-card:hover,.zcool-card:focus-visible{border-color:#686868}
+    .zcool-card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#0a0a0a}
+    .zcool-card-info{padding:clamp(10px,1.6vw,20px)}
+    .zcool-card h3{font-size:clamp(13px,1.45vw,19px);line-height:1.4;margin:0;overflow-wrap:anywhere}
+    .zcool-card p{font-size:12px;color:#aaa;margin:6px 0 0}
+    @media(max-width:767px){.zcool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   </style>
   <link rel="stylesheet" href="assets/v2/halloween-case.css?v=20261028-images">
 </head>
@@ -126,11 +133,37 @@
   </section>
 
 
-  <section class="zcool-showcase" lang="zh-CN" aria-label="站酷作品展示">
-    <a href="https://www.zcool.com.cn/u/15231846" target="_blank" rel="noopener noreferrer" aria-label="访问我的站酷主页">
-      <img src="assets/v2/zcool-portfolio.webp" width="2048" height="1149" loading="lazy" decoding="async" alt="站酷精选作品：车载香薰、产品海报、中秋设计、618 大促和插画">
-      <span>查看我的站酷主页 ↗</span>
-    </a>
+  <section class="zcool-showcase" lang="zh-CN" aria-labelledby="zcool-title">
+    <header class="zcool-heading">
+      <h2 id="zcool-title">站酷精选</h2>
+      <a href="https://www.zcool.com.cn/u/15231846" target="_blank" rel="noopener noreferrer">站酷主页 ↗</a>
+    </header>
+    <div class="zcool-grid">
+      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjgzNTMzNDA=.html" target="_blank" rel="noopener noreferrer">
+        <img src="assets/v2/zcool-17088335.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
+        <div class="zcool-card-info"><h3>香舍里-车载香薰-主视觉海报设计升级</h3><p>电商</p></div>
+      </a>
+      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjc5MzAyOTI=.html" target="_blank" rel="noopener noreferrer">
+        <img src="assets/v2/zcool-16982573.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
+        <div class="zcool-card-info"><h3>许森作品集</h3><p>电商</p></div>
+      </a>
+      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU4NDM0MzI=.html" target="_blank" rel="noopener noreferrer">
+        <img src="assets/v2/zcool-16460858.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
+        <div class="zcool-card-info"><h3>产品海报设计 x AIGC（mj）流程分享</h3><p>电商</p></div>
+      </a>
+      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU3NjU1NjQ=.html" target="_blank" rel="noopener noreferrer">
+        <img src="assets/v2/zcool-16441391.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
+        <div class="zcool-card-info"><h3>西鸽电商2022年-中秋设计分享</h3><p>电商</p></div>
+      </a>
+      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU2ODY3Njg=.html" target="_blank" rel="noopener noreferrer">
+        <img src="assets/v2/zcool-16421692.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
+        <div class="zcool-card-info"><h3>2023年西鸽618大促</h3><p>电商</p></div>
+      </a>
+      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU1MDExMTY=.html" target="_blank" rel="noopener noreferrer">
+        <img src="assets/v2/zcool-16375279.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
+        <div class="zcool-card-info"><h3>插画作品</h3><p>商业插画</p></div>
+      </a>
+    </div>
   </section>
 
   <section id="halloween-case" class="halloween-case" aria-labelledby="original-case-title">
