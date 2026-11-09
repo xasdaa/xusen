@@ -94,6 +94,24 @@
     .zcool-stats span{display:flex;align-items:center;gap:3px}
     .zcool-stats svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linejoin:round}
     .zcool-card time{display:block;border-top:1px solid #272727;padding:10px}
+  
+    .scene-showcase{padding-top:0}
+    .scene-panels{display:flex;gap:12px;margin-inline:var(--inset);height:clamp(230px,32vw,480px)}
+    .scene-panel{position:relative;flex:1 1 0;min-width:0;overflow:hidden;border:0;border-radius:0;padding:0;background:#161616;color:#fff;cursor:pointer;text-align:left;transition:flex-grow .35s ease}
+    .scene-panel[aria-pressed="true"]{flex-grow:8}
+    .scene-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:65% center}
+    .scene-panel:not([aria-pressed="true"]) img{filter:brightness(.72)}
+    .scene-panel:focus-visible{outline:2px solid #fff;outline-offset:3px}
+    .scene-caption{position:absolute;inset:auto 0 0;display:none;padding:clamp(14px,2vw,28px);background:linear-gradient(transparent,rgba(0,0,0,.9));color:#fff}
+    .scene-panel[aria-pressed="true"] .scene-caption{display:grid;gap:5px}
+    .scene-caption strong{font-size:clamp(18px,2.4vw,34px)}
+    .scene-caption span{font-size:clamp(12px,1.25vw,16px);line-height:1.5}
+    @media(max-width:767px){
+      .scene-panels{height:auto;flex-direction:column;gap:8px}
+      .scene-panel{flex:none;min-height:54px}
+      .scene-panel[aria-pressed="true"]{aspect-ratio:1.45}
+    }
+    @media(prefers-reduced-motion:reduce){.scene-panel{transition:none}}
   </style>
   <link rel="stylesheet" href="assets/v2/halloween-case.css?v=20261028-images">
 </head>
@@ -213,6 +231,27 @@
       <button type="button" id="next-selling" aria-label="下一个项目" aria-controls="selling-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
     </div>
   </section>
+  <section class="selected scene-showcase" lang="zh-CN" aria-labelledby="scene-title">
+    <h2 id="scene-title">场景视觉</h2>
+    <div class="scene-panels" id="scene-panels" role="group" aria-label="切换场景视觉">
+      <button class="scene-panel" type="button" aria-label="度假远程对讲" aria-pressed="true">
+        <img src="assets/works/previews/vacation-02.webp" width="1280" height="544" alt="" loading="lazy" decoding="async">
+        <span class="scene-caption"><strong>度假远程对讲</strong><span>出门度假，也能回应家门口的来访。</span></span>
+      </button>
+      <button class="scene-panel" type="button" aria-label="全屋安防" aria-pressed="false">
+        <img src="assets/works/previews/full-home-01.webp" width="1280" height="544" alt="" loading="lazy" decoding="async">
+        <span class="scene-caption"><strong>全屋安防</strong><span>一张画面看清住宅各处的摄像头覆盖。</span></span>
+      </button>
+      <button class="scene-panel" type="button" aria-label="雪夜守护" aria-pressed="false">
+        <img src="assets/works/previews/winter-01.webp" width="1280" height="544" alt="" loading="lazy" decoding="async">
+        <span class="scene-caption"><strong>雪夜守护</strong><span>用雪夜场景呈现照明和全彩夜视。</span></span>
+      </button>
+      <button class="scene-panel" type="button" aria-label="家庭关怀" aria-pressed="false">
+        <img src="assets/works/previews/mothers-2026-01.webp" width="1280" height="544" alt="" loading="lazy" decoding="async">
+        <span class="scene-caption"><strong>家庭关怀</strong><span>在手机上看到后院玩耍与门前送花。</span></span>
+      </button>
+    </div>
+  </section>
   <dialog id="creative-zoom" aria-label="作品大图">
     <button type="button" aria-label="关闭大图"><img alt=""></button>
   </dialog>
@@ -276,5 +315,17 @@
   </script>
   <script src="assets/v2/motion.js?v=20261028-light-media" defer></script>
   <script src="assets/v2/halloween-case.js?v=20261029-mobile" defer></script>
+  <script>
+    {
+      const panels = [...document.querySelectorAll('#scene-panels .scene-panel')];
+      for (const panel of panels) {
+        panel.addEventListener('click', () => {
+          for (const option of panels) {
+            option.setAttribute('aria-pressed', String(option === panel));
+          }
+        });
+      }
+    }
+  </script>
 </body>
 </html>
