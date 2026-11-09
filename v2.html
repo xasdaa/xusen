@@ -76,6 +76,11 @@
     #creative-zoom button{display:block;padding:0;border:0;background:transparent;cursor:zoom-out}
     #creative-zoom img{display:block;width:min(92vw,2000px);height:auto;max-height:90vh;object-fit:contain}
     #project-track picture[role="button"]{cursor:zoom-in}
+      .zcool-showcase{margin:clamp(40px,6vw,96px) auto 0;width:min(100%,1440px);text-align:center}
+    .zcool-showcase a{display:block;color:#141414;background:#f0f1f5;text-decoration:none}
+    .zcool-showcase img{display:block;width:100%;height:auto}
+    .zcool-showcase span{display:none}
+    @media(max-width:767px){.zcool-showcase span{display:block;padding:0 16px 22px;font-size:14px;text-decoration:underline}}
   </style>
   <link rel="stylesheet" href="assets/v2/halloween-case.css?v=20261028-images">
 </head>
@@ -120,6 +125,13 @@
     </div>
   </section>
 
+
+  <section class="zcool-showcase" lang="zh-CN" aria-label="站酷作品展示">
+    <a href="https://www.zcool.com.cn/u/15231846" target="_blank" rel="noopener noreferrer" aria-label="访问我的站酷主页">
+      <img src="assets/v2/zcool-portfolio.webp" width="2048" height="1149" loading="lazy" decoding="async" alt="站酷精选作品：车载香薰、产品海报、中秋设计、618 大促和插画">
+      <span>查看我的站酷主页 ↗</span>
+    </a>
+  </section>
 
   <section id="halloween-case" class="halloween-case" aria-labelledby="original-case-title">
     <details id="halloween-details">
