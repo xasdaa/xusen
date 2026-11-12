@@ -1,12 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
+  <script>
+    // Start fresh page visits at the cover instead of restoring browser scroll.
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    // Preserve navigation anchors shared by visitors.
+    const resetInitialScroll = () => { if (!location.hash) window.scrollTo({top:0,left:0,behavior:'instant'}); };
+    resetInitialScroll();
+    window.addEventListener('pageshow', resetInitialScroll);
+    window.addEventListener('load', () => requestAnimationFrame(resetInitialScroll), {once:true});
+  </script>
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#000000">
   <meta name="description" content="Xu Zhizhai — Portfolio 2026. 11 years of experience. Visual Designer.">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Xu Zhizhai — Portfolio 2026</title>
+  <meta name="robots" content="index,follow">
+  <title>许志斋作品 — Portfolio 2026</title>
   <style>
     *{box-sizing:border-box}
     html,body{margin:0;width:100%;min-height:100%;background:#000}
@@ -14,7 +24,7 @@
     .desktop-cover{display:block;width:100%;height:100%}
     .desktop-cover img{display:block;width:100%;height:100%;object-fit:cover;object-position:83% center;user-select:none}
     .mobile-cover{display:none}
-    ::selection{background:#666;color:#fff}
+    ::selection{background:#666;color:#d4d4d4}
     @media(max-width:767px),(max-aspect-ratio:4/5){
       .desktop-cover{display:none}
       .mobile-cover{display:block;position:absolute;inset:0;isolation:isolate;background:radial-gradient(ellipse 145% 72% at 0% -12%,#191919 0%,#0c0c0c 38%,#020202 66%,#000 85%)}
@@ -26,17 +36,19 @@
     @media(max-height:650px) and (max-width:767px){.mobile-copy{top:46%;font-size:16px;gap:12px}}
     @media(max-height:450px) and (max-width:767px){.mobile-copy{top:34%;font-size:14px;gap:9px}}
 
-    .selected{--inset:max(6vw,calc((100vw - 1120px)/2));--gap:24px;padding:110px 0 100px;overflow:hidden;color:#f5f5f7;font-family:Arial,"Microsoft YaHei",sans-serif}
+    .selected{--inset:max(6vw,calc((100vw - 1120px)/2));--gap:24px;padding:110px 0 100px;overflow:hidden;color:#d4d4d4;font-family:Arial,"Microsoft YaHei",sans-serif}
+    @font-face{font-family:Poppins;src:url("assets/v2/halloween-native/fonts/Poppins-ExtraLight.woff") format("woff");font-style:normal;font-weight:200;font-display:swap}
+    .selected .section-title-en{display:inline-block;margin-inline-start:.3em;color:#969693;font:200 clamp(12px,1.35vw,24px)/1.2 Poppins,sans-serif;letter-spacing:normal;white-space:nowrap}
     .selected h2{margin:0 var(--inset) 42px;font-size:clamp(30px,3vw,48px);line-height:1.1;letter-spacing:-1.6px;font-weight:600}
     .project-track{display:flex;gap:var(--gap);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-left:var(--inset);padding:0 var(--inset);scrollbar-width:none}
     .project-track::-webkit-scrollbar{display:none}
     .project{flex:0 0 min(44vw,680px);min-width:0;margin:0;scroll-snap-align:start}
-    .project picture{display:block;overflow:hidden;border:1px solid #202020;border-radius:24px;background:#090909}
+    .project picture{display:block;overflow:hidden;border:1px solid #202020;border-radius:0;background:#090909}
     .project img{display:block;width:100%;height:auto;aspect-ratio:2.35/1;object-fit:contain}
     .project figcaption{max-width:440px;margin:24px 14px 0;color:#858589;font-size:16px;line-height:1.65;letter-spacing:-.2px}
-    .project strong{color:#ededf0;font-weight:600}
+    .project strong{color:#d4d4d4;font-weight:600}
     .gallery-controls{display:flex;justify-content:flex-end;gap:16px;margin:40px var(--inset) 0}
-    .gallery-controls button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:#303032;color:#eee;cursor:pointer;transition:background .2s,opacity .2s}
+    .gallery-controls button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:#303032;color:#d4d4d4;cursor:pointer;transition:background .2s,opacity .2s}
     .gallery-controls button:disabled{background:#171718;color:#5b5b5e;cursor:default}
     .gallery-controls button:hover:not(:disabled){background:#48484b}
     .gallery-controls button:focus-visible,.project-track:focus-visible{outline:2px solid #fff;outline-offset:5px}
@@ -45,9 +57,9 @@
       .selected{--inset:7vw;--gap:20px;padding:72px 0 64px}
       .selected h2{font-size:clamp(27px,7vw,36px);letter-spacing:-1px;margin-bottom:30px}
       .project{flex-basis:74vw}
-      .project picture{border-radius:24px}
+      .project picture{border-radius:0}
       .project img{aspect-ratio:3/4}
-      .project figcaption{margin:20px 10px 0;font-size:15px;line-height:1.65}
+      .project figcaption{margin:20px 10px 0;font-size:11px;line-height:1.65}
       .gallery-controls{margin-top:34px;gap:14px}
     }
     @media(prefers-reduced-motion:reduce){.gallery-controls button{transition:none}}
@@ -56,9 +68,9 @@
     .motion-track{display:flex;gap:var(--gap);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-left:var(--inset);padding:0 var(--inset);scrollbar-width:none}
     .motion-track::-webkit-scrollbar{display:none}
     .motion-project{flex:0 0 min(86vw,1440px);min-width:0;margin:0;scroll-snap-align:start}
-    .motion-video{display:block;width:100%;height:auto;aspect-ratio:2.35/1;object-fit:contain;background:#0a0a0a;border:0;border-radius:24px}
+    .motion-video{display:block;width:100%;height:auto;aspect-ratio:2.35/1;object-fit:contain;background:#0a0a0a;border:0;border-radius:0}
     .motion-project figcaption{display:flex;align-items:baseline;gap:18px;margin:22px 0 0;color:#858589;font-size:13px;line-height:1.5}
-    .motion-project strong{font-size:20px;color:#f5f5f7;font-weight:500;letter-spacing:-.5px}
+    .motion-project strong{font-size:20px;color:#d4d4d4;font-weight:500;letter-spacing:-.5px}
     .motion-number{margin-left:auto;font-variant-numeric:tabular-nums}
     .motion-track:focus-visible,.motion-video:focus-visible{outline:2px solid #fff;outline-offset:-3px}
     @media(max-width:767px){
@@ -70,41 +82,26 @@
       .motion-project strong{font-size:18px}
       .motion .gallery-controls{margin-left:7vw;margin-right:7vw}
     }
-  
-    #creative-zoom{padding:0;border:0;background:transparent;max-width:96vw;max-height:94vh;overflow:visible}
+
+    #creative-zoom{padding:0;border:0;background:#000;inset:0;margin:0;width:100%;height:100%;max-width:none;max-height:none;overflow:hidden}
     #creative-zoom::backdrop{background:rgba(0,0,0,.9)}
-    #creative-zoom button{display:block;padding:0;border:0;background:transparent;cursor:zoom-out}
-    #creative-zoom img{display:block;width:min(92vw,2000px);height:auto;max-height:90vh;object-fit:contain}
+    #creative-zoom button{display:block;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:zoom-out}
+    #creative-zoom img{display:block;width:100%;height:100%;object-fit:contain}
     .selected picture[role="button"]{cursor:zoom-in}
-      .zcool-showcase{width:min(1440px,calc(100% - 32px));margin:clamp(48px,7vw,110px) auto 0;color:#f5f5f5}
-    .zcool-heading{text-align:center;margin-bottom:clamp(24px,4vw,56px)}
-    .zcool-heading h2{margin:0 0 12px;font-size:clamp(24px,3vw,38px);line-height:1.15}
-    .zcool-heading a{color:#ccc;text-decoration:none;font-size:clamp(13px,1.5vw,18px)}
-    .zcool-grid{display:grid;grid-template-columns:repeat(6,minmax(150px,1fr));gap:8px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x proximity}
-    .zcool-card{display:block;scroll-snap-align:start;color:inherit;text-decoration:none;background:#111;border:1px solid #272727;border-radius:6px;overflow:hidden}
-    .zcool-card:hover,.zcool-card:focus-visible{border-color:#686868}
-    .zcool-card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#0a0a0a}
-    .zcool-card-info{padding:10px}
-    .zcool-card-title{display:flex;align-items:center;gap:5px}
-    .zcool-card h3{flex:1;min-width:0;font-size:clamp(12px,1.1vw,16px);line-height:1.45;margin:0;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
-    .zcool-flame{flex:0 0 16px;width:16px;height:19px;fill:#ff572f}
-    .zcool-card p,.zcool-card time{font-size:12px;color:#aaa}
-    .zcool-card p{margin:4px 0 12px}
-    .zcool-stats{display:flex;gap:8px;color:#bbb;font-size:11px}
-    .zcool-stats span{display:flex;align-items:center;gap:3px}
-    .zcool-stats svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linejoin:round}
-    .zcool-card time{display:block;border-top:1px solid #272727;padding:10px}
-  
+
     .scene-showcase{padding-top:0}
-    .dual-case{box-sizing:border-box;width:min(1440px,92vw);max-height:90dvh;padding:0;border:0;background:#000;color:#fff;overflow:auto;overscroll-behavior:contain}
-    .dual-case::backdrop{background:rgb(0 0 0 / .78)}
+    #halloween-case + #other-works{margin-top:clamp(36px,7vw,176px)}
+    .dual-case{position:fixed;inset:0 0 auto;margin:0 auto;box-sizing:border-box;width:min(1440px,92vw);max-height:100dvh;padding:0;border:0;background:#000;color:#d4d4d4;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
+    #halloween-modal{scrollbar-width:none}
+    #halloween-modal::-webkit-scrollbar{display:none}
+    .dual-case::backdrop{background:#000}
     body:has(.dual-case[open]){overflow:hidden}
-    .dual-case-header{position:sticky;top:0;z-index:1;display:flex;justify-content:flex-end;background:#000}
+    .dual-case-header{position:sticky;isolation:isolate;top:0;z-index:1;display:flex;justify-content:flex-end;background:#000}
     .dual-case img{cursor:zoom-out}
     .dual-case picture,.dual-case img{display:block;width:100%;height:auto}
-    .dual-case-close{display:block;margin:20px auto 0;padding:12px 20px;border:1px solid #333;background:#000;color:#fff;cursor:pointer}
+    .dual-case-close{display:block;margin:20px auto 0;padding:12px 20px;border:1px solid #333;background:#000;color:#d4d4d4;cursor:pointer}
     .scene-panels{display:flex;gap:12px;margin-inline:var(--inset);height:calc((100vw - 2 * var(--inset) - 24px) * .8 * 1103 / 2544)}
-    .scene-panel{position:relative;flex:1 1 0;min-width:0;overflow:hidden;border:0;border-radius:0;padding:0;background:#000;color:#fff;cursor:pointer;text-align:left;transition:flex-grow .35s ease}
+    .scene-panel{position:relative;flex:1 1 0;min-width:0;overflow:hidden;border:0;border-radius:0;padding:0;background:#000;color:#d4d4d4;cursor:pointer;text-align:left;transition:flex-grow .35s ease}
     .scene-panel[aria-pressed="true"]{flex-grow:8}
     .scene-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:65% center}
     .scene-panel[aria-pressed="true"] img{object-fit:contain;object-position:center}
@@ -117,53 +114,351 @@
     }
     @media(prefers-reduced-motion:reduce){.scene-panel{transition:none}}
     @media (min-width: 768px) {
-      .selected[aria-labelledby="selected-title"],
-      .selected[aria-labelledby="selling-title"],
+      .selected#selected-title,
+      .selected#selling-title,
       .scene-showcase {
         --inset: max(5vw, calc((100vw - 1440px) / 2));
       }
     }
       .rain-camera-banner{position:relative;width:100%;margin:0 0 clamp(12px,2vw,32px)}
-    .scene-showcase .rain-camera-banner h2{position:absolute;inset-inline:0;bottom:12%;margin:0;text-align:center}
-    .scene-title-en{display:block;margin-top:8px;color:#aaa;font-size:clamp(10px,1vw,14px);font-weight:500;letter-spacing:.18em}
-    #halloween-details .original-case-image{cursor:zoom-out}
-    #halloween-details{border-block:0}
+    @media(min-width:768px){.scene-showcase .scene-panels{margin-top:-52px}}
+    .selected#selected-title,.selected#selling-title{padding-top:0}
+    @media(min-width:768px){.selected#selected-title,.selected#selling-title{margin-top:-20px}}
+    .selected#selected-title,.selected#selling-title{padding-bottom:clamp(96px,12vw,270px)}
+    #selling-banner{margin-top:200px;margin-bottom:0;scroll-margin-top:100px}
+    #creative-banner{scroll-margin-top:100px;margin-block:calc(clamp(40px,6vw,112px) - 50px) 0}
+    #other-works{margin-bottom:0}
     .rain-camera-banner img{display:block;width:100%;height:auto}
+
+    #halloween-case{margin-top:0}
+    .selected#selected-title{padding-bottom:max(0px,calc(clamp(48px,6vw,135px) - 50px))}
+    .halloween-cover-button{appearance:none;display:block;width:100%;padding:0;border:0;background:#000;cursor:zoom-in}
+    .halloween-cover-button .case-preview{display:block}
+    .halloween-cover-button:focus:not(:focus-visible){outline:none}
+    .halloween-cover-button:focus-visible{outline:2px solid #aaa;outline-offset:4px}
+    @font-face{font-family:Poppins;src:url("assets/v2/halloween-native/fonts/Poppins-Regular.woff") format("woff");font-weight:400;font-display:swap}
+    @font-face{font-family:Poppins;src:url("assets/v2/halloween-native/fonts/Poppins-Medium.woff") format("woff");font-weight:500;font-display:swap}
+    .portfolio-nav{font-family:Poppins,Arial,sans-serif;position:fixed;inset:0 0 auto;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:clamp(56px,3.5vw,88px);padding-inline:clamp(16px,3vw,76px);background:#fafafa;color:#171717;border-bottom:1px solid #e8e8e8;font-size:13px}
+    @media(prefers-reduced-motion:no-preference){.portfolio-nav{transition:background-color .25s ease,color .25s ease,border-color .25s ease}}
+    .portfolio-nav.is-over-cover{background:transparent;color:#d4d4d4;border-bottom-color:transparent}
+    .portfolio-nav.is-over-cover .portfolio-menu-links{color:#171717}
+    .portfolio-nav a{color:inherit;text-decoration:none}
+    .portfolio-menu{justify-self:start}
+    .portfolio-menu summary{display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none}
+    .portfolio-menu summary::-webkit-details-marker{display:none}
+    .portfolio-menu-links{position:absolute;top:100%;left:0;min-width:220px;padding:14px clamp(16px,3vw,76px);background:#fafafa;border-bottom:1px solid #e8e8e8}
+    .portfolio-menu-links a{display:block;padding:10px 0}
+    .portfolio-nav a:hover{text-decoration:underline}
+    .portfolio-wordmark{font-size:clamp(16px,1.25vw,30px);font-weight:700;letter-spacing:.075em;white-space:nowrap}
+    .portfolio-work-link{justify-self:end;white-space:nowrap}
+    #motion,#halloween-case,#selected-title,#selling-title,#product-detail-pages{scroll-margin-top:100px}
+    @media(max-width:480px){.portfolio-nav{font-size:11px}}
+    .vi-guidelines{max-width:1440px;width:90%;margin:72px auto;scroll-margin-top:100px;color:#d4d4d4;font-family:Arial,sans-serif}
+    .vi-guidelines + .vi-guidelines{margin-top:-52px}
+    .vi-guidelines summary{display:grid;gap:16px;place-content:center;text-align:center;min-height:clamp(200px,26vw,380px);padding:24px;background:#15100d;border:1px solid #3d3026;cursor:pointer;list-style:none}
+    .vi-guidelines summary::-webkit-details-marker{display:none}
+    .vi-guidelines .guideline-title{font-size:clamp(22px,3vw,44px);font-weight:600}
+    .vi-guidelines .guideline-label,.vi-guidelines .guideline-open,.vi-guidelines .guideline-close{font-size:13px;color:#cfb59a}
+    .vi-guidelines .guideline-open{font-size:clamp(16px,1.5vw,22px);font-weight:600}
+    .vi-guidelines:not([open]) .guideline-close,.vi-guidelines[open] .guideline-open{display:none}
+    .guideline-reader iframe{display:block;width:100%;height:75vh;border:0;background:#15100d}
+    .guideline-reader a{display:inline-block;margin-top:14px;color:inherit}
+      #strengths{width:90%;max-width:1440px;margin:clamp(64px,8vw,128px) auto;scroll-margin-top:110px;background:#000;color:#d4d4d4}
+    #strengths h2{font-size:clamp(28px,4vw,48px);margin:0 0 32px}
+    #motion-title span,#strengths h2 span{display:inline-block;font-size:13px;font-weight:400;letter-spacing:.12em;color:#a6a6a6;margin-inline-start:10px}
+    .strengths-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    .strengths-grid article{padding:clamp(18px,2.3vw,34px);background:#0c0c0c}
+    .strengths-grid .strength-linked{padding:0}
+    .strength-linked a{display:block;height:100%;box-sizing:border-box;padding:clamp(18px,2.3vw,34px);color:inherit;text-decoration:none}
+    .strength-linked a:hover,.strength-linked a:focus-visible{background:#191919}
+    .strength-pdf{display:block;margin-top:14px;font-size:13px;text-decoration:underline}
+    .strength-index{font-size:13px;color:#aaa;font-variant-numeric:tabular-nums}
+    .strengths-grid h3{margin:20px 0 10px;font-size:clamp(19px,1.65vw,26px)}
+    .strengths-grid h3,.strengths-grid .strength-pdf{color:#ffa160}
+    .strengths-grid p{margin:0;color:#b4b4b4;font-size:15px;line-height:1.65;overflow-wrap:anywhere}
+    @media(max-width:1050px){.strengths-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:540px){.strengths-grid{grid-template-columns:1fr}}
+    .strength-linked .strength-pdf{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:0;border-radius:0;text-decoration:none;background:#999;color:#000}.strength-linked a:hover .strength-pdf,.strength-linked a:focus-visible .strength-pdf{background:#aaa}
+    .other-works-heading{text-align:center;padding:clamp(80px,9vw,346px) 20px clamp(48px,4vw,154px);font-family:Arial,"Microsoft YaHei",sans-serif}
+    .other-works-heading h2{margin:0;color:#d4d4d4;font-size:clamp(32px,2.85vw,110px);font-weight:700;line-height:1.2;letter-spacing:-.035em}
+    .other-works-heading p{margin:clamp(14px,1vw,38px) 0 0;color:#858589;font:200 clamp(16px,1.1vw,42px)/1.4 Poppins,Arial,sans-serif}
+    .bath-poster-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:min(1440px,90%);margin:0 auto}
+    .bath-poster-grid img{display:block;width:100%;height:auto}
+
+.zcool-showcase{width:min(1440px,90%);margin:320px auto 0;font-family:Arial,"Microsoft YaHei",sans-serif}
+.zcool-showcase>header{text-align:center;margin-bottom:86px;color:#ccc}
+.zcool-showcase h2{margin:0 0 22px;font-size:36px;line-height:1.2;font-weight:700}.zcool-showcase h2 b{font-family:Arial,sans-serif;font-weight:900;font-style:italic;letter-spacing:-3px}
+.zcool-showcase>header>a{color:#ccc;text-decoration:none;font-size:clamp(16px,1.8vw,36px);overflow-wrap:anywhere}.zcool-flame{display:inline-block;width:13px;height:17px;color:#ff4622;vertical-align:middle;flex-shrink:0}.zcool-showcase>header .zcool-flame{width:25px;height:32px;margin-left:10px}
+.zcool-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.zcool-card{min-width:0;overflow:hidden;border-radius:3px;background:#fff;color:#282828}.zcool-card>img{display:block;width:100%;height:auto;aspect-ratio:247/184;object-fit:cover}.zcool-card-body{padding:15px 16px 17px}.zcool-card h3{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;line-height:1.4;font-weight:400;white-space:nowrap;margin:0;overflow:hidden}.zcool-card p{margin:3px 0 20px;color:#b5b5b5;font-size:12px}.zcool-stats{display:flex;gap:12px;color:#b5b5b5;font-size:12px}.zcool-card footer{padding:19px 16px;border-top:1px solid #f2f2f2;color:#b5b5b5;font-size:12px}
+
+.zcool-showcase .zcool-logo{display:block;width:200px;height:auto;margin:0 auto}
+.zcool-showcase>header>a{font-size:clamp(14px,1.17vw,23.4px)}
+.zcool-showcase>header .zcool-flame{object-fit:contain;margin-left:10px;width:23px;height:30px}
+.zcool-showcase>header .zcool-flame-small{width:16px;height:26px}
+.zcool-card h3 .zcool-flame{display:block;object-fit:contain;width:13px;height:17px}
+.zcool-card h3 .zcool-flame-small{width:9px;height:15px}
+.zcool-stats span{display:inline-flex;align-items:center;gap:5px}.zcool-stats svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linejoin:round}
+
+.zcool-card{border-radius:5px;isolation:isolate}
+.zcool-card>img{border-radius:5px 5px 0 0;clip-path:inset(0 round 5px 5px 0 0)}
+
+.zcool-cards{gap:10px}
+.zcool-card{background:#000;border-radius:12px;overflow:hidden;clip-path:inset(0 round 12px)}
+.zcool-cover-frame{position:relative;aspect-ratio:247/184;overflow:hidden;background:#000;border-radius:12px 12px 0 0}
+.zcool-cover-frame>img{display:block;position:absolute;width:calc(100% + 12px);height:calc(100% + 12px);max-width:none;left:-6px;top:-6px;object-fit:cover;border:0;border-radius:0;clip-path:none}
+.zcool-card-body,.zcool-card footer{background:#fff}
+
+.wine-poster-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:min(1440px,90%);margin:80px auto 0}.wine-poster-grid img{display:block;width:100%;height:auto}
+    .wine-poster-grid + #brand-guidelines{margin-top:10px}
+
+.wine-five-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;width:min(1440px,90%);margin:80px auto 0}.wine-five-grid img{display:block;width:100%;height:auto}.wine-five-grid + .wine-poster-grid{margin-top:10px}
+
+.other-works-content #group-guidelines{margin:150px auto 0}
+.other-works-content #group-guidelines + #brand-guidelines{margin:10px auto 0}
+.other-works-content #brand-guidelines + .wine-five-grid{margin-top:10px}
+.wine-five-grid + .wine-poster-grid{margin-top:10px}
+
+.wine-promo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:min(1440px,90%);margin:10px auto 0}.wine-promo-grid img{display:block;width:100%;height:auto}
+
+.vi-direct-link{display:block;text-decoration:none}
+.vi-direct-summary{display:grid;gap:16px;place-content:center;text-align:center;min-height:clamp(200px,26vw,380px);padding:24px;background:#15100d;border:1px solid #3d3026;cursor:pointer}
+
+.other-works-content #brand-guidelines + .wine-poster-grid{margin-top:10px}
+.wine-square-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:min(1440px,90%);margin:10px auto 0}.wine-square-grid img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+
+.wine-double11-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:min(1440px,90%);margin:10px auto 0}.wine-double11-grid img{display:block;width:100%;height:auto}
+
+.bamboo-poster-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:min(1440px,90%);margin:80px auto 0}.bamboo-poster-grid img{display:block;width:100%;height:auto}
+
+.coffee-valentine{width:min(1440px,90%);margin:10px auto 0}
+.coffee-valentine-top{display:grid;grid-template-columns:2.300218fr 0.458515fr;gap:10px;align-items:stretch}
+.coffee-valentine-bottom{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:10px}
+.coffee-valentine img{display:block;width:100%;height:auto}
+
+.coffee-menu-showcase{width:min(1440px,90%);margin:10px auto 0}
+.coffee-menu-top{display:grid;grid-template-columns:2.55fr 1fr;gap:10px;align-items:stretch}
+.coffee-menu-banners{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:10px;min-height:0}
+.coffee-menu-showcase img{display:block;width:100%;height:auto}
+.coffee-menu-banners img{height:100%;object-fit:cover;min-height:0}
+.coffee-menu-posters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:10px}
+
+.coffee-valentine-bottom{grid-template-columns:minmax(0,0.5591296121fr) minmax(0,0.5591296121fr) minmax(0,0.6064333018fr) minmax(0,0.5014191107fr);align-items:start}
+.coffee-valentine-bottom img{width:100%;height:auto;object-fit:contain;aspect-ratio:auto}
+.coffee-menu-posters{grid-template-columns:minmax(0,0.6637168142fr) minmax(0,0.6637168142fr) minmax(0,0.7035398230fr) minmax(0,0.6607669617fr);align-items:start}
+.coffee-menu-posters img{width:100%;height:auto;object-fit:contain;aspect-ratio:auto}
+
+.bamboo-poster-grid{grid-template-columns:minmax(0,0.6633416459fr) minmax(0,0.6641729011fr) minmax(0,0.7049044057fr) minmax(0,0.7040731505fr);align-items:start}.bamboo-poster-grid img{width:100%;height:auto;object-fit:contain;aspect-ratio:auto}
+
+.coffee-valentine-bottom{margin-top:0}
+#ppt-design{margin-top:10px;margin-bottom:0}
+.portfolio-ending{padding:230px 20px 230px;background:#000;color:#4d4d4d;text-align:center;font:400 12px/1.5 Arial,"Microsoft YaHei",sans-serif;letter-spacing:.12em}
+
+.bamboo-poster-grid{margin-top:150px}
+
+@font-face{font-family:CoverPoppins;src:url("assets/v2/halloween-native/fonts/Poppins-Regular.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+.desktop-cover-copy{position:absolute;right:16.5%;top:48%;display:flex;flex-direction:column;align-items:flex-end;gap:clamp(18px,2.8svh,42px);padding:28px 0 28px 50px;background:#000;color:#969693;font:400 clamp(16px,1.25vw,30px)/1.2 CoverPoppins,sans-serif;text-align:right}
+.mobile-copy{font-family:CoverPoppins,sans-serif;font-weight:400}
+@media(max-width:767px),(max-aspect-ratio:4/5){.desktop-cover-copy{display:none}}
+
+.portfolio-work-link .contact-arrow{display:inline-block;width:1em;height:1em;vertical-align:-.12em;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+
+@media(max-width:767px){
+ .motion{--inset:7vw;--gap:20px}
+ .motion-project{flex:0 0 74vw}
+ .motion-project figcaption{margin:20px 10px 0;gap:10px}
+ .motion h2{margin-left:7vw;margin-right:7vw}
+}
+
+.mobile-video-shell{position:relative}.mobile-video-tools{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;opacity:0;pointer-events:none;transition:opacity .12s;background:rgba(0,0,0,.08)}
+.mobile-video-tools.is-visible{opacity:1}.mobile-video-tools.is-visible button{pointer-events:auto}
+.mobile-video-tools button{min-width:44px;min-height:44px;border:0;border-radius:50%;background:rgba(0,0,0,.65);color:#d4d4d4;font:14px Arial,sans-serif;cursor:pointer}
+.mobile-video-tools .mobile-video-sound{position:absolute;right:12px;top:12px}.mobile-video-tools .mobile-video-fullscreen{position:absolute;left:12px;top:12px}
+
+@media(max-width:767px){
+ #strengths .strengths-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ #strengths .strengths-grid article{min-width:0;padding:14px}
+ #strengths .strengths-grid .strength-linked{padding:0}
+ #strengths .strength-linked a{padding:14px}
+ #strengths .strengths-grid h3{font-size:17px;line-height:1.4;margin:18px 0 10px;overflow-wrap:anywhere}
+ #strengths .strengths-grid p{font-size:11px;line-height:1.65}
+ #strengths .strength-linked .strength-pdf{font-size:11px;padding:0 8px;max-width:100%;flex-wrap:wrap}
+}
+
+@media(max-width:767px){
+ .zcool-showcase{width:100%;margin:100px auto 0}
+ .zcool-showcase>header{margin:0 7vw 32px}
+ .zcool-showcase .zcool-logo{width:156px}
+ .zcool-showcase h2{margin-bottom:18px}
+ .zcool-showcase>header>a{font-size:12px;line-height:1.6;overflow-wrap:normal;white-space:nowrap}
+ .zcool-showcase>header .zcool-flame{width:13px;height:18px;margin-left:5px}
+ .zcool-showcase>header .zcool-flame-small{width:9px;height:15px}
+ .zcool-cards{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:7vw;padding:0 7vw;scrollbar-width:none;overscroll-behavior-x:contain;align-items:stretch}
+ .zcool-cards::-webkit-scrollbar{display:none}
+ .zcool-card{flex:0 0 34vw;min-width:0;scroll-snap-align:start;border-radius:12px;display:flex;flex-direction:column}
+ .zcool-card-body{padding:14px 14px 16px;flex:1}
+ .zcool-card h3{font-size:14px;line-height:1.5;white-space:normal;min-height:42px;align-items:flex-start}
+ .zcool-card h3 .zcool-flame{margin-top:3px}
+ .zcool-card p{font-size:12px;margin:4px 0 18px;white-space:nowrap}
+ .zcool-stats{gap:14px;font-size:12px;flex-wrap:nowrap}
+ .zcool-stats span{white-space:nowrap}
+ .zcool-card footer{padding:14px;font-size:12px;white-space:nowrap}
+ .zcool-showcase + .other-works-content .other-works-heading{padding-top:80px}
+}
+
+@media(max-width:767px){
+ .zcool-card-body{padding:10px 9px 12px}
+ .zcool-card h3{font-size:11px;line-height:1.45;min-height:32px;gap:4px}
+ .zcool-card p{font-size:10px;margin:4px 0 12px}
+ .zcool-stats{gap:6px;font-size:9px;flex-wrap:wrap}
+ .zcool-stats span{gap:2px}
+ .zcool-stats svg{width:12px;height:12px}
+ .zcool-card footer{padding:10px 9px;font-size:10px}
+ .zcool-card h3 .zcool-flame{width:10px;height:13px}
+ .zcool-card h3 .zcool-flame-small{width:7px;height:11px}
+}
+
+@media(max-width:767px){.bath-poster-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+
+@media(max-width:767px){
+ .wine-poster-grid,.wine-promo-grid,.wine-double11-grid,.bamboo-poster-grid,.coffee-valentine-bottom,.coffee-menu-posters{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
+ .wine-poster-grid img,.wine-promo-grid img,.wine-double11-grid img,.bamboo-poster-grid img,.coffee-valentine-bottom img,.coffee-menu-posters img{display:block;width:100%;height:auto;object-fit:contain;aspect-ratio:auto}
+}
+
+.portfolio-menu-links{max-height:calc(100dvh - 88px);overflow-y:auto}.portfolio-menu-links a{white-space:nowrap}#zcool-showcase,#other-works-content{scroll-margin-top:100px}
+
+@media(min-width:768px){
+ #strengths .strengths-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:stretch}
+ #strengths .strengths-grid article{position:relative;min-width:0;min-height:300px;padding:28px;background:#d4d4d4;color:#000;display:flex;flex-direction:column}
+ #strengths .strengths-grid article.strength-linked{padding:0}
+ #strengths .strength-linked>a{position:relative;display:flex;flex-direction:column;flex:1;height:100%;padding:28px;color:#000}
+ #strengths .strength-linked>a:hover,#strengths .strength-linked>a:focus-visible{background:#c9c9c9}
+ #strengths .strength-index{color:#000;font:700 15px/1.3 Arial,sans-serif}
+ #strengths .strengths-grid h3{margin:30px 0 32px;color:#000;font-size:clamp(21px,1.65vw,28px);line-height:1.25;letter-spacing:-.035em;font-weight:700;overflow-wrap:anywhere}
+ #strengths .strengths-grid p{margin-top:auto;color:#111;font-size:14px;line-height:1.65}
+ #strengths .strength-linked .strength-pdf{display:none}
+ #strengths .strength-linked>a::after{content:"";position:absolute;right:28px;top:29px;width:23px;height:23px;background:#ff6b00;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19 19 5M5 5h14v14' fill='none' stroke='black' stroke-width='3'/%3E%3C/svg%3E") center/contain no-repeat}
+}
+
+@font-face{font-family:StrengthPoppins;src:url("assets/v2/halloween-native/fonts/Poppins-Regular.woff") format("woff");font-weight:400;font-style:normal;unicode-range:U+0000-024F}
+@font-face{font-family:StrengthPoppins;src:url("assets/v2/halloween-native/fonts/Poppins-Medium.woff") format("woff");font-weight:500;font-style:normal;unicode-range:U+0000-024F}
+@font-face{font-family:StrengthHan;src:url("assets/v2/halloween-native/fonts/SourceHanSansCN-Regular.woff") format("woff");font-weight:400;font-style:normal}
+@font-face{font-family:StrengthHan;src:url("assets/v2/halloween-native/fonts/SourceHanSansCN-Bold.woff") format("woff");font-weight:700;font-style:normal}
+#strengths .strengths-grid,#strengths .strengths-grid .strength-index,#strengths .strengths-grid h3,#strengths .strengths-grid p,#strengths .strengths-grid .strength-pdf{font-family:StrengthPoppins,StrengthHan,sans-serif}
+#strengths .strengths-grid .strength-index,#strengths .strengths-grid h3,#strengths .strengths-grid strong{font-weight:700}
+#strengths .strengths-grid p{font-weight:400}
+
+@media(min-width:768px) and (hover:hover){
+ #strengths .strength-linked>a{cursor:pointer;transition:transform .18s ease,background-color .18s ease,box-shadow .18s ease}
+ #strengths .strength-linked>a::after{transition:transform .18s ease}
+ #strengths .strength-linked>a:hover,#strengths .strength-linked>a:focus-visible{background:#e5e5e5;transform:translateY(-5px);box-shadow:0 12px 24px rgba(0,0,0,.3);outline:none}
+ #strengths .strength-linked>a:hover::after,#strengths .strength-linked>a:focus-visible::after{transform:translate(4px,-4px)}
+}
+@media(prefers-reduced-motion:reduce){#strengths .strength-linked>a,#strengths .strength-linked>a::after{transition:none}}
+
+@media(min-width:768px){#strengths{margin-bottom:260px}}
+
+@media(min-width:768px){
+ #motion-title span,#strengths h2 span{font-family:Poppins,Arial,sans-serif;font-size:clamp(16px,1.1vw,42px);font-weight:200;line-height:1.4;letter-spacing:normal}
+}
+
+/* A text-free CSS cover prevents baked-in lettering from surfacing on resize. */
+.desktop-cover{background:radial-gradient(ellipse 145% 72% at 0% -12%,#191919 0%,#0c0c0c 38%,#020202 66%,#000 85%)}
+.desktop-cover-copy{padding:28px 0 28px 50px;background:transparent}
+
+@media(max-width:767px){
+ #strengths .strengths-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:stretch}
+ #strengths .strengths-grid article{position:relative;background:#d4d4d4;color:#000;display:flex;flex-direction:column;min-height:240px}
+ #strengths .strength-linked>a{position:relative;display:flex;flex-direction:column;flex:1;color:#000}
+ #strengths .strength-index{color:#000;font-weight:700}
+ #strengths .strengths-grid h3{color:#000;margin:24px 0 28px}
+ #strengths .strengths-grid p{color:#111;margin-top:auto}
+ #strengths .strength-linked .strength-pdf{display:none}
+ #strengths .strength-linked>a:hover,#strengths .strength-linked>a:focus-visible{background:#e5e5e5}
+ #strengths .strength-linked>a::after{content:"";position:absolute;right:14px;top:15px;width:18px;height:18px;background:#ff6b00;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19 19 5M5 5h14v14' fill='none' stroke='black' stroke-width='3'/%3E%3C/svg%3E") center/contain no-repeat}
+}
+
+.scene-mobile-caption{display:none}
+@media(max-width:767px){
+ #scene-panels{display:flex;flex-direction:row;height:auto;margin:0;gap:12px;padding:0 7vw 6px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:7vw;scrollbar-width:none;overscroll-behavior-x:contain}
+ #scene-panels::-webkit-scrollbar{display:none}
+ #scene-panels .scene-panel,#scene-panels .scene-panel[aria-pressed="true"]{flex:0 0 78vw;min-height:0;aspect-ratio:auto;scroll-snap-align:start;transition:none;align-self:stretch;background:#101010;border-radius:8px;display:flex;flex-direction:column}
+ #scene-panels .scene-panel img,#scene-panels .scene-panel[aria-pressed="true"] img{position:static;width:100%;height:auto;aspect-ratio:2427/1052;object-fit:contain;object-position:center;filter:none}
+ #scene-panels .scene-mobile-caption{display:flex;flex-direction:column;gap:8px;padding:16px;text-align:left}
+ .scene-mobile-caption strong{font-size:16px;font-weight:500;color:#d4d4d4}
+ .scene-mobile-caption>span{font-size:11px;color:#969693}
+}
+
+@media(max-width:767px){#scene-panels .scene-panel{touch-action:pan-x pan-y; -webkit-tap-highlight-color:transparent}#scene-panels .scene-panel img{pointer-events:none;-webkit-user-drag:none;user-select:none}}
+
+@media(max-width:767px){
+ dialog.dual-case.mobile-case-open{display:block!important;position:fixed!important;inset:0!important;width:100%!important;height:100dvh!important;max-height:100dvh!important;max-width:none!important;margin:0!important;z-index:1000!important;overflow-y:auto!important;background:#000;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+ body.mobile-case-active{overflow:hidden}
+ .mobile-case-open .dual-case-header{position:sticky;top:0;z-index:2}
+}
+
+@media(max-width:767px){#scene-panels .scene-panel picture{display:block;width:100%}#scene-panels .scene-panel picture img{aspect-ratio:2427/1052}}
+
+@media(max-width:767px){#selling-banner{margin-top:50px}}
+
+@media(max-width:767px){#halloween-case{margin-top:50px}}
+
+@media(max-width:767px){
+ .zcool-cards .zcool-card{border-radius:4px;clip-path:inset(0 round 4px);overflow:hidden;background:#000}
+ .zcool-card .zcool-cover-frame{border-radius:4px 4px 0 0;overflow:hidden}
+}
   </style>
-  <link rel="stylesheet" href="assets/v2/halloween-case.css?v=20261028-images">
+  <link rel="stylesheet" href="assets/v2/halloween-case.css?v=text-d4d4d4">
+  <link rel="stylesheet" href="assets/v2/typography.css?v=20261112">
 </head>
-<body>
+<body id="portfolio-top">
+  <nav class="portfolio-nav" aria-label="&#20316;&#21697;&#38598;&#23548;&#33322;">
+    <details class="portfolio-menu">
+      <summary><span aria-hidden="true">&#9776;</span> 导航</summary>
+      <div class="portfolio-menu-links">
+        <a href="#portfolio-top">首页</a>
+        <a href="#motion">视频动画</a>
+        <a href="#strengths">个人优势</a>
+        <a href="#product-detail-pages">产品介绍页</a>
+        <a href="#selling-banner">产品卖点视觉</a>
+        <a href="#creative-banner">创意视觉</a>
+        <a href="#other-works-content">其他作品</a>
+      </div>
+    </details>
+    <a class="portfolio-wordmark" href="#portfolio-top">许志斋作品</a>
+    <a class="portfolio-work-link" href="assets/v2/xu-zhizhai-resume-2026.pdf" target="_blank" rel="noopener">联系我 <svg class="contact-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M4 4h8v8"/></svg></a>
+  </nav>
   <main class="cover" aria-label="Xu Zhizhai — Portfolio 2026">
-    <picture class="desktop-cover"><source media="(min-width:768px) and (min-aspect-ratio:4/5)" srcset="assets/v2/cover-desktop-2026.png"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" width="3840" height="1632" alt="XU. 2026. 11 years' experience. Visual Designer. Portfolio." fetchpriority="high" decoding="async"></picture>
+    <div class="desktop-cover" aria-hidden="true"></div>
+    <div class="desktop-cover-copy" aria-label="XU 2026 11 years experience Visual Designer Portfolio"><span>XU</span><span>2026</span><span>11 YRS’ EXP</span><span>VISUAL DESIGNER</span><span>PORTFOLIO</span></div>
     <div class="mobile-cover"><h1 class="mobile-copy"><span>XU</span><span>2026</span><span>11 YRS’ EXP</span><span>VISUAL DESIGNER</span><span>PORTFOLIO</span></h1></div>
   </main>
 
 
   <section class="motion selected" aria-labelledby="motion-title" id="motion">
-    <h2 id="motion-title" lang="zh-CN">视频动画</h2>
+    <h2 id="motion-title" lang="zh-CN">视频动画<span lang="en">MOTION DESIGN</span></h2>
     <div class="motion-track" id="motion-track" tabindex="0" role="region" aria-label="六组动态视觉作品，可横向滑动">
       <figure class="motion-project">
-        <video class="motion-video" width="3840" height="1632" controls muted loop playsinline preload="none" aria-label="黑五预热，营销视觉动画" data-desktop="assets/v2/delivery/black-friday-motion-02.mp4" data-mobile="assets/v2/delivery/black-friday-motion-01.mp4" data-poster-desktop="assets/works/previews/black-friday-motion-motion-02.webp" data-poster-mobile="assets/works/cards/black-friday-motion-motion-01-800.webp" poster="assets/works/previews/black-friday-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
+        <video class="motion-video" width="3840" height="1632" controls muted playsinline preload="none" aria-label="黑五预热，营销视觉动画" data-desktop="assets/v2/delivery/black-friday-motion-02.mp4" data-mobile="assets/v2/delivery/black-friday-motion-01.mp4" data-poster-desktop="assets/works/previews/black-friday-motion-motion-02.webp" data-poster-mobile="assets/works/cards/black-friday-motion-motion-01-800.webp" poster="assets/works/previews/black-friday-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
         <figcaption><strong>Black Friday.</strong><span lang="zh-CN">黑五预热 / aosu</span><span class="motion-number">01 / 06</span></figcaption>
       </figure>
       <figure class="motion-project">
-        <video class="motion-video" width="3840" height="1632" controls muted loop playsinline preload="none" aria-label="夏日浪潮，营销视觉动画" data-desktop="assets/v2/delivery/summer-wave-02.mp4" data-mobile="assets/v2/delivery/summer-wave-01.mp4" data-poster-desktop="assets/works/previews/summer-wave-motion-02.webp" data-poster-mobile="assets/works/cards/summer-wave-motion-01-800.webp" poster="assets/works/previews/summer-wave-motion-02.webp">你的浏览器不支持视频播放。</video>
+        <video class="motion-video" width="3840" height="1632" controls muted playsinline preload="none" aria-label="夏日浪潮，营销视觉动画" data-desktop="assets/v2/delivery/summer-wave-02.mp4" data-mobile="assets/v2/delivery/summer-wave-01.mp4" data-poster-desktop="assets/works/previews/summer-wave-motion-02.webp" data-poster-mobile="assets/works/cards/summer-wave-motion-01-800.webp" poster="assets/works/previews/summer-wave-motion-02.webp">你的浏览器不支持视频播放。</video>
         <figcaption><strong>Summer Ready.</strong><span lang="zh-CN">夏日浪潮 / aosu</span><span class="motion-number">02 / 06</span></figcaption>
       </figure>
       <figure class="motion-project">
-        <video class="motion-video" width="3840" height="1632" controls muted loop playsinline preload="none" aria-label="夏日礼遇，营销视觉动画" data-desktop="assets/v2/delivery/summer-event-motion-02.mp4" data-mobile="assets/v2/delivery/summer-event-motion-01.mp4" data-poster-desktop="assets/works/previews/summer-event-motion-motion-02.webp" data-poster-mobile="assets/works/cards/summer-event-motion-motion-01-800.webp" poster="assets/works/previews/summer-event-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
-        <figcaption><strong>Summer Event.</strong><span lang="zh-CN">夏日礼遇 / aosu</span><span class="motion-number">03 / 06</span></figcaption>
+        <video class="motion-video" width="3840" height="1632" controls muted playsinline preload="none" aria-label="赛场热情，营销视觉动画" data-desktop="assets/v2/delivery/football-motion-02.mp4" data-mobile="assets/v2/delivery/football-motion-01.mp4" data-poster-desktop="assets/works/previews/football-motion-motion-02.webp" data-poster-mobile="assets/works/cards/football-motion-motion-01-800.webp" poster="assets/works/previews/football-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
+        <figcaption><strong>Game Day.</strong><span lang="zh-CN">赛场热情 / aosu</span><span class="motion-number">03 / 06</span></figcaption>
       </figure>
       <figure class="motion-project">
-        <video class="motion-video" width="3840" height="1632" controls muted loop playsinline preload="none" aria-label="赛场热情，营销视觉动画" data-desktop="assets/v2/delivery/football-motion-02.mp4" data-mobile="assets/v2/delivery/football-motion-01.mp4" data-poster-desktop="assets/works/previews/football-motion-motion-02.webp" data-poster-mobile="assets/works/cards/football-motion-motion-01-800.webp" poster="assets/works/previews/football-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
-        <figcaption><strong>Game Day.</strong><span lang="zh-CN">赛场热情 / aosu</span><span class="motion-number">04 / 06</span></figcaption>
+        <video class="motion-video" width="3840" height="1632" controls muted playsinline preload="none" aria-label="夏日礼遇，营销视觉动画" data-desktop="assets/v2/delivery/summer-event-motion-02.mp4" data-mobile="assets/v2/delivery/summer-event-motion-01.mp4" data-poster-desktop="assets/works/previews/summer-event-motion-motion-02.webp" data-poster-mobile="assets/works/cards/summer-event-motion-motion-01-800.webp" poster="assets/works/previews/summer-event-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
+        <figcaption><strong>Summer Event.</strong><span lang="zh-CN">夏日礼遇 / aosu</span><span class="motion-number">04 / 06</span></figcaption>
       </figure>
       <figure class="motion-project">
-        <video class="motion-video" width="3840" height="1632" controls muted loop playsinline preload="none" aria-label="全屋守护，营销视觉动画" data-desktop="assets/works/videos/full-home-motion-02.mp4" data-mobile="assets/works/videos/full-home-motion-01.mp4" data-poster-desktop="assets/works/previews/full-home-motion-motion-02.webp" data-poster-mobile="assets/works/cards/full-home-motion-motion-01-800.webp" poster="assets/works/previews/full-home-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
+        <video class="motion-video" width="3840" height="1632" controls muted playsinline preload="none" aria-label="全屋守护，营销视觉动画" data-desktop="assets/works/videos/full-home-motion-02.mp4" data-mobile="assets/works/videos/full-home-motion-01.mp4" data-poster-desktop="assets/works/previews/full-home-motion-motion-02.webp" data-poster-mobile="assets/works/cards/full-home-motion-motion-01-800.webp" poster="assets/works/previews/full-home-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
         <figcaption><strong>Full Home.</strong><span lang="zh-CN">全屋守护 / aosu</span><span class="motion-number">05 / 06</span></figcaption>
       </figure>
       <figure class="motion-project">
-        <video class="motion-video" width="3840" height="1632" controls muted loop playsinline preload="none" aria-label="夜视守护，营销视觉动画" data-desktop="assets/works/videos/night-vision-motion-02.mp4" data-mobile="assets/works/videos/night-vision-motion-01.mp4" data-poster-desktop="assets/works/previews/night-vision-motion-motion-02.webp" data-poster-mobile="assets/works/cards/night-vision-motion-motion-01-800.webp" poster="assets/works/previews/night-vision-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
+        <video class="motion-video" width="3840" height="1632" controls muted playsinline preload="none" aria-label="夜视守护，营销视觉动画" data-desktop="assets/works/videos/night-vision-motion-02.mp4" data-mobile="assets/works/videos/night-vision-motion-01.mp4" data-poster-desktop="assets/works/previews/night-vision-motion-motion-02.webp" data-poster-mobile="assets/works/cards/night-vision-motion-motion-01-800.webp" poster="assets/works/previews/night-vision-motion-motion-02.webp">你的浏览器不支持视频播放。</video>
         <figcaption><strong>Reveal the Night.</strong><span lang="zh-CN">夜视守护 / aosu</span><span class="motion-number">06 / 06</span></figcaption>
       </figure>
     </div>
@@ -174,94 +469,34 @@
   </section>
 
 
-  <section class="zcool-showcase" lang="zh-CN" aria-labelledby="zcool-title">
-    <header class="zcool-heading">
-      <h2 id="zcool-title">ZCOOL 站酷</h2>
-      <a href="https://www.zcool.com.cn/u/15231846" target="_blank" rel="noopener noreferrer">zcool.com.cn/u/15231846 ↗</a>
-    </header>
-    <div class="zcool-grid">
-      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjgzNTMzNDA=.html" target="_blank" rel="noopener noreferrer">
-        <img src="assets/v2/zcool-17088335.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="香舍里-车载香薰-主视觉海报设计升级">香舍里-车载香薰-主视觉海报设计升级</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="频道推荐"><title>频道推荐</title><path d="M12 1c1 5-4 6-3 10 1-1 2-2 2-4 4 3 6 6 6 9a8 8 0 0 1-16 0c0-5 4-8 5-10 0 3 1 4 2 4 0-4 3-6 4-9Z"/></svg></div><p>电商</p><div class="zcool-stats"><span aria-label="浏览 1014"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>1014</span><span aria-label="评论 0"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>0</span><span aria-label="推荐 15"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>15</span></div></div><time datetime="2024-04-18">2024-04-18</time>
-      </a>
-      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU4NDM0MzI=.html" target="_blank" rel="noopener noreferrer">
-        <img src="assets/v2/zcool-16460858.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="产品海报设计 x AIGC（mj）流程分享">产品海报设计 x AIGC（mj）流程分享</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="频道推荐"><title>频道推荐</title><path d="M12 1c1 5-4 6-3 10 1-1 2-2 2-4 4 3 6 6 6 9a8 8 0 0 1-16 0c0-5 4-8 5-10 0 3 1 4 2 4 0-4 3-6 4-9Z"/></svg></div><p>电商</p><div class="zcool-stats"><span aria-label="浏览 3274"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>3274</span><span aria-label="评论 16"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>16</span><span aria-label="推荐 104"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>104</span></div></div><time datetime="2023-07-10">2023-07-10</time>
-      </a>
-      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU3NjU1NjQ=.html" target="_blank" rel="noopener noreferrer">
-        <img src="assets/v2/zcool-16441391.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="西鸽电商2022年-中秋设计分享">西鸽电商2022年-中秋设计分享</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="频道推荐"><title>频道推荐</title><path d="M12 1c1 5-4 6-3 10 1-1 2-2 2-4 4 3 6 6 6 9a8 8 0 0 1-16 0c0-5 4-8 5-10 0 3 1 4 2 4 0-4 3-6 4-9Z"/></svg></div><p>电商</p><div class="zcool-stats"><span aria-label="浏览 871"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>871</span><span aria-label="评论 2"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>2</span><span aria-label="推荐 35"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>35</span></div></div><time datetime="2023-07-03">2023-07-03</time>
-      </a>
-      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjc5MzAyOTI=.html" target="_blank" rel="noopener noreferrer">
-        <img src="assets/v2/zcool-16982573.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="许森作品集">许森作品集</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="佳作推荐"><title>佳作推荐</title><path d="M12 1c-1 5 5 6 5 12 0 4-3 7-7 9 1-5-6-6-6-12 0-4 3-7 8-9Z"/></svg></div><p>电商</p><div class="zcool-stats"><span aria-label="浏览 287"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>287</span><span aria-label="评论 2"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>2</span><span aria-label="推荐 21"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>21</span></div></div><time datetime="2024-03-04">2024-03-04</time>
-      </a>
-      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU2ODY3Njg=.html" target="_blank" rel="noopener noreferrer">
-        <img src="assets/v2/zcool-16421692.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="2023年西鸽618大促">2023年西鸽618大促</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="佳作推荐"><title>佳作推荐</title><path d="M12 1c-1 5 5 6 5 12 0 4-3 7-7 9 1-5-6-6-6-12 0-4 3-7 8-9Z"/></svg></div><p>电商</p><div class="zcool-stats"><span aria-label="浏览 836"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>836</span><span aria-label="评论 4"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>4</span><span aria-label="推荐 28"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>28</span></div></div><time datetime="2023-06-26">2023-06-26</time>
-      </a>
-      <a class="zcool-card" href="https://www.zcool.com.cn/work/ZNjU1MDExMTY=.html" target="_blank" rel="noopener noreferrer">
-        <img src="assets/v2/zcool-16375279.webp" width="800" height="600" alt="" loading="lazy" decoding="async">
-        <div class="zcool-card-info"><div class="zcool-card-title"><h3 title="插画作品">插画作品</h3><svg class="zcool-flame" viewBox="0 0 20 24" role="img" aria-label="佳作推荐"><title>佳作推荐</title><path d="M12 1c-1 5 5 6 5 12 0 4-3 7-7 9 1-5-6-6-6-12 0-4 3-7 8-9Z"/></svg></div><p>商业插画</p><div class="zcool-stats"><span aria-label="浏览 277"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8s2.5-4.5 7-4.5S15 8 15 8s-2.5 4.5-7 4.5S1 8 1 8Zm9 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/></svg>277</span><span aria-label="评论 4"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v8H8l-4 3v-3H2z M5 7h.1 M8 7h.1 M11 7h.1"/></svg>4</span><span aria-label="推荐 23"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7l3-5c2 0 2 2 1 4h5l-1 7H5z M2 7h3v6H2z"/></svg>23</span></div></div><time datetime="2023-06-08">2023-06-08</time>
-      </a>
+  <section id="strengths" lang="zh-CN" aria-labelledby="strengths-title">
+    <h2 id="strengths-title">个人优势 <span lang="en">DESIGN STRENGTHS</span></h2>
+    <div class="strengths-grid">
+      <article class="strength-linked"><a href="assets/v2/xige-brand-guidelines.pdf" target="_blank" rel="noopener"><span class="strength-index" aria-hidden="true">01</span><h3>品牌视觉统一</h3><p>以 aosu 为例，品牌战略方向是“家庭安全，是我们的首要目标”。<strong>品牌视觉统一，则是这一方向在视觉上的一致表达。</strong></p><span class="strength-pdf">&#28857;&#20987;&#26597;&#30475;&#26696;&#20363; &#8599;</span></a></article>
+      <article class="strength-linked"><a href="assets/v2/teng-brand-guidelines.pdf" target="_blank" rel="noopener"><span class="strength-index" aria-hidden="true">02</span><h3>产品VI统一规范</h3><p>策划并跟进产品拍摄，把控渲染质量，统一产品主视觉、字体、色彩和各类宣传物料。</p><span class="strength-pdf">&#28857;&#20987;&#26597;&#30475;&#26696;&#20363; &#8599;</span></a></article>
+      <article class="strength-linked"><a href="assets/v2/email-ab-test.pdf" target="_blank" rel="noopener"><span class="strength-index" aria-hidden="true">03</span><h3>ROI +27%</h3><p>Facebook 与 Google 广告素材对比中，平均 ROI 较外包素材高 27%，CTR 高 19%。通过复盘持续优化创意与受众的匹配。</p><span class="strength-pdf">&#28857;&#20987;&#26597;&#30475;&#26696;&#20363; &#8599;</span></a></article>
+      <article><span class="strength-index" aria-hidden="true">04</span><h3>280%</h3><p>2025–2026 年负责独立站运营设计，年度业绩完成率为 280%。</p></article>
+      <article><span class="strength-index" aria-hidden="true">05</span><h3>营销心理学</h3><p>将损失厌恶、从众心理、情绪与好奇心驱动、心理账户等应用于营销视觉。</p></article>
+      <article><span class="strength-index" aria-hidden="true">06</span><h3>AI提效</h3><p>将 AI 用于创意探索、视觉制作和视频动画，兼顾品质与交付效率。工具包括 Codex、ChatGPT、LibLib、LibTV、Banana、Lovart、即梦 Seedream 5.0 和 Seedance 2.5。</p></article>
+      <article><span class="strength-index" aria-hidden="true">07</span><h3>项目管理 · S / A / B / C</h3><p>按项目优先级和上线时间倒排计划，统筹分工、方案、内部提案、延展和上线验收。</p></article>
+      <article><span class="strength-index" aria-hidden="true">08</span><h3>团队管理 · 4人</h3><p>负责跨部门需求对接、需求统筹与工作分配，通过周会对齐 OKR，并制定 KPI。</p></article>
     </div>
   </section>
 
-  <section id="halloween-case" class="halloween-case" aria-labelledby="original-case-title">
-    <details id="halloween-details">
-      <summary aria-label="aosu 2026 万圣节：展开或收起完整案例">
-        <div class="case-preview"><img src="assets/v2/halloween-images/cover-original.jpg" srcset="assets/v2/halloween-images/cover-960.webp 960w, assets/v2/halloween-images/cover-1920.webp 1920w, assets/v2/halloween-images/cover-original.jpg 3840w" sizes="100vw" width="3840" height="1919" alt="aosu 品牌营销 / 2026 万圣节，点击查看完整案例" loading="lazy" decoding="async"></div>
-        <div class="case-summary"><div><h2 id="original-case-title">aosu 品牌营销 / 2026 万圣节</h2><p>BRAND MARKETING VISUALS / CASE STUDY</p></div><span class="case-action"><span class="case-open-label">收起完整案例</span><b aria-hidden="true">↓</b></span></div>
-      </summary>
-      <div class="case-expanded">
-        <div class="case-toolbar"><span>完整案例</span><button type="button" data-case-zoom>放大查看 ↗</button><button type="button" data-case-close class="case-close-inline">收起案例 ↑</button></div>
-        <img class="original-case-image" data-mobile="assets/v2/halloween-images/case-20261029-mobile.jpg" data-src="assets/v2/halloween-images/case-20261029-original.jpg" data-srcset="assets/v2/halloween-images/case-20261029-1920.webp 1920w, assets/v2/halloween-images/case-20261029-original.jpg 3840w" sizes="100vw" width="3840" height="9327" alt="aosu 2026 万圣节完整品牌营销案例：目标用户、创意策略、美术参考、配色字体及延展视觉，点击收起案例" decoding="async" tabindex="0" role="button">
-        <div class="case-bottom"><button type="button" data-case-close>收起完整案例 ↑</button></div>
-      </div>
-    </details>
-  </section>
-  <dialog id="case-zoom" aria-labelledby="zoom-title"><div class="zoom-top"><h2 id="zoom-title">aosu / 2026 万圣节 · 完整案例</h2><button type="button" id="zoom-minus" aria-label="缩小案例">−</button><output id="zoom-value" aria-live="polite">100%</output><button type="button" id="zoom-plus" aria-label="放大案例">+</button><button type="button" id="zoom-fit">适应宽度</button><button type="button" id="zoom-close" aria-label="关闭放大查看">×</button></div><p class="zoom-help">滚动阅读；手机可左右滑动，电脑可按住画面拖动。</p><div class="zoom-scroll" id="zoom-scroll" tabindex="0" role="region" aria-label="完整案例放大阅读区"><img id="zoom-image" width="3840" height="9327" alt="aosu 2026 万圣节完整案例放大图" draggable="false"></div></dialog>
 
-  <section class="selected" aria-labelledby="selected-title">
-    <h2 id="selected-title" lang="zh-CN">创意视觉</h2>
-    <div class="project-track" id="project-track" tabindex="0" role="region" aria-label="精选品牌视觉项目，可横向滑动">
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/christmas-02-800.webp" width="800" height="1067"><img src="assets/works/previews/christmas-01.webp" width="1280" height="544" alt="aosu 圣诞礼遇活动主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>让守护成为节日礼物。</strong> 以雪夜、暖金字和屋顶上的圣诞老人，把家庭安防融入送礼场景。</figcaption></figure>
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/school-02-800.webp" width="800" height="1067"><img src="assets/works/previews/school-01.webp" width="1280" height="544" alt="aosu 开学季活动主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>用飞起的书翻开新学期。</strong> 以蓝天、书本和亮黄吊牌营造开学氛围，将返校与家庭安全的新习惯联系起来。</figcaption></figure>
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/fathers-2025-02-800.webp" width="800" height="1067"><img src="assets/works/previews/fathers-2025-01.webp" width="1280" height="544" alt="aosu 父亲节活动主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>用父子剪影表现守护的力量。</strong> 让父子并肩秀肌肉的影子与安防设备同框，呼应父亲节主题。</figcaption></figure>
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/travel-2025-02-800.webp" width="800" height="1067"><img src="assets/works/previews/travel-2025-01.webp" width="1280" height="544" alt="aosu 安心出游活动主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>把度假与居家守护放进同一画面。</strong> 让沙滩延伸进客厅，表达家人在外度假时，家中仍有设备守护。</figcaption></figure>
-    </div>
-    <div class="gallery-controls" role="group" aria-label="切换项目">
-      <button type="button" id="previous-project" aria-label="上一个项目" aria-controls="project-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
-      <button type="button" id="next-project" aria-label="下一个项目" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
-    </div>
-  </section>
-  <section class="selected" aria-labelledby="selling-title">
-    <h2 id="selling-title" lang="zh-CN">产品卖点视觉</h2>
-    <div class="project-track" id="selling-track" tabindex="0" role="region" aria-label="产品卖点视觉项目，可横向滑动">
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/winter-02-800.webp" width="800" height="1067"><img src="assets/works/previews/winter-01.webp" width="1280" height="544" alt="aosu 雪夜守护主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>用雪夜突出照明与夜视。</strong> 把强光照明、4K 清晰度和全彩夜视放进同一个夜间场景。</figcaption></figure>
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/vacation-01-800.webp" width="800" height="1067"><img src="assets/works/previews/vacation-02.webp" width="1280" height="544" alt="aosu 度假远程对讲主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>度假时也能回应门口来访。</strong> 用沙滩与送货画面并置，展示如何通过手机远程对讲。</figcaption></figure>
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/full-home-02-800.webp" width="800" height="1067"><img src="assets/works/previews/full-home-01.webp" width="1280" height="544" alt="aosu 全屋安防主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>用光束展示不同机位的覆盖范围。</strong> 把摄像头放进住宅场景，让门口、庭院等位置的安防布局一目了然。</figcaption></figure>
-      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/mothers-2026-02-800.webp" width="800" height="1067"><img src="assets/works/previews/mothers-2026-01.webp" width="1280" height="544" alt="aosu 母亲节远程看护主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>用手机画面串起家人的日常。</strong> 把后院玩耍和门前送花放进同一屏，呈现远程查看的使用场景。</figcaption></figure>
-    </div>
-    <div class="gallery-controls" role="group" aria-label="切换项目">
-      <button type="button" id="previous-selling" aria-label="上一个项目" aria-controls="selling-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
-      <button type="button" id="next-selling" aria-label="下一个项目" aria-controls="selling-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
-    </div>
-  </section>
-  <section class="selected scene-showcase" lang="zh-CN" aria-labelledby="scene-title">
+  <section class="selected scene-showcase" lang="zh-CN" id="product-detail-pages" aria-label="Product Detail Pages">
     <figure class="rain-camera-banner">
-      <img src="assets/v2/rain-camera-banner-v4.webp" width="2560" height="1398" loading="lazy" decoding="async" alt="雨中安装在外墙上的 aosu 太阳能摄像头">
-      <h2 id="scene-title">产品介绍页<span class="scene-title-en" lang="en">PRODUCT DETAIL PAGES</span></h2>
+      <picture><source media="(max-width:767px)" srcset="assets/v2/product-detail-cover-mobile-v2.jpg" width="1200" height="1450"><img src="assets/v2/rain-camera-banner-v6.jpg" width="3840" height="2312" loading="lazy" decoding="async" alt="雨中安装在外墙上的 aosu 太阳能摄像头"></picture>
     </figure>
     <div class="scene-panels" id="scene-panels" role="group" aria-label="切换产品介绍页">
       <button class="scene-panel" type="button" aria-label="查看 aosu 双摄广角覆盖完整案例" aria-controls="dual-case" aria-haspopup="dialog" aria-pressed="true">
-        <img src="assets/v2/product-cover-1.webp" width="2427" height="1052" alt="" loading="lazy" decoding="async">
+        <picture><source media="(max-width:767px)" srcset="assets/v2/product-cover-1-mobile.jpg" width="2427" height="1052"><img src="assets/v2/product-cover-1.webp" width="2427" height="1052" alt="" loading="lazy" decoding="async"></picture><span class="scene-mobile-caption"><strong>双摄广角覆盖</strong><span>查看完整案例 ↗</span></span>
       </button>
       <button class="scene-panel" type="button" aria-label="aosu 三合一精准侦测" aria-pressed="false">
-        <img src="assets/v2/product-cover-2.webp" width="2427" height="1052" alt="" loading="lazy" decoding="async">
+        <picture><source media="(max-width:767px)" srcset="assets/v2/product-cover-2-mobile.jpg" width="2427" height="1052"><img src="assets/v2/product-cover-2.webp" width="2427" height="1052" alt="" loading="lazy" decoding="async"></picture><span class="scene-mobile-caption"><strong>三合一精准侦测</strong><span>查看完整案例 ↗</span></span>
       </button>
       <button class="scene-panel" type="button" aria-label="Marshall 音箱细节" aria-pressed="false">
-        <img src="assets/v2/product-cover-3.webp" width="2427" height="1053" alt="" loading="lazy" decoding="async">
+        <picture><source media="(max-width:767px)" srcset="assets/v2/product-cover-3-mobile.jpg" width="2427" height="1053"><img src="assets/v2/product-cover-3.webp" width="2427" height="1053" alt="" loading="lazy" decoding="async"></picture><span class="scene-mobile-caption"><strong>Marshall 音箱</strong><span>查看完整案例 ↗</span></span>
       </button>
     </div>
     <dialog class="dual-case" id="dual-case" aria-label="aosu 双摄广角覆盖完整案例">
@@ -299,6 +534,110 @@
       </template>
     </dialog>
   </section>
+
+  <figure class="rain-camera-banner" id="selling-banner">
+      <picture><source media="(max-width:767px)" srcset="assets/v2/product-feature-cover-mobile.jpg" width="1200" height="1450"><img src="assets/v2/product-feature-banner-v2.jpg" width="3840" height="2312" loading="lazy" decoding="async" alt="Product Feature Visuals"></picture>
+    </figure>
+  <section class="selected" id="selling-title" aria-label="&#20135;&#21697;&#21334;&#28857;&#35270;&#35273;">
+    <div class="project-track" id="selling-track" tabindex="0" role="region" aria-label="产品卖点视觉项目，可横向滑动">
+
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/vacation-01-800.webp" width="800" height="1067"><img src="assets/works/previews/vacation-02.webp" width="1280" height="544" alt="aosu 度假远程对讲主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>度假时也能回应门口来访。</strong> 用沙滩与送货画面并置，展示如何通过手机远程对讲。</figcaption></figure>
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/full-home-02-800.webp" width="800" height="1067"><img src="assets/works/previews/full-home-01.webp" width="1280" height="544" alt="aosu 全屋安防主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>用光束展示不同机位的覆盖范围。</strong> 把摄像头放进住宅场景，让门口、庭院等位置的安防布局一目了然。</figcaption></figure>
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/mothers-2026-02-800.webp" width="800" height="1067"><img src="assets/works/previews/mothers-2026-01.webp" width="1280" height="544" alt="aosu 母亲节远程看护主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>用手机画面串起家人的日常。</strong> 把后院玩耍和门前送花放进同一屏，呈现远程查看的使用场景。</figcaption></figure>
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/winter-02-800.webp" width="800" height="1067"><img src="assets/works/previews/winter-01.webp" width="1280" height="544" alt="aosu 雪夜守护主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>用雪夜突出照明与夜视。</strong> 把强光照明、4K 清晰度和全彩夜视放进同一个夜间场景。</figcaption></figure>
+    </div>
+    <div class="gallery-controls" role="group" aria-label="切换项目">
+      <button type="button" id="previous-selling" aria-label="上一个项目" aria-controls="selling-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      <button type="button" id="next-selling" aria-label="下一个项目" aria-controls="selling-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
+  </section>
+  <figure class="rain-camera-banner" id="creative-banner">
+    <picture><source media="(max-width:767px)" srcset="assets/v2/creative-visuals-cover-mobile.jpg" width="1200" height="1450"><img src="assets/v2/creative-visuals-banner-v5.jpg" width="3840" height="2312" loading="lazy" decoding="async" alt="Creative Visuals"></picture>
+  </figure>
+
+  <section class="selected" id="selected-title" aria-label="&#21019;&#24847;&#35270;&#35273;">
+    <div class="project-track" id="project-track" tabindex="0" role="region" aria-label="精选品牌视觉项目，可横向滑动">
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/christmas-02-800.webp" width="800" height="1067"><img src="assets/works/previews/christmas-01.webp" width="1280" height="544" alt="aosu 圣诞礼遇活动主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>让守护成为节日礼物。</strong> 以雪夜、暖金字和屋顶上的圣诞老人，把家庭安防融入送礼场景。</figcaption></figure>
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/school-02-800.webp" width="800" height="1067"><img src="assets/works/previews/school-01.webp" width="1280" height="544" alt="aosu 开学季活动主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>用飞起的书翻开新学期。</strong> 以蓝天、书本和亮黄吊牌营造开学氛围，将返校与家庭安全的新习惯联系起来。</figcaption></figure>
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/fathers-2025-02-800.webp" width="800" height="1067"><img src="assets/works/previews/fathers-2025-01.webp" width="1280" height="544" alt="aosu 父亲节活动主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>用父子剪影表现守护的力量。</strong> 让父子并肩秀肌肉的影子与安防设备同框，呼应父亲节主题。</figcaption></figure>
+      <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/v2/cozy-vibes-mobile.jpg" width="1200" height="1600"><img src="assets/v2/cozy-vibes-desktop.jpg" width="3840" height="1632" alt="aosu 秋季活动主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>把秋日暖意融入家庭守护。</strong> 用落叶、暖阳和飞舞的优惠券串起产品与促销信息。</figcaption></figure>
+        <figure class="project"><picture><source media="(max-width:767px)" srcset="assets/works/cards/travel-2025-02-800.webp" width="800" height="1067"><img src="assets/works/previews/travel-2025-01.webp" width="1280" height="544" alt="aosu 安心出游活动主视觉" loading="lazy" decoding="async"></picture><figcaption lang="zh-CN"><strong>把度假与居家守护放进同一画面。</strong> 让沙滩延伸进客厅，表达家人在外度假时，家中仍有设备守护。</figcaption></figure>
+    </div>
+    <div class="gallery-controls" role="group" aria-label="切换项目">
+      <button type="button" id="previous-project" aria-label="上一个项目" aria-controls="project-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      <button type="button" id="next-project" aria-label="下一个项目" aria-controls="project-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
+  </section>
+  <section id="halloween-case" class="halloween-case" aria-labelledby="original-case-title">
+    <button type="button" class="halloween-cover-button" aria-haspopup="dialog" aria-controls="halloween-modal"><span class="case-preview"><picture><source media="(max-width:767px)" srcset="assets/v2/halloween-images/cover-mobile-v3.jpg" width="1200" height="1450"><img src="assets/v2/halloween-images/cover-qq.jpg" width="3840" height="1919" alt="aosu 品牌营销 / 2026 万圣节，点击查看案例详解" loading="lazy" decoding="async"></picture></span></button>
+    <dialog class="dual-case" id="halloween-modal" aria-label="aosu 2026 Halloween">
+      <div class="dual-case-header"><button class="dual-case-close" type="button" autofocus>&#20851;&#38381;&#26696;&#20363; &times;</button></div>
+      <img class="original-case-image" data-mobile="assets/v2/halloween-images/case-20261029-mobile.jpg" data-src="assets/v2/halloween-images/case-20261029-original.jpg" data-srcset="assets/v2/halloween-images/case-20261029-1920.webp 1920w, assets/v2/halloween-images/case-20261029-original.jpg 3840w" sizes="(max-width:767px) 86vw, (max-width:1600px) 90vw, 1440px" width="3840" height="9327" alt="aosu 2026 万圣节完整品牌营销案例：目标用户、创意策略、美术参考、配色字体及延展视觉，点击收起案例" decoding="async" tabindex="0" role="button">
+    </dialog>
+  </section>
+  <figure class="rain-camera-banner" id="other-works">
+    <picture><source media="(max-width:767px)" srcset="assets/v2/other-works-cover-mobile-v2.jpg" width="1200" height="890"><img src="assets/v2/other-works-banner-v5.jpg" width="3840" height="1654" loading="lazy" decoding="async" alt="&#20854;&#20182;&#20316;&#21697; / Other Works"></picture>
+  </figure>
+
+  <section id="zcool-showcase" class="zcool-showcase" aria-labelledby="zcool-title"><header><h2 id="zcool-title"><img class="zcool-logo" src="assets/v2/zcool/logo-hd.png" width="1671" height="294" alt="ZCOOL 站酷"></h2><a href="https://www.zcool.com.cn/u/15231846" target="_blank" rel="noopener">https://www.zcool.com.cn/u/15231846 <img class="zcool-flame zcool-flame-large" src="assets/v2/zcool/flame-large.png" alt="" aria-hidden="true"> <img class="zcool-flame zcool-flame-small" src="assets/v2/zcool/flame-small.png" alt="" aria-hidden="true"></a></header><div class="zcool-cards"><article class="zcool-card"><div class="zcool-cover-frame"><img src="assets/v2/zcool/cover-1-clean.png" width="247" height="184" loading="lazy" alt="香舍里-车载香薰-主视觉海报设…"></div><div class="zcool-card-body"><h3>香舍里-车载香薰-主视觉海报设…<img class="zcool-flame zcool-flame-large" src="assets/v2/zcool/flame-large.png" alt="" aria-hidden="true"></h3><p>网页-电商</p><div class="zcool-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> 326</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5l-3 3-3-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path d="M7 10h.1M12 10h.1M17 10h.1" stroke-linecap="round" stroke-width="3"/></svg> 0</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-6V1h2c2 0 2 3 1 6h5a2 2 0 0 1 2 2l-1 10a2 2 0 0 1-2 2H7"/></svg> 12</span></div></div><footer>17天前</footer></article><article class="zcool-card"><div class="zcool-cover-frame"><img src="assets/v2/zcool/cover-2-clean.png" width="247" height="184" loading="lazy" alt="产品海报设计 x AIGC（mj）流…"></div><div class="zcool-card-body"><h3>产品海报设计 x AIGC（mj）流…<img class="zcool-flame zcool-flame-large" src="assets/v2/zcool/flame-large.png" alt="" aria-hidden="true"></h3><p>网页-电商</p><div class="zcool-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> 2347</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5l-3 3-3-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path d="M7 10h.1M12 10h.1M17 10h.1" stroke-linecap="round" stroke-width="3"/></svg> 16</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-6V1h2c2 0 2 3 1 6h5a2 2 0 0 1 2 2l-1 10a2 2 0 0 1-2 2H7"/></svg> 95</span></div></div><footer>224天前</footer></article><article class="zcool-card"><div class="zcool-cover-frame"><img src="assets/v2/zcool/cover-3-clean.png" width="247" height="184" loading="lazy" alt="西鸽电商2022年-中秋设计分享"></div><div class="zcool-card-body"><h3>西鸽电商2022年-中秋设计分享<img class="zcool-flame zcool-flame-large" src="assets/v2/zcool/flame-large.png" alt="" aria-hidden="true"></h3><p>网页-电商</p><div class="zcool-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> 620</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5l-3 3-3-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path d="M7 10h.1M12 10h.1M17 10h.1" stroke-linecap="round" stroke-width="3"/></svg> 2</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-6V1h2c2 0 2 3 1 6h5a2 2 0 0 1 2 2l-1 10a2 2 0 0 1-2 2H7"/></svg> 30</span></div></div><footer>231天前</footer></article><article class="zcool-card"><div class="zcool-cover-frame"><img src="assets/v2/zcool/cover-4-clean.png" width="247" height="184" loading="lazy" alt="2023年西鸽618大促"></div><div class="zcool-card-body"><h3>2023年西鸽618大促<img class="zcool-flame zcool-flame-small" src="assets/v2/zcool/flame-small.png" alt="" aria-hidden="true"></h3><p>网页-电商</p><div class="zcool-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> 665</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5l-3 3-3-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path d="M7 10h.1M12 10h.1M17 10h.1" stroke-linecap="round" stroke-width="3"/></svg> 4</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-6V1h2c2 0 2 3 1 6h5a2 2 0 0 1 2 2l-1 10a2 2 0 0 1-2 2H7"/></svg> 27</span></div></div><footer>238天前</footer></article><article class="zcool-card"><div class="zcool-cover-frame"><img src="assets/v2/zcool/cover-5-clean.png" width="247" height="184" loading="lazy" alt="插画作品"></div><div class="zcool-card-body"><h3>插画作品<img class="zcool-flame zcool-flame-small" src="assets/v2/zcool/flame-small.png" alt="" aria-hidden="true"></h3><p>插画-商业插画</p><div class="zcool-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> 209</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5l-3 3-3-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path d="M7 10h.1M12 10h.1M17 10h.1" stroke-linecap="round" stroke-width="3"/></svg> 4</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-6V1h2c2 0 2 3 1 6h5a2 2 0 0 1 2 2l-1 10a2 2 0 0 1-2 2H7"/></svg> 22</span></div></div><footer>256天前</footer></article></div></section>
+  <section id="other-works-content" class="other-works-content" aria-labelledby="other-works-heading">
+    <header class="other-works-heading">
+      <h2 id="other-works-heading">其他作品</h2>
+      <p lang="en">Other Works</p>
+    </header>
+    <div class="bath-poster-grid" aria-label="沐浴露产品海报">
+      <img src="assets/v2/bath-posters/1.jpg" width="1242" height="1660" loading="lazy" decoding="async" alt="沐浴露产品海报 1">
+      <img src="assets/v2/bath-posters/2.jpg" width="1242" height="1660" loading="lazy" decoding="async" alt="沐浴露产品海报 2">
+      <img src="assets/v2/bath-posters/3.jpg" width="1242" height="1660" loading="lazy" decoding="async" alt="沐浴露产品海报 3">
+      <img src="assets/v2/bath-posters/4.jpg" width="1242" height="1660" loading="lazy" decoding="async" alt="沐浴露产品海报 4">
+      <img src="assets/v2/bath-posters/5.jpg" width="1242" height="1660" loading="lazy" decoding="async" alt="沐浴露产品海报 5">
+      <img src="assets/v2/bath-posters/6.jpg" width="1242" height="1660" loading="lazy" decoding="async" alt="沐浴露产品海报 6">
+      <img src="assets/v2/bath-posters/7.jpg" width="1242" height="1660" loading="lazy" decoding="async" alt="沐浴露产品海报 7">
+      <img src="assets/v2/bath-posters/8.jpg" width="1242" height="1660" loading="lazy" decoding="async" alt="沐浴露产品海报 8">
+    </div>
+
+    <a id="group-guidelines" class="vi-guidelines vi-direct-link" lang="zh-CN" href="assets/v2/xige-brand-guidelines.pdf" target="_blank" rel="noopener"><div class="vi-direct-summary">
+      <span class="guideline-label">BRAND GUIDELINES / PDF</span>
+      <span class="guideline-title">西鸽酒庄品牌VI</span>
+      <span class="guideline-open">&#28857;&#20987;&#26597;&#30475; &#8599;</span>
+    </div></a>
+<a id="brand-guidelines" class="vi-guidelines vi-direct-link" lang="zh-CN" href="assets/v2/teng-brand-guidelines.pdf" target="_blank" rel="noopener"><div class="vi-direct-summary">
+      <span class="guideline-label">BRAND GUIDELINES / PDF</span>
+      <span class="guideline-title">西鸽酒庄-藤上藤产品VI</span>
+      <span class="guideline-open">&#28857;&#20987;&#26597;&#30475; &#8599;</span>
+    </div></a>
+
+    <div class="wine-poster-grid" aria-label="西鸽酒庄产品展示"><img src="assets/v2/wine-posters/1-trim.png" width="752" height="1369" loading="lazy" decoding="async" alt="西鸽酒庄产品展示 1"><img src="assets/v2/wine-posters/2-trim.png" width="752" height="1369" loading="lazy" decoding="async" alt="西鸽酒庄产品展示 2"><img src="assets/v2/wine-posters/3-trim.png" width="752" height="1369" loading="lazy" decoding="async" alt="西鸽酒庄产品展示 3"><img src="assets/v2/wine-posters/4-trim.png" width="752" height="1369" loading="lazy" decoding="async" alt="西鸽酒庄产品展示 4"></div>
+
+    <div class="wine-promo-grid" aria-label="西鸽酒庄活动详情"><img src="assets/v2/wine-promo/1.png" width="842" height="1518" loading="lazy" decoding="async" alt="西鸽酒庄活动详情 1"><img src="assets/v2/wine-promo/2.png" width="841" height="1517" loading="lazy" decoding="async" alt="西鸽酒庄活动详情 2"><img src="assets/v2/wine-promo/3.png" width="842" height="1515" loading="lazy" decoding="async" alt="西鸽酒庄活动详情 3"><img src="assets/v2/wine-promo/4.png" width="842" height="1515" loading="lazy" decoding="async" alt="西鸽酒庄活动详情 4"></div>
+    <div class="wine-double11-grid" aria-label="西鸽酒庄双十一活动展示"><img src="assets/v2/wine-double11/1.png" width="811" height="1041" loading="lazy" decoding="async" alt="西鸽酒庄双十一活动展示 1"><img src="assets/v2/wine-double11/2.png" width="811" height="1045" loading="lazy" decoding="async" alt="西鸽酒庄双十一活动展示 2"><img src="assets/v2/wine-double11/3.png" width="809" height="1045" loading="lazy" decoding="async" alt="西鸽酒庄双十一活动展示 3"></div>
+    <div class="bamboo-poster-grid" aria-label="小咖竹香系列海报"><img src="assets/v2/bamboo-posters/1.png" width="798" height="1203" loading="lazy" decoding="async" alt="小咖竹香系列海报 1"><img src="assets/v2/bamboo-posters/2.png" width="799" height="1203" loading="lazy" decoding="async" alt="小咖竹香系列海报 2"><img src="assets/v2/bamboo-posters/3.png" width="848" height="1203" loading="lazy" decoding="async" alt="小咖竹香系列海报 3"><img src="assets/v2/bamboo-posters/4.png" width="847" height="1203" loading="lazy" decoding="async" alt="小咖竹香系列海报 4"></div>
+    <section class="coffee-valentine" aria-label="小咖七夕活动"><div class="coffee-valentine-bottom"><img src="assets/v2/coffee-valentine/3.png" width="591" height="1057" loading="lazy" decoding="async" alt="小咖七夕活动展示 3"><img src="assets/v2/coffee-valentine/4.png" width="591" height="1057" loading="lazy" decoding="async" alt="小咖七夕活动展示 4"><img src="assets/v2/coffee-valentine/5.png" width="641" height="1057" loading="lazy" decoding="async" alt="小咖七夕活动展示 5"><img src="assets/v2/coffee-valentine/6.png" width="530" height="1057" loading="lazy" decoding="async" alt="小咖七夕活动展示 6"></div></section>
+    <section class="coffee-menu-showcase" aria-label="小咖产品与点单展示"><div class="coffee-menu-top"><div class="coffee-menu-banners"><img src="assets/v2/coffee-menu/1.png" width="1338" height="338" loading="lazy" decoding="async" alt="小咖产品与点单展示 1"><img src="assets/v2/coffee-menu/2.png" width="1338" height="337" loading="lazy" decoding="async" alt="小咖产品与点单展示 2"><img src="assets/v2/coffee-menu/3.png" width="1338" height="336" loading="lazy" decoding="async" alt="小咖产品与点单展示 3"></div><img src="assets/v2/coffee-menu/4.png" width="520" height="1076" loading="lazy" decoding="async" alt="小咖产品与点单展示 4"></div><div class="coffee-menu-posters"><img src="assets/v2/coffee-menu/5.png" width="450" height="678" loading="lazy" decoding="async" alt="小咖产品与点单展示 5"><img src="assets/v2/coffee-menu/6.png" width="450" height="678" loading="lazy" decoding="async" alt="小咖产品与点单展示 6"><img src="assets/v2/coffee-menu/7.png" width="477" height="678" loading="lazy" decoding="async" alt="小咖产品与点单展示 7"><img src="assets/v2/coffee-menu/8.png" width="448" height="678" loading="lazy" decoding="async" alt="小咖产品与点单展示 8"></div></section>
+
+
+  </section>
+
+
+
+  <a id="ppt-design" class="vi-guidelines vi-direct-link" lang="zh-CN" href="assets/v2/xiaoyuan-presentation.pdf" target="_blank" rel="noopener"><div class="vi-direct-summary">
+      <span class="guideline-label">PRESENTATION DESIGN / PDF</span>
+      <span class="guideline-title">咖啡机PPT设计</span>
+      <span class="guideline-open">&#28857;&#20987;&#26597;&#30475; &#8599;</span>
+    </div></a>
+  <footer class="portfolio-ending" lang="en">THE END</footer>
+  <script>
+    for (const guidelines of document.querySelectorAll('.vi-guidelines')) {
+      guidelines.addEventListener('toggle', () => {
+        if (!guidelines.open || guidelines.querySelector('iframe')) return;
+        const reader = document.createElement('iframe');
+        reader.title = guidelines.querySelector('.guideline-title').textContent;
+        reader.src = guidelines.querySelector('a').href;
+        guidelines.querySelector('.guideline-reader').prepend(reader);
+      });
+    }
+  </script>
+
   <dialog id="creative-zoom" aria-label="作品大图">
     <button type="button" aria-label="关闭大图"><img alt=""></button>
   </dialog>
@@ -360,8 +699,30 @@
     const projectViewer = document.getElementById('creative-zoom');
     projectViewer.addEventListener('click', () => projectViewer.close());
   </script>
-  <script src="assets/v2/motion.js?v=20261028-light-media" defer></script>
-  <script src="assets/v2/halloween-case.js?v=click-to-collapse" defer></script>
+  <script src="assets/v2/motion.js?v=20261112-sequence" defer></script>
+  <script>
+    {
+      const modal = document.getElementById('halloween-modal');
+      const cover = document.querySelector('.halloween-cover-button');
+      const image = modal.querySelector('img');
+      cover.addEventListener('click', () => {
+        const mobile = matchMedia('(max-width:767px)').matches;
+        image.srcset = mobile ? '' : image.dataset.srcset;
+        image.src = mobile ? image.dataset.mobile : image.dataset.src;
+        modal.showModal();
+        modal.scrollTop = 0;
+      });
+      modal.querySelector('button').addEventListener('click', () => modal.close());
+      image.addEventListener('click', () => modal.close());
+      image.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          modal.close();
+        }
+      });
+      modal.addEventListener('close', () => cover.focus({preventScroll:true}));
+    }
+  </script>
   <script>
     {
       const desktop = matchMedia('(min-width: 768px)');
@@ -375,7 +736,7 @@
         if (!caseImages.hasChildNodes()) {
           caseImages.append(caseTemplate.content.cloneNode(true));
         }
-        caseDetails.showModal();
+        if (!caseDetails.open) caseDetails.showModal();
         caseDetails.scrollTop = 0;
       }
 
@@ -400,12 +761,163 @@
         panel.addEventListener('pointerenter', (event) => {
           if (event.pointerType === 'mouse' && desktop.matches) activate();
         });
+        let touchStart = null;
+        panel.addEventListener('touchstart', event => {
+          const t=event.touches[0];
+          touchStart={x:t.clientX,y:t.clientY,time:Date.now()};
+        },{passive:true});
+        panel.addEventListener('touchend', event => {
+          if(!touchStart || !event.changedTouches.length)return;
+          const t=event.changedTouches[0],start=touchStart;touchStart=null;
+          if(Math.hypot(t.clientX-start.x,t.clientY-start.y)>12 || Date.now()-start.time>700)return;
+          if(panel!==caseTrigger && panel!==panels[1])return;
+          event.preventDefault();
+          activate();
+          if(panel===caseTrigger)openCase();
+          else window.openPrecisionCase();
+        },{passive:false});
+        panel.addEventListener('touchcancel',()=>{touchStart=null},{passive:true});
         panel.addEventListener('click', () => {
           activate();
           if (panel === caseTrigger) openCase();
+          if (panel === panels[1]) window.openPrecisionCase();
         });
       }
     }
   </script>
+<script>
+  {
+    const menu = document.querySelector('.portfolio-menu');
+    const nav = menu.closest('.portfolio-nav');
+    const cover = document.querySelector('.cover');
+    const syncNav = () => {
+      nav.classList.toggle('is-over-cover', cover.getBoundingClientRect().bottom >= nav.offsetHeight);
+    };
+    syncNav();
+    window.addEventListener('scroll', syncNav, { passive: true });
+    window.addEventListener('resize', syncNav);
+
+    document.addEventListener('click', event => {
+      if (!menu.contains(event.target) || event.target.closest('.portfolio-menu-links a')) menu.open = false;
+    });
+    menu.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && menu.open) {
+        menu.open = false;
+        menu.querySelector('summary').focus();
+      }
+    });
+  }
+  </script>
+
+
+
+
+
+
+
+
+
+
+<dialog class="dual-case" id="precision-case" aria-label="aosu 三合一精准侦测完整案例">
+ <div class="dual-case-header"><button class="dual-case-close" type="button" autofocus>关闭案例 ×</button></div>
+ <div id="precision-case-content"></div>
+</dialog>
+<script>
+(() => {
+ const modal=document.getElementById('precision-case');
+ const trigger=document.querySelectorAll('#scene-panels .scene-panel')[1];
+ document.getElementById('precision-case-content').addEventListener('click',()=>modal.close());
+ trigger.setAttribute('aria-controls','precision-case');trigger.setAttribute('aria-haspopup','dialog');
+ trigger.setAttribute('aria-label','查看 aosu 三合一精准侦测完整案例');
+ window.openPrecisionCase=()=>{
+  const content=document.getElementById('precision-case-content');
+  if(!content.hasChildNodes())content.innerHTML='<picture><source media="(max-width:767px)" srcset="assets/v2/precision-case-mobile.png" width="500" height="23484"><img src="assets/v2/precision-case-desktop.png" width="2560" height="26427" alt="aosu 三合一精准侦测完整产品介绍页" decoding="async"></picture>';
+  if(!modal.open)modal.showModal();modal.scrollTop=0;
+ };
+ modal.querySelector('button').addEventListener('click',()=>modal.close());
+})();
+</script>
+
+
+<script>
+(() => {
+ const mobile=()=>matchMedia('(max-width:767px)').matches;
+ const panels=[...document.querySelectorAll('#scene-panels .scene-panel')];
+ function openMobile(index){
+  const modal=document.getElementById(index===0?'dual-case':'precision-case');
+  if(index===0){
+   const content=document.getElementById('dual-case-images');
+   if(!content.hasChildNodes())content.append(document.getElementById('dual-case-template').content.cloneNode(true));
+  }else{
+   const content=document.getElementById('precision-case-content');
+   if(!content.hasChildNodes()){
+    const img=document.createElement('img');img.src='assets/v2/precision-case-mobile.png';img.width=500;img.height=23484;img.alt='三合一精准侦测完整案例';content.append(img);
+   }
+  }
+  // Use a fixed overlay on touch devices, avoiding dialog implementation differences.
+  if(modal.open && !modal.classList.contains('mobile-case-open'))modal.close();
+  modal.classList.add('mobile-case-open');modal.setAttribute('open','');
+  document.body.classList.add('mobile-case-active');modal.scrollTop=0;
+ }
+ function closeMobile(modal){
+  modal.classList.remove('mobile-case-open');modal.removeAttribute('open');
+  document.body.classList.remove('mobile-case-active');
+ }
+ panels.slice(0,2).forEach((old,index)=>{
+  // Remove inherited pointer/click handlers from the mobile activation path.
+  const fresh=old.cloneNode(true);
+  if(!mobile())return;
+  old.replaceWith(fresh);
+  let start;
+  fresh.addEventListener('touchstart',e=>{const t=e.touches[0];start={x:t.clientX,y:t.clientY}},{passive:true});
+  fresh.addEventListener('touchend',e=>{
+   if(!start)return;const t=e.changedTouches[0];const moved=Math.hypot(t.clientX-start.x,t.clientY-start.y);start=null;
+   if(moved>14)return;e.preventDefault();e.stopPropagation();openMobile(index);
+  },{passive:false});
+  fresh.addEventListener('click',e=>{e.preventDefault();openMobile(index)});
+ });
+ ['dual-case','precision-case'].forEach(id=>{
+  const modal=document.getElementById(id);
+  modal.addEventListener('click',e=>{
+   if(!modal.classList.contains('mobile-case-open'))return;
+   if(e.target.closest('button')||e.target.closest('img')){e.stopImmediatePropagation();closeMobile(modal)}
+  },true);
+ });
+})();
+</script>
+
+
+<dialog class="dual-case" id="marshall-case" aria-label="Marshall 音箱完整案例">
+ <div class="dual-case-header"><button class="dual-case-close" type="button" autofocus>关闭案例 ×</button></div>
+ <div class="marshall-case-content"></div>
+</dialog>
+<script>
+(() => {
+ const trigger=document.querySelectorAll('#scene-panels .scene-panel')[2];
+ const modal=document.getElementById('marshall-case');
+ trigger.setAttribute('aria-controls','marshall-case');trigger.setAttribute('aria-haspopup','dialog');trigger.setAttribute('aria-label','查看 Marshall 音箱完整案例');
+ function open(){
+  const content=modal.querySelector('.marshall-case-content');
+  if(!content.hasChildNodes()){
+   const img=document.createElement('img');img.src='assets/v2/marshall-case.jpg';img.width=2560;img.height=16475;img.alt='Marshall Emberton II 音箱完整产品案例';content.append(img);
+  }
+  if(matchMedia('(max-width:767px)').matches){
+   modal.classList.add('mobile-case-open');modal.setAttribute('open','');document.body.classList.add('mobile-case-active');
+  }else if(!modal.open)modal.showModal();
+  modal.scrollTop=0;
+ }
+ function close(){
+  if(modal.classList.contains('mobile-case-open')){modal.classList.remove('mobile-case-open');modal.removeAttribute('open');document.body.classList.remove('mobile-case-active')}
+  else if(modal.open)modal.close();
+ }
+ trigger.addEventListener('click',open);
+ let start=null;
+ trigger.addEventListener('touchstart',e=>{const t=e.touches[0];start={x:t.clientX,y:t.clientY}},{passive:true});
+ trigger.addEventListener('touchend',e=>{if(!start)return;const t=e.changedTouches[0],delta=Math.hypot(t.clientX-start.x,t.clientY-start.y);start=null;if(delta>14)return;e.preventDefault();open()},{passive:false});
+ modal.querySelector('button').addEventListener('click',close);
+ modal.querySelector('.marshall-case-content').addEventListener('click',close);
+})();
+</script>
+
 </body>
 </html>

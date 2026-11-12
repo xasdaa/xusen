@@ -1,51 +1,42 @@
 (()=>{
-  const track=document.getElementById('motion-track');
-  if(!track)return;
-  const videos=[...track.querySelectorAll('video')];
-  const previous=document.getElementById('previous-motion');
-  const next=document.getElementById('next-motion');
-  const mobile=matchMedia('(max-width:767px)');
-  const reduced=matchMedia('(prefers-reduced-motion:reduce)');
-  const visible=new Set();
-  // Slow connections keep the poster visible until the visitor chooses to play.
-  const shouldAutoPlay=()=>!reduced.matches&&!navigator.connection?.saveData&&!['slow-2g','2g','3g'].includes(navigator.connection?.effectiveType)&&!document.hidden;
-  function configure(video){
-    const src=mobile.matches?video.dataset.mobile:video.dataset.desktop;
-    const poster=mobile.matches?video.dataset.posterMobile:video.dataset.posterDesktop;
-    video.poster=poster;
-    if(video.getAttribute('src')&&video.getAttribute('src')!==src){video.pause();video.removeAttribute('src');video.load();}
-    return src;
-  }
-  function activate(video,manual=false){
-    if(!manual&&!shouldAutoPlay())return;
-    if(!video.getAttribute('src')){video.src=configure(video);video.load();}
-    if(manual||shouldAutoPlay())video.play().catch(()=>{});
-  }
-  videos.forEach(video=>{
-    configure(video);
-    // User-initiated playback also works when automatic playback is disabled.
-    video.addEventListener('pointerdown',()=>{if(!video.getAttribute('src'))activate(video,true);});
-    video.addEventListener('keydown',e=>{if(['Enter',' '].includes(e.key)&&!video.getAttribute('src')){e.preventDefault();activate(video,true);}});
-    video.addEventListener('play',()=>videos.forEach(other=>{if(other!==video)other.pause();}));
-  });
-  if('IntersectionObserver' in window){
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(({target,intersectionRatio})=>{
-        if(intersectionRatio>=.55){visible.add(target);activate(target);}
-        else{visible.delete(target);target.pause();}
-      });
-    },{threshold:[0,.55]});
-    videos.forEach(v=>observer.observe(v));
-  }else{videos.forEach(v=>{v.src=configure(v);});}
-  mobile.addEventListener('change',()=>videos.forEach(v=>{configure(v);if(visible.has(v))activate(v);}));
-  reduced.addEventListener('change',()=>{if(reduced.matches)videos.forEach(v=>v.pause());});
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)videos.forEach(v=>v.pause());});
-  function update(){previous.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-2;}
-  function move(direction){const step=track.querySelector('.motion-project').getBoundingClientRect().width+parseFloat(getComputedStyle(track).gap);track.scrollBy({left:direction*step,behavior:reduced.matches?'instant':'smooth'});}
-  previous.addEventListener('click',()=>move(-1));
-  next.addEventListener('click',()=>move(1));
-  track.addEventListener('keydown',e=>{if(e.target!==track)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();move(e.key==='ArrowRight'?1:-1);}});
-  track.addEventListener('scroll',update,{passive:true});
-  new ResizeObserver(update).observe(track);
-  update();
+ const track=document.getElementById('motion-track');if(!track)return;
+ const videos=[...track.querySelectorAll('video')],cards=[...track.querySelectorAll('.motion-project')];
+ const previous=document.getElementById('previous-motion'),next=document.getElementById('next-motion');
+ const mobile=matchMedia('(max-width:767px)'),reduced=matchMedia('(prefers-reduced-motion:reduce)');
+ let active=null,timer,transitioning=false;
+ function configure(v){
+  v.loop=false;v.removeAttribute('loop');v.muted=true;v.playsInline=true;v.controls=!mobile.matches;
+  const source=mobile.matches?v.dataset.mobile:v.dataset.desktop;
+  v.poster=mobile.matches?v.dataset.posterMobile:v.dataset.posterDesktop;
+  if(v.getAttribute('src')&&v.getAttribute('src')!==source){v.pause();v.removeAttribute('src');v.load()}
+  return source;
+ }
+ function visible(v){const r=v.getBoundingClientRect();return Math.max(0,Math.min(r.bottom,innerHeight)-Math.max(r.top,0))/Math.min(r.height,innerHeight)>.3}
+ function nearest(){const left=track.getBoundingClientRect().left+parseFloat(getComputedStyle(track).paddingLeft);return videos.reduce((a,v)=>Math.abs(v.getBoundingClientRect().left-left)<Math.abs(a.getBoundingClientRect().left-left)?v:a,videos[0])}
+ function update(){previous.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-2}
+ function sync(){
+  update();if(transitioning)return;
+  const chosen=nearest();
+  if(document.hidden||!visible(chosen)){videos.forEach(v=>v.pause());return}
+  videos.forEach(v=>{if(v!==chosen)v.pause()});
+  const changed=active!==chosen;active=chosen;
+  if(!chosen.getAttribute('src')){chosen.src=configure(chosen);chosen.load()}
+  if(changed||chosen.ended){try{chosen.currentTime=0}catch(e){}}
+  if(chosen.paused)chosen.play().catch(()=>{});
+ }
+ function moveTo(i){
+  const padding=parseFloat(getComputedStyle(track).paddingLeft);
+  const left=track.scrollLeft+cards[i].getBoundingClientRect().left-track.getBoundingClientRect().left-padding;
+  videos.forEach(v=>v.pause());transitioning=true;
+  track.scrollTo({left,behavior:reduced.matches?'instant':'smooth'});
+  clearTimeout(timer);timer=setTimeout(()=>{transitioning=false;sync()},450);
+ }
+ videos.forEach((v,i)=>{configure(v);v.addEventListener('ended',()=>{if(v===active&&!document.hidden&&visible(v))moveTo((i+1)%videos.length)});v.addEventListener('play',()=>videos.forEach(o=>{if(o!==v)o.pause()}))});
+ previous.addEventListener('click',()=>moveTo(Math.max(0,videos.indexOf(nearest())-1)));
+ next.addEventListener('click',()=>moveTo(Math.min(videos.length-1,videos.indexOf(nearest())+1)));
+ track.addEventListener('scroll',()=>{update();if(transitioning)return;clearTimeout(timer);timer=setTimeout(sync,140)},{passive:true});
+ track.addEventListener('touchstart',()=>{transitioning=false;clearTimeout(timer)},{passive:true});
+ window.addEventListener('scroll',sync,{passive:true});
+ new ResizeObserver(sync).observe(track);mobile.addEventListener('change',()=>{videos.forEach(configure);active=null;sync()});
+ document.addEventListener('visibilitychange',sync);sync();
 })();
