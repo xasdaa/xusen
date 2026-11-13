@@ -931,5 +931,19 @@
 </script>
 
 
+<script>
+// Mobile browsers use ordinary web pages instead of external PDF viewers.
+(()=>{
+ const links=[...document.querySelectorAll('a[href$=".pdf"]')];
+ const mobile=matchMedia('(max-width:767px)');
+ function update(){links.forEach(a=>{
+  if(!a.dataset.originalPdf){a.dataset.originalPdf=a.getAttribute('href');a.dataset.originalTarget=a.getAttribute('target')||'';}
+  const pdf=a.dataset.originalPdf;
+  a.setAttribute('href',mobile.matches?pdf.replace('assets/v2/','assets/v2/document-previews/').replace(/\.pdf$/,'.html'):pdf);
+  if(mobile.matches)a.removeAttribute('target');else if(a.dataset.originalTarget)a.setAttribute('target',a.dataset.originalTarget);
+ });}
+ update();mobile.addEventListener('change',update);
+})();
+</script>
 </body>
 </html>
