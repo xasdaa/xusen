@@ -9,3 +9,6 @@
 :root{--portfolio-font:PortfolioLatin,PortfolioHan,sans-serif}
 body,body .selected,body .portfolio-nav,body .vi-guidelines,body .other-works-heading,body .zcool-showcase,body .portfolio-ending,body .dual-case,body .mobile-copy,body .desktop-cover-copy,body #strengths .strengths-grid,body #strengths .strengths-grid .strength-index,body #strengths .strengths-grid h3,body #strengths .strengths-grid p,body #strengths .strengths-grid .strength-pdf,body #motion-title span,body #strengths h2 span,body .other-works-heading p{font-family:var(--portfolio-font)}
 button,input,select,textarea{font-family:var(--portfolio-font)}
+
+/* Fine, compact English section headings, matching the cover subtitle tone. */
+body #motion-title span,body #strengths h2 span{font-family:PortfolioLatin,sans-serif;font-weight:200;letter-spacing:-.04em}
