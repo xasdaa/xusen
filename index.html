@@ -5,7 +5,8 @@
   <script>
     // Start fresh page visits at the cover instead of restoring browser scroll.
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    // Preserve navigation anchors shared by visitors.
+    // Fresh visits always start at the cover; in-page navigation still works.
+    if (location.hash) history.replaceState(history.state, "", location.pathname + location.search);
     const resetInitialScroll = () => { if (!location.hash) window.scrollTo({top:0,left:0,behavior:'instant'}); };
     resetInitialScroll();
     window.addEventListener('pageshow', resetInitialScroll);
