@@ -919,5 +919,32 @@
 })();
 </script>
 
+
+<script>
+// One gentle introduction per page visit; user input always takes priority.
+(() => {
+ if(location.hash || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+ let cancelled=false, frame=0, timer=0;
+ const events=['wheel','touchstart','pointerdown','keydown'];
+ function stop(){cancelled=true;clearTimeout(timer);cancelAnimationFrame(frame);events.forEach(e=>window.removeEventListener(e,stop));}
+ events.forEach(e=>window.addEventListener(e,stop,{passive:true}));
+ window.addEventListener('pagehide',stop,{once:true});
+ window.addEventListener('hashchange',stop,{once:true});
+ function begin(){
+  timer=setTimeout(()=>{
+   if(cancelled || document.hidden || scrollY>8){stop();return;}
+   const start=scrollY,target=innerHeight*.5,duration=2800,began=performance.now();
+   function step(now){
+    if(cancelled || document.hidden){stop();return;}
+    const t=Math.min(1,(now-began)/duration),ease=t*t*(3-2*t);
+    window.scrollTo({top:start+(target-start)*ease,left:0,behavior:'instant'});
+    if(t<1)frame=requestAnimationFrame(step);else stop();
+   }
+   frame=requestAnimationFrame(step);
+  },1800);
+ }
+ if(document.readyState==='complete')begin();else window.addEventListener('load',begin,{once:true});
+})();
+</script>
 </body>
 </html>
