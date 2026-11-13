@@ -421,6 +421,21 @@
 .mobile-cover:before{display:none}
 @media(max-width:767px),(max-aspect-ratio:4/5){.mobile-cover{background-image:url("assets/v2/cover-gray-gradient-mobile.png")}}
 </style>
+<script>
+// Retry transient image failures, including picture sources, at most twice.
+(()=>{
+ const counts=new WeakMap();
+ document.addEventListener('error',event=>{
+  const img=event.target;if(!(img instanceof HTMLImageElement))return;
+  const attempt=(counts.get(img)||0)+1;if(attempt>2)return;counts.set(img,attempt);
+  setTimeout(()=>{
+   const refresh=url=>{const u=new URL(url,location.href);if(u.origin!==location.origin)return url;u.searchParams.set('image_retry',String(attempt));return u.href;};
+   if(img.parentElement?.tagName==='PICTURE')img.parentElement.querySelectorAll('source[srcset]').forEach(source=>{source.srcset=source.srcset.split(',').map(part=>{const bits=part.trim().split(/\s+/);bits[0]=refresh(bits[0]);return bits.join(' ')}).join(', ')});
+   if(img.hasAttribute('src'))img.src=refresh(img.getAttribute('src'));
+  },attempt*1500);
+ },true);
+})();
+</script>
 </head>
 <body id="portfolio-top">
   <nav class="portfolio-nav" aria-label="&#20316;&#21697;&#38598;&#23548;&#33322;">
@@ -498,17 +513,17 @@
 
   <section class="selected scene-showcase" lang="zh-CN" id="product-detail-pages" aria-label="Product Detail Pages">
     <figure class="rain-camera-banner">
-      <picture><source media="(max-width:767px)" srcset="assets/v2/product-detail-cover-mobile-v2.jpg" width="1200" height="1450"><img src="assets/v2/rain-camera-banner-v6.jpg" width="3840" height="2312" loading="lazy" decoding="async" alt="雨中安装在外墙上的 aosu 太阳能摄像头"></picture>
+      <picture><source media="(max-width:767px)" srcset="assets/v2/mobile-delivery/product-detail-cover-mobile-v2.webp" width="1200" height="1450"><img src="assets/v2/rain-camera-banner-v6.jpg" width="3840" height="2312" loading="lazy" decoding="async" alt="雨中安装在外墙上的 aosu 太阳能摄像头"></picture>
     </figure>
     <div class="scene-panels" id="scene-panels" role="group" aria-label="切换产品介绍页">
       <button class="scene-panel" type="button" aria-label="查看 aosu 双摄广角覆盖完整案例" aria-controls="dual-case" aria-haspopup="dialog" aria-pressed="true">
-        <picture><source media="(max-width:767px)" srcset="assets/v2/product-cover-1-mobile.jpg" width="2427" height="1052"><img src="assets/v2/product-cover-1.webp" width="2427" height="1052" alt="" loading="lazy" decoding="async"></picture><span class="scene-mobile-caption"><strong>双摄广角覆盖</strong><span>查看完整案例 ↗</span></span>
+        <picture><source media="(max-width:767px)" srcset="assets/v2/mobile-delivery/product-cover-1-mobile.webp" width="2427" height="1052"><img src="assets/v2/product-cover-1.webp" width="2427" height="1052" alt="" loading="lazy" decoding="async"></picture><span class="scene-mobile-caption"><strong>双摄广角覆盖</strong><span>查看完整案例 ↗</span></span>
       </button>
       <button class="scene-panel" type="button" aria-label="aosu 三合一精准侦测" aria-pressed="false">
-        <picture><source media="(max-width:767px)" srcset="assets/v2/product-cover-2-mobile.jpg" width="2427" height="1052"><img src="assets/v2/product-cover-2.webp" width="2427" height="1052" alt="" loading="lazy" decoding="async"></picture><span class="scene-mobile-caption"><strong>三合一精准侦测</strong><span>查看完整案例 ↗</span></span>
+        <picture><source media="(max-width:767px)" srcset="assets/v2/mobile-delivery/product-cover-2-mobile.webp" width="2427" height="1052"><img src="assets/v2/product-cover-2.webp" width="2427" height="1052" alt="" loading="lazy" decoding="async"></picture><span class="scene-mobile-caption"><strong>三合一精准侦测</strong><span>查看完整案例 ↗</span></span>
       </button>
       <button class="scene-panel" type="button" aria-label="Marshall 音箱细节" aria-pressed="false">
-        <picture><source media="(max-width:767px)" srcset="assets/v2/product-cover-3-mobile.jpg" width="2427" height="1053"><img src="assets/v2/product-cover-3.webp" width="2427" height="1053" alt="" loading="lazy" decoding="async"></picture><span class="scene-mobile-caption"><strong>Marshall 音箱</strong><span>查看完整案例 ↗</span></span>
+        <picture><source media="(max-width:767px)" srcset="assets/v2/mobile-delivery/product-cover-3-mobile.webp" width="2427" height="1053"><img src="assets/v2/product-cover-3.webp" width="2427" height="1053" alt="" loading="lazy" decoding="async"></picture><span class="scene-mobile-caption"><strong>Marshall 音箱</strong><span>查看完整案例 ↗</span></span>
       </button>
     </div>
     <dialog class="dual-case" id="dual-case" aria-label="aosu 双摄广角覆盖完整案例">
@@ -548,7 +563,7 @@
   </section>
 
   <figure class="rain-camera-banner" id="selling-banner">
-      <picture><source media="(max-width:767px)" srcset="assets/v2/product-feature-cover-mobile.jpg" width="1200" height="1450"><img src="assets/v2/product-feature-banner-v2.jpg" width="3840" height="2312" loading="lazy" decoding="async" alt="Product Feature Visuals"></picture>
+      <picture><source media="(max-width:767px)" srcset="assets/v2/mobile-delivery/product-feature-cover-mobile.webp" width="1200" height="1450"><img src="assets/v2/product-feature-banner-v2.jpg" width="3840" height="2312" loading="lazy" decoding="async" alt="Product Feature Visuals"></picture>
     </figure>
   <section class="selected" id="selling-title" aria-label="&#20135;&#21697;&#21334;&#28857;&#35270;&#35273;">
     <div class="project-track" id="selling-track" tabindex="0" role="region" aria-label="产品卖点视觉项目，可横向滑动">
@@ -564,7 +579,7 @@
     </div>
   </section>
   <figure class="rain-camera-banner" id="creative-banner">
-    <picture><source media="(max-width:767px)" srcset="assets/v2/creative-visuals-cover-mobile.jpg" width="1200" height="1450"><img src="assets/v2/creative-visuals-banner-v5.jpg" width="3840" height="2312" loading="lazy" decoding="async" alt="Creative Visuals"></picture>
+    <picture><source media="(max-width:767px)" srcset="assets/v2/mobile-delivery/creative-visuals-cover-mobile.webp" width="1200" height="1450"><img src="assets/v2/creative-visuals-banner-v5.jpg" width="3840" height="2312" loading="lazy" decoding="async" alt="Creative Visuals"></picture>
   </figure>
 
   <section class="selected" id="selected-title" aria-label="&#21019;&#24847;&#35270;&#35273;">
@@ -581,14 +596,14 @@
     </div>
   </section>
   <section id="halloween-case" class="halloween-case" aria-labelledby="original-case-title">
-    <button type="button" class="halloween-cover-button" aria-haspopup="dialog" aria-controls="halloween-modal"><span class="case-preview"><picture><source media="(max-width:767px)" srcset="assets/v2/halloween-images/cover-mobile-v3.jpg" width="1200" height="1450"><img src="assets/v2/halloween-images/cover-qq.jpg" width="3840" height="1919" alt="aosu 品牌营销 / 2026 万圣节，点击查看案例详解" loading="lazy" decoding="async"></picture></span></button>
+    <button type="button" class="halloween-cover-button" aria-haspopup="dialog" aria-controls="halloween-modal"><span class="case-preview"><picture><source media="(max-width:767px)" srcset="assets/v2/mobile-delivery/cover-mobile-v3.webp" width="1200" height="1450"><img src="assets/v2/halloween-images/cover-qq.jpg" width="3840" height="1919" alt="aosu 品牌营销 / 2026 万圣节，点击查看案例详解" loading="lazy" decoding="async"></picture></span></button>
     <dialog class="dual-case" id="halloween-modal" aria-label="aosu 2026 Halloween">
       <div class="dual-case-header"><button class="dual-case-close" type="button" autofocus>&#20851;&#38381;&#26696;&#20363; &times;</button></div>
       <img class="original-case-image" data-mobile="assets/v2/halloween-images/case-20261029-mobile.jpg" data-src="assets/v2/halloween-images/case-20261029-original.jpg" data-srcset="assets/v2/halloween-images/case-20261029-1920.webp 1920w, assets/v2/halloween-images/case-20261029-original.jpg 3840w" sizes="(max-width:767px) 86vw, 100vw" width="3840" height="9327" alt="aosu 2026 万圣节完整品牌营销案例：目标用户、创意策略、美术参考、配色字体及延展视觉，点击收起案例" decoding="async" tabindex="0" role="button">
     </dialog>
   </section>
   <figure class="rain-camera-banner" id="other-works">
-    <picture><source media="(max-width:767px)" srcset="assets/v2/other-works-cover-mobile-v2.jpg" width="1200" height="890"><img src="assets/v2/other-works-banner-v5.jpg" width="3840" height="1654" loading="lazy" decoding="async" alt="&#20854;&#20182;&#20316;&#21697; / Other Works"></picture>
+    <picture><source media="(max-width:767px)" srcset="assets/v2/mobile-delivery/other-works-cover-mobile-v2.webp" width="1200" height="890"><img src="assets/v2/other-works-banner-v5.jpg" width="3840" height="1654" loading="lazy" decoding="async" alt="&#20854;&#20182;&#20316;&#21697; / Other Works"></picture>
   </figure>
 
   <section id="zcool-showcase" class="zcool-showcase" aria-labelledby="zcool-title"><header><h2 id="zcool-title"><img class="zcool-logo" src="assets/v2/optimized/logo-hd-76307.webp" width="1671" height="294" alt="ZCOOL 站酷"></h2><a href="https://www.zcool.com.cn/u/15231846" target="_blank" rel="noopener">https://www.zcool.com.cn/u/15231846 <img class="zcool-flame zcool-flame-large" src="assets/v2/zcool/flame-large.png" alt="" aria-hidden="true"> <img class="zcool-flame zcool-flame-small" src="assets/v2/zcool/flame-small.png" alt="" aria-hidden="true"></a></header><div class="zcool-cards"><article class="zcool-card"><div class="zcool-cover-frame"><img src="assets/v2/optimized/cover-1-clean-100052.webp" width="247" height="184" loading="lazy" alt="香舍里-车载香薰-主视觉海报设…"></div><div class="zcool-card-body"><h3>香舍里-车载香薰-主视觉海报设…<img class="zcool-flame zcool-flame-large" src="assets/v2/zcool/flame-large.png" alt="" aria-hidden="true"></h3><p>网页-电商</p><div class="zcool-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> 326</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5l-3 3-3-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path d="M7 10h.1M12 10h.1M17 10h.1" stroke-linecap="round" stroke-width="3"/></svg> 0</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-6V1h2c2 0 2 3 1 6h5a2 2 0 0 1 2 2l-1 10a2 2 0 0 1-2 2H7"/></svg> 12</span></div></div><footer>17天前</footer></article><article class="zcool-card"><div class="zcool-cover-frame"><img src="assets/v2/optimized/cover-2-clean-220441.webp" width="247" height="184" loading="lazy" alt="产品海报设计 x AIGC（mj）流…"></div><div class="zcool-card-body"><h3>产品海报设计 x AIGC（mj）流…<img class="zcool-flame zcool-flame-large" src="assets/v2/zcool/flame-large.png" alt="" aria-hidden="true"></h3><p>网页-电商</p><div class="zcool-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> 2347</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5l-3 3-3-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path d="M7 10h.1M12 10h.1M17 10h.1" stroke-linecap="round" stroke-width="3"/></svg> 16</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-6V1h2c2 0 2 3 1 6h5a2 2 0 0 1 2 2l-1 10a2 2 0 0 1-2 2H7"/></svg> 95</span></div></div><footer>224天前</footer></article><article class="zcool-card"><div class="zcool-cover-frame"><img src="assets/v2/optimized/cover-3-clean-416131.webp" width="247" height="184" loading="lazy" alt="西鸽电商2022年-中秋设计分享"></div><div class="zcool-card-body"><h3>西鸽电商2022年-中秋设计分享<img class="zcool-flame zcool-flame-large" src="assets/v2/zcool/flame-large.png" alt="" aria-hidden="true"></h3><p>网页-电商</p><div class="zcool-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> 620</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5l-3 3-3-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path d="M7 10h.1M12 10h.1M17 10h.1" stroke-linecap="round" stroke-width="3"/></svg> 2</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-6V1h2c2 0 2 3 1 6h5a2 2 0 0 1 2 2l-1 10a2 2 0 0 1-2 2H7"/></svg> 30</span></div></div><footer>231天前</footer></article><article class="zcool-card"><div class="zcool-cover-frame"><img src="assets/v2/optimized/cover-4-clean-81231.webp" width="247" height="184" loading="lazy" alt="2023年西鸽618大促"></div><div class="zcool-card-body"><h3>2023年西鸽618大促<img class="zcool-flame zcool-flame-small" src="assets/v2/zcool/flame-small.png" alt="" aria-hidden="true"></h3><p>网页-电商</p><div class="zcool-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> 665</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5l-3 3-3-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path d="M7 10h.1M12 10h.1M17 10h.1" stroke-linecap="round" stroke-width="3"/></svg> 4</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-6V1h2c2 0 2 3 1 6h5a2 2 0 0 1 2 2l-1 10a2 2 0 0 1-2 2H7"/></svg> 27</span></div></div><footer>238天前</footer></article><article class="zcool-card"><div class="zcool-cover-frame"><img src="assets/v2/optimized/cover-5-clean-140696.webp" width="247" height="184" loading="lazy" alt="插画作品"></div><div class="zcool-card-body"><h3>插画作品<img class="zcool-flame zcool-flame-small" src="assets/v2/zcool/flame-small.png" alt="" aria-hidden="true"></h3><p>插画-商业插画</p><div class="zcool-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> 209</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5l-3 3-3-3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/><path d="M7 10h.1M12 10h.1M17 10h.1" stroke-linecap="round" stroke-width="3"/></svg> 4</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-6V1h2c2 0 2 3 1 6h5a2 2 0 0 1 2 2l-1 10a2 2 0 0 1-2 2H7"/></svg> 22</span></div></div><footer>256天前</footer></article></div></section>
