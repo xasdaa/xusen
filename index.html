@@ -438,10 +438,10 @@
 </script>
 <style>
 /* Portfolio 2.2: lightweight perspective poster gallery */
-.cover.gallery-cover{background:#090909;height:100svh;min-height:600px;color:#d4d4d4}
+.cover.gallery-cover{background:#000;height:100svh;min-height:600px;color:#d4d4d4}
 .hero-heading{position:absolute;z-index:3;top:17%;left:0;width:100%;margin:0;text-align:center;font:400 clamp(32px,4vw,64px)/1.08 PortfolioLatin,Arial,sans-serif;letter-spacing:-.055em;pointer-events:none}
 .hero-heading small{display:block;margin-top:16px;font:400 12px/1.5 PortfolioLatin,sans-serif;letter-spacing:.18em;color:#888}
-.poster-tunnel{position:absolute;inset:0;overflow:hidden;perspective:1000px;touch-action:pan-y}
+.poster-tunnel{position:absolute;inset:0;overflow:hidden;touch-action:pan-y}
 .tunnel-poster{position:absolute;left:50%;top:57%;width:240px;aspect-ratio:3/4;margin:0;transform-origin:center;border-radius:4px;overflow:hidden;backface-visibility:hidden;box-shadow:0 12px 40px #0005;will-change:transform}
 .tunnel-poster img{display:block;width:100%;height:100%;object-fit:cover}
 .hero-bottom{position:absolute;z-index:4;bottom:6%;left:0;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px;pointer-events:none}
@@ -451,6 +451,7 @@
 .hero-pause{position:absolute;right:24px;bottom:24px;z-index:5;min-width:44px;min-height:44px;color:#999;border:1px solid #333;border-radius:50%}
 @media(max-width:767px){.cover.gallery-cover{min-height:560px}.hero-heading{top:19%;font-size:36px}.hero-heading small{font-size:10px;margin-top:14px}.tunnel-poster{width:160px;top:55%}.hero-bottom{bottom:8%}.hero-bottom p{font-size:11px;max-width:260px}.hero-pause{right:16px;bottom:20px}}
 </style>
+<style>.gallery-cover .hero-bottom{bottom:10%}.gallery-cover .hero-bottom a{color:#d4d4d4}</style>
 </head>
 <body id="portfolio-top">
   <nav class="portfolio-nav" aria-label="&#20316;&#21697;&#38598;&#23548;&#33322;">
@@ -470,10 +471,10 @@
     <a class="portfolio-work-link" href="assets/v2/xu-zhizhai-resume-2026-latest.pdf" target="_blank" rel="noopener">联系我 <svg class="contact-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M4 4h8v8"/></svg></a>
   </nav>
   <main class="cover gallery-cover" aria-label="许志斋精选视觉作品">
-<h1 class="hero-heading">Selected Works,<br>Visual Stories.<small>XU ZHIZHAI · PORTFOLIO 2026</small></h1>
+<h1 class="hero-heading">Design that works.<small>XU ZHIZHAI · PORTFOLIO 2026</small></h1>
 <div class="poster-tunnel" aria-hidden="true"></div>
-<div class="hero-bottom"><p>品牌视觉、创意影像与动态设计<br>以视觉探索科技与生活的连接。</p><a href="#motion">向下探索作品 ↓</a></div>
-<button class="hero-pause" type="button" aria-label="暂停首页动画" aria-pressed="false">Ⅱ</button>
+<div class="hero-bottom"><a href="#motion">向下探索作品 ↓</a></div>
+
 </main>
 
 
@@ -977,6 +978,6 @@
  update();mobile.addEventListener('change',update);
 })();
 </script>
-<script src="assets/v2/hero-gallery.js"></script>
+<script src="assets/v2/hero-gallery.js?v=7"></script>
 </body>
 </html>
